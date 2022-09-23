@@ -1,8 +1,6 @@
 ## This code is the backend access for the Flow Project
-```
-$ docker build . -t backend
-$ docker run -it backend
-```
+Code is deployed in [https://djangoflowapp.herokuapp.com/](https://djangoflowapp.herokuapp.com/)
+
 * [Examples](./example/)
 * [Dependencies](./requirements.txt)
 
