@@ -1,19 +1,18 @@
+from asyncore import read
 from .models import *
 from rest_framework import fields, serializers
 
-
-class QuerySerializer(serializers.ModelSerializer):
-    class Meta:
-        model  = Query
-        fields = "__all__"
-
 class FacultySerializer(serializers.ModelSerializer):
+
     class Meta:
         model  = Faculty
         fields = "__all__"
 
 
-class TopicSerializer(serializers.ModelSerializer):
+class QuerySerializer(serializers.ModelSerializer):
+    uwinId =  FacultySerializer(read_only=True)
+
     class Meta:
-        model  = Topic
-        fields = ("id", "topic")
+        model  = Query
+        fields = "__all__"
+      
