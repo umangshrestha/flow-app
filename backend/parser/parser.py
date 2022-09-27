@@ -28,14 +28,27 @@ faculty  = df[["firstName", "lastName", "uwinId", "email", "department", "facult
 #     print(resp.json())
 
 
-query = df[["createdBy", "location", "topics", "uwinId", "description", "isMultiple", "isTeams"]]
-query["isMultiple"] = df["isMultiple"].apply(lambda x: bool(x))
-for body in json.loads(query.to_json(orient="records")):
-    body["topics"] = json.loads(body["topics"])
-    resp = requests.post("http://127.0.0.1:8000/query/",
-    headers={"content-type": "application/json"},
-        data= json.dumps(body))
-    print(resp)
-    print(resp.json())
-print(query.MajorTopic)
+# query = df[["createdBy", "location", "topics", "uwinId", "description", "isMultiple", "isTeams"]]
+# query["isMultiple"] = df["isMultiple"].apply(lambda x: bool(x))
+# for body in json.loads(query.to_json(orient="records")):
+#     body["topics"] = json.loads(body["topics"])
+#     resp = requests.post("http://127.0.0.1:8000/query/",
+#     headers={"content-type": "application/json"},
+#         data= json.dumps(body))
+#     print(resp)
+#     print(resp.json())
+# print(query.MajorTopic)
 
+topics = set()
+for x in df["topics"].dropna().unique():
+    try: 
+        [topics.add(x) for x in json.loads(x)]
+    except Exception as E:
+        print("err", x)
+topics.add("Other - Please Provide Details in the \"Topic(s)\" Text-Field")
+    
+for topic in topics:
+    resp = requests.post("http://127.0.0.1:8000/topic/",
+    headers={"content-type": "application/json"},
+        data= json.dumps({"topic": topic}))
+    print(resp.json())

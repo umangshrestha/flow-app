@@ -3,4 +3,5 @@ from .models import *
 
 # Register your models here.
 admin.register(Query)
+admin.register(Topic)
 admin.register(Faculty)
