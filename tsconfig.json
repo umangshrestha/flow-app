@@ -9,7 +9,7 @@
       "outDir": "dist",
       "baseUrl": ".",
       "paths": {
-        "@config": ["config/*"]
+        "@config/*": ["src/config/*"]
       }
     },
     "include": ["src/**/*"]

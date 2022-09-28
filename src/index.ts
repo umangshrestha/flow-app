@@ -1,11 +1,13 @@
 
 import express from 'express'
-import { PORT } from './config';
+import { IP, NAME, TAG, PORT, NODE_ENV } from './config/settings';
 
 const app = express();
 
 
-app.get('/hello', (_, res) => {
-    res.status(200).json({"name": "hello, WOrld"})
-  })
-  app.listen(PORT, () => console.log(`Running on port ${PORT}`))
+app.get('/greet', (_: express.Request, res: express.Response) => {
+  res.status(200).json({ "name": "hello, World" })
+})
+app.listen(PORT, IP, () => {
+  (NODE_ENV === "production") && console.log(`${NAME}@${TAG}: http://${IP}:${PORT}`)
+})
