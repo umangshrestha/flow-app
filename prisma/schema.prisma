@@ -1,0 +1,42 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model Faculty {
+  uwinID     String  @id @unique
+  firstName  String
+  lastName   String
+  department String
+  faculty    String
+  email      String  @unique
+  query      Query[]
+}
+
+model Topic {
+  id      Int    @id @default(autoincrement())
+  topic   String @unique
+  Query   Query? @relation(fields: [queryId], references: [id])
+  queryId Int?
+}
+
+model Query {
+  id          Int      @id @default(autoincrement())
+  faculty     Faculty  @relation(fields: [uwinID], references: [uwinID])
+  uwinID      String
+  createdAt   DateTime @default(now())
+  createdBy   String
+  updatedAt   DateTime @updatedAt
+  majorTopics Topic[]
+  location    String   @default("BBCafe")
+  description String
+  isTeams     Boolean  @default(false)
+  isMultiple  Boolean  @default(false)
+}
