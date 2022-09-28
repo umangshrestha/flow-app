@@ -10,6 +10,14 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+model User {
+  id        Int     @id @default(autoincrement())
+  email     String  @unique
+  firstName String
+  lastName  String
+  query     Query[]
+}
+
 model Faculty {
   uwinID     String  @id @unique
   firstName  String
@@ -32,7 +40,8 @@ model Query {
   faculty     Faculty  @relation(fields: [uwinID], references: [uwinID])
   uwinID      String
   createdAt   DateTime @default(now())
-  createdBy   String
+  createdBy   User     @relation(fields: [userId], references: [id])
+  userId     Int
   updatedAt   DateTime @updatedAt
   majorTopics Topic[]
   location    String   @default("BBCafe")
