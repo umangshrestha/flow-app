@@ -1,5 +1,5 @@
 import express from "express";
-import { handler } from "@middleware/handler";
+import { handler } from "@middleware/requesthandler";
 import addmodel from "@middleware/addmodel";
 import db from "@utils/dbconn";
 

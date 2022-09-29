@@ -1,8 +1,5 @@
-import { PORT, IP, NAME, TAG, isDevelopment } from "@config/settings";
-import { TOPICS_LIST } from "@config/topics";
+import { PORT, IP, LOG_NAME } from "@config/settings";
 import app from "./app";
+import logger from "@logger";
 
-app.listen(PORT, IP, () => {
-  const debugMsg = `${NAME}@${TAG}: http://${IP}:${PORT}`;
-  isDevelopment() && console.log(debugMsg);
-})
+app.listen(PORT, IP, () => logger.debug(LOG_NAME, `http://${IP}:${PORT}`));

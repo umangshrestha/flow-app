@@ -1,10 +1,10 @@
-import { formattedDateTime } from "@utils/time";
+import logger from "@logger";
 import { Request, Response, NextFunction } from "express";
 
 export default (req: Request, res: Response, next: NextFunction) => {
 
-    console.log("[DEBUG]", formattedDateTime(), ":", req.method, "@", req.originalUrl)
-    console.table({
+    logger.debug(req.method, "@", req.originalUrl)
+    logger.debug({
         params: JSON.stringify(req.params),
         body: JSON.stringify(req.body),
         query: JSON.stringify(req.query),

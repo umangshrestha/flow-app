@@ -21,10 +21,14 @@
 			"@middleware/*": [
 				"src/middleware/*"
 			],
-      "@types/*": [
+			"@types/*": [
 				"src/types/*"
+			],
+			"@logger": [
+				"src/logger"
 			]
 		},
+
 		"typeRoots": [
 			"src/types/",
 			"node_modules/@types"
@@ -32,6 +36,6 @@
 	},
 	"include": [
 		"src/**/*",
-    "tests/**/*"
+		"tests/**/*"
 	]
 }
