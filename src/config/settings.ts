@@ -8,5 +8,4 @@ export const TAG = process.env.npm_package_version;
 export const NAME = process.env.npm_package_name;
 export const ALLOWED_ORIGIN = process.env.ALLOWED_ORIGIN || "*";
 
-const NODE_ENV = process.env.NODE_ENV || "development";
-export const IS_DEVELOPMENT = (NODE_ENV === "development"); 
+export const isDevelopment = () => (process.env.NODE_ENV  === "development"); 

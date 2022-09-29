@@ -1,7 +1,7 @@
 
 import hello from "@api/hello";
 import topic from "@api/topic";
-import auth from "@api/auth/index";
+import auth from "@api/auth/urls";
 import express from "express";
 
 export default express.Router()

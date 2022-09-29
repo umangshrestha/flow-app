@@ -1,12 +1,12 @@
 import { Prisma } from "@prisma/client"
+import { DB } from "../db"
 
 export { }
 
-type GlobalSettings = Prisma.RejectOnNotFound | Prisma.RejectPerOperation | false | undefined;
 declare global {
     namespace Express {
         export interface Request {
-            model?: Prisma.TopicDelegate<GlobalSettings>,
+            model?: DB.Any,
         }
     }
 }

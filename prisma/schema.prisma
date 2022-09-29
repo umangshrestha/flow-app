@@ -32,7 +32,7 @@ model Faculty {
 model Topic {
   id      Int    @id @default(autoincrement())
   topic   String @unique
-  Query   Query? @relation(fields: [queryId], references: [id])
+  query   Query? @relation(fields: [queryId], references: [id])
   queryId Int?
 }
 

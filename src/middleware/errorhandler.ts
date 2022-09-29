@@ -1,14 +1,20 @@
+import { isDevelopment } from "@config/settings";
 import { Prisma } from "@prisma/client";
 import { formattedDateTime } from "@utils/time";
-import express, { Request, Response, NextFunction } from "express";
+import { Request, Response, NextFunction } from "express";
 
 export default (error: Error, req: Request, res: Response, next: NextFunction) => {
-    console.log("[ERROR]", formattedDateTime(), ":", req.method, "@", req.originalUrl);
+    if (isDevelopment()) {
+        console.log(error);
+        console.log("[ERROR]", formattedDateTime(), ":", req.method, "@", req.originalUrl);
+    }
     if (error instanceof Prisma.PrismaClientKnownRequestError) {
-        if (error.code === 'P2002')
-            res.status(422).json({ error: "duplicate", code: error.code })
-        if (error.code === 'P2025')
-            res.status(422).json({ error: "not found", code: error.code })
+        let msg:any = error.meta.cause;
+        msg ||= (error.code === "P2002")? "duplicate entry": "unknown";
+        res.status(422).json({
+            error: msg,
+            code: error.code
+        })
     } else {
         res.status(500).json({ error: "ERROR" });
     }

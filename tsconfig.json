@@ -1,32 +1,37 @@
 {
-  "compilerOptions": {
-    "module": "commonjs",
-    "esModuleInterop": true,
-    "target": "es2022",
-    "noImplicitAny": true,
-    "moduleResolution": "node",
-    "sourceMap": true,
-    "outDir": "dist",
-    "baseUrl": ".",
-    "paths": {
-      "@config/*": [
-        "src/config/*"
-      ],
-      "@api/*": [
-        "src/api/*"
-      ],
-      "@utils/*": [
-        "src/utils/*"
-      ],
-      "@middleware/*": [
-        "src/middleware/*"
-      ],
-    },
-    "typeRoots": [
-      "src/types/"
-    ],
-  },
-  "include": [
-    "src/**/*"
-  ]
+	"compilerOptions": {
+		"module": "commonjs",
+		"esModuleInterop": true,
+		"target": "es2022",
+		"noImplicitAny": true,
+		"moduleResolution": "node",
+		"sourceMap": true,
+		"outDir": "dist",
+		"baseUrl": ".",
+		"paths": {
+			"@config/*": [
+				"src/config/*"
+			],
+			"@api/*": [
+				"src/api/*"
+			],
+			"@utils/*": [
+				"src/utils/*"
+			],
+			"@middleware/*": [
+				"src/middleware/*"
+			],
+      "@types/*": [
+				"src/types/*"
+			]
+		},
+		"typeRoots": [
+			"src/types/",
+			"node_modules/@types"
+		]
+	},
+	"include": [
+		"src/**/*",
+    "tests/**/*"
+	]
 }

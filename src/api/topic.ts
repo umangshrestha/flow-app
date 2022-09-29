@@ -1,19 +1,13 @@
-import express, { Request, Response, NextFunction } from "express";
-import db from "@utils/dbconn";
+import express from "express";
 import { handleRequest as hr } from "@utils/responsehandler";
-import { Prisma } from "@prisma/client";
+import addmodel from "@middleware/addmodel";
+import db from "@utils/dbconn";
 
 let router = express.Router();
 
-router.use(async (req: Request, _: Response, next: NextFunction) => {
-    req.model = db.topic;
-    next();
-})
-
-
 export default router
+    .use(addmodel(db.topic))
     .get("/:id?", hr.get)
     .post("/", hr.post)
     .delete("/:id", hr.delete)
     .put("/:id", hr.put)
-
