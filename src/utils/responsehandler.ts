@@ -1,78 +1,67 @@
-import express, { Request, Response } from "express";
+import express, { Request, Response, NextFunction } from "express";
 import db from "src/utils/dbconn";
 import { Prisma } from '@prisma/client'
 
 
-interface IId {
-    id?: number,
-    uwinID?: string
-};
+interface IQuery {
+    id?: string,
+    uwinID?: string,
+}
 
+interface IParams {
+    offset?: string,
+    limit?: string,
+}
+
+
+const parseIntOrUndefined = (val?: string) => parseInt(val) || undefined;
 export const handleRequest = {
 
-    get: async (req: Request, res: Response, findMany: CallableFunction) => {
+    get: async (req: Request<any, any, IQuery, IParams>, res: Response, next: NextFunction) => {
         try {
-            let where: IId = {};
-            where.id = parseInt(req.params.id) || null;
-            where.uwinID = req.params.uwinID;
-            const { offset: skip, limit: take } = req.query as { [key: string]: string };
-            let topics = await findMany({
-                skip: parseInt(skip) || undefined,
-                take: parseInt(take) || undefined,
-                where, 
-            });
-            res.status(200).json(topics);
-        } catch (e) {
-            console.log(e)
-            res.status(500).json({ error: e.name });
+            let where = { id: parseIntOrUndefined(req.params.id) };
+            const { offset, limit } = req.query;
+            const skip = parseIntOrUndefined(offset);
+            const take = parseIntOrUndefined(limit);
+            let out = await req.model.findMany({ skip, take, where });
+            res.status(200).json(out);
+        } catch (err) {
+            next(err)
         }
     },
 
-    post: async (req: express.Request, res: express.Response, create: CallableFunction) => {
+    post: async (req: Request, res: Response, next: NextFunction) => {
         try {
-            let resp = await create({ data: req.body });
+            let resp = await req.model.create({ data: req.body });
             res.status(201).json(resp);
-        } catch (e) {
-            console.log(e)
-            if (e instanceof Prisma.PrismaClientKnownRequestError
-                && e.code === 'P2002')
-                res.status(422).json({ error: "duplicate topic", code: e.code })
-            else
-                res.status(500).json({ error: e.name });
+        } catch (err) {
+            next(err)
         }
     },
 
-    delete: async (req: express.Request, res: express.Response, del: CallableFunction) => {
+    delete: async (req: Request<any, any, any, IParams>, res: Response, next: NextFunction) => {
         try {
-            let where: IId = {};
-            where.id = parseInt(req.params.id) || null;
-            where.uwinID = req.params.uwinID;
-            let resp = await del({ where });
+            const where = {
+                id: parseIntOrUndefined(req.params.id),
+                uwinID: req.params.uwinID
+            }; 
+            let resp = await req.model.delete({ where });
             res.status(201).json(resp);
-        } catch (e) {
-            if (e instanceof Prisma.PrismaClientKnownRequestError
-                && e.code === 'P2025')
-                res.status(422).json({ error: "duplicate topic", code: e.code })
-            else
-                res.status(500).json({ error: e.name });
+        } catch (err) {
+            next(err)
         }
     },
 
-    put: async (req: express.Request, res: express.Response, update: CallableFunction) => {
+    put: async (req: Request<any, any, any, IParams>, res: Response, next: NextFunction) => {
         try {
-            let where: IId = {};
-            where.id = parseInt(req.params.id) || null;
-            where.uwinID = req.params.uwinID;
-            console.log(where)
-            let resp = await update({ where, data: req.body });
+            let where = {
+                id: parseIntOrUndefined(req.params.id),
+                uwinID: req.params.uwinID
+            };
+            let resp = await req.model.update({ where, data: req.body });
             res.status(201).json(resp);
-        } catch (e) {
-            console.log(e)
-            if (e instanceof Prisma.PrismaClientKnownRequestError
-                && e.code === 'P2025')
-                res.status(422).json({ error: "duplicate topic", code: e.code })
-            else
-                res.status(500).json({ error: e.name });
+        } catch (err) {
+            next(err)
         }
     },
 }

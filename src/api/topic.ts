@@ -1,14 +1,19 @@
-import express from "express";
+import express, { Request, Response, NextFunction } from "express";
 import db from "@utils/dbconn";
 import { handleRequest as hr } from "@utils/responsehandler";
+import { Prisma } from "@prisma/client";
 
-let model = db.topic;
+let router = express.Router();
 
-export default 
-    express
-    .Router()
-    .get("/:id?", async (req, res) => hr.get(req, res, model.findMany))
-    .post("/", async (req, res) => hr.post(req, res, model.create))
-    .delete("/:id", async (req, res) => hr.delete(req, res, model.delete))
-    .put("/:id", async (req, res) => hr.put(req, res, model.update))
+router.use(async (req: Request, _: Response, next: NextFunction) => {
+    req.model = db.topic;
+    next();
+})
+
+
+export default router
+    .get("/:id?", hr.get)
+    .post("/", hr.post)
+    .delete("/:id", hr.delete)
+    .put("/:id", hr.put)
 

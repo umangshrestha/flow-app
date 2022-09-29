@@ -13,8 +13,9 @@ datasource db {
 model User {
   id        Int     @id @default(autoincrement())
   email     String  @unique
-  firstName String
-  lastName  String
+  firstName String?
+  lastName  String?
+  password  String
   query     Query[]
 }
 
@@ -41,7 +42,7 @@ model Query {
   uwinID      String
   createdAt   DateTime @default(now())
   createdBy   User     @relation(fields: [userId], references: [id])
-  userId     Int
+  userId      Int
   updatedAt   DateTime @updatedAt
   majorTopics Topic[]
   location    String   @default("BBCafe")
