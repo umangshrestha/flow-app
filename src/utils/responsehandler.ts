@@ -1,7 +1,4 @@
-import express, { Request, Response, NextFunction } from "express";
-import db from "src/utils/dbconn";
-import { Prisma } from '@prisma/client'
-
+import { Request, Response, NextFunction } from "express";
 
 interface IParams {
     offset?: string,
