@@ -6,13 +6,14 @@ interface IParams {
 }
 
 const parseIntOrUndefined = (val?: string) => parseInt(val) || undefined;
+
 const getId = (req: Request) => req.params.id ?
     { id: parseIntOrUndefined(req.params.id) } :
     { uwinID: req.params.uwinID };
 
-export const handleRequest = {
+export namespace handler {
 
-    get: async (req: Request, res: Response, next: NextFunction) => {
+    export const Get = async (req: Request, res: Response, next: NextFunction) => {
         try {
             let query = req.query as IParams;
             let where = getId(req);
@@ -24,9 +25,9 @@ export const handleRequest = {
         } catch (err) {
             next(err)
         }
-    },
+    }
 
-    post: async (req: Request, res: Response, next: NextFunction) => {
+    export const Post = async (req: Request, res: Response, next: NextFunction) => {
         try {
             const func: CallableFunction = req.model.create;
             let resp = await func({ data: req.body });
@@ -34,9 +35,9 @@ export const handleRequest = {
         } catch (err) {
             next(err)
         }
-    },
+    }
 
-    delete: async (req: Request, res: Response, next: NextFunction) => {
+    export const Delete = async (req: Request, res: Response, next: NextFunction) => {
         try {
             let where = getId(req);
             const func: CallableFunction = req.model.delete;
@@ -45,9 +46,9 @@ export const handleRequest = {
         } catch (err) {
             next(err)
         }
-    },
+    }
 
-    put: async (req: Request, res: Response, next: NextFunction) => {
+    export const Put = async (req: Request, res: Response, next: NextFunction) => {
         try {
             let where = getId(req);
             const func: CallableFunction = req.model.update;
@@ -56,5 +57,5 @@ export const handleRequest = {
         } catch (err) {
             next(err)
         }
-    },
+    }
 }

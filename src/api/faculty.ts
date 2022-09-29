@@ -1,5 +1,5 @@
 import express from "express";
-import { handleRequest as hr } from "@utils/responsehandler";
+import { handler } from "@middleware/handler";
 import addmodel from "@middleware/addmodel";
 import db from "@utils/dbconn";
 
@@ -7,7 +7,7 @@ let router = express.Router();
 
 export default router
     .use(addmodel(db.faculty))
-    .get("/:uwinID?", hr.get)
-    .post("/", hr.post)
-    .delete("/:uwinID", hr.delete)
-    .put("/:uwinID", hr.put)
+    .get("/:uwinID?", handler.Get)
+    .post("/", handler.Post)
+    .delete("/:uwinID", handler.Delete)
+    .put("/:uwinID", handler.Put)
