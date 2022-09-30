@@ -1,4 +1,13 @@
 -- CreateTable
+CREATE TABLE "User" (
+    "id" INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+    "email" TEXT NOT NULL,
+    "firstName" TEXT,
+    "lastName" TEXT,
+    "password" TEXT NOT NULL
+);
+
+-- CreateTable
 CREATE TABLE "Faculty" (
     "uwinID" TEXT NOT NULL PRIMARY KEY,
     "firstName" TEXT NOT NULL,
@@ -11,9 +20,7 @@ CREATE TABLE "Faculty" (
 -- CreateTable
 CREATE TABLE "Topic" (
     "id" INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
-    "topic" TEXT NOT NULL,
-    "queryId" INTEGER,
-    CONSTRAINT "Topic_queryId_fkey" FOREIGN KEY ("queryId") REFERENCES "Query" ("id") ON DELETE SET NULL ON UPDATE CASCADE
+    "topic" TEXT NOT NULL
 );
 
 -- CreateTable
@@ -30,6 +37,17 @@ CREATE TABLE "Query" (
     CONSTRAINT "Query_uwinID_fkey" FOREIGN KEY ("uwinID") REFERENCES "Faculty" ("uwinID") ON DELETE RESTRICT ON UPDATE CASCADE
 );
 
+-- CreateTable
+CREATE TABLE "_QueryToTopic" (
+    "A" INTEGER NOT NULL,
+    "B" INTEGER NOT NULL,
+    CONSTRAINT "_QueryToTopic_A_fkey" FOREIGN KEY ("A") REFERENCES "Query" ("id") ON DELETE CASCADE ON UPDATE CASCADE,
+    CONSTRAINT "_QueryToTopic_B_fkey" FOREIGN KEY ("B") REFERENCES "Topic" ("id") ON DELETE CASCADE ON UPDATE CASCADE
+);
+
+-- CreateIndex
+CREATE UNIQUE INDEX "User_email_key" ON "User"("email");
+
 -- CreateIndex
 CREATE UNIQUE INDEX "Faculty_uwinID_key" ON "Faculty"("uwinID");
 
@@ -38,3 +56,9 @@ CREATE UNIQUE INDEX "Faculty_email_key" ON "Faculty"("email");
 
 -- CreateIndex
 CREATE UNIQUE INDEX "Topic_topic_key" ON "Topic"("topic");
+
+-- CreateIndex
+CREATE UNIQUE INDEX "_QueryToTopic_AB_unique" ON "_QueryToTopic"("A", "B");
+
+-- CreateIndex
+CREATE INDEX "_QueryToTopic_B_index" ON "_QueryToTopic"("B");
