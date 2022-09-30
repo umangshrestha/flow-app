@@ -1,0 +1,3122 @@
+[
+    {
+        "uwinID": "biswas",
+        "firstName": "Nihar",
+        "lastName": "Biswas",
+        "department": "Civil and Environmental Engineering",
+        "faculty": "Engineering",
+        "email": "biswas@uwindsor.ca"
+    },
+    {
+        "uwinID": "jgreen",
+        "firstName": "Jim",
+        "lastName": "Green",
+        "department": "Chemistry & Biochemistry",
+        "faculty": "Science",
+        "email": "jgreen@uwindsor.ca"
+    },
+    {
+        "uwinID": "rajesh",
+        "firstName": "Rajesh",
+        "lastName": "Seth",
+        "department": "Civil and Environmental Engineering",
+        "faculty": "Engineering",
+        "email": "rajesh@uwindsor.ca"
+    },
+    {
+        "uwinID": "kader",
+        "firstName": "Walid",
+        "lastName": "Abdul-Kader",
+        "department": "Mechanical, Automotive & Materials Engineering",
+        "faculty": "Engineering",
+        "email": "kader@uwindsor.ca"
+    },
+    {
+        "uwinID": "oajianu",
+        "firstName": "Ofelia",
+        "lastName": "Jianu",
+        "department": "Mechanical, Automotive & Materials Engineering",
+        "faculty": "Engineering",
+        "email": "oajianu@uwindsor.ca"
+    },
+    {
+        "uwinID": "lafren1",
+        "firstName": "Kathryn",
+        "lastName": "Lafreniere",
+        "department": "Psychology",
+        "faculty": "FAHSS",
+        "email": "lafren1@uwindsor.ca"
+    },
+    {
+        "uwinID": "mathes4",
+        "firstName": "Suzanne",
+        "lastName": "Matheson",
+        "department": "English and Creative Writing",
+        "faculty": "FAHSS",
+        "email": "mathes4@uwindsor.ca"
+    },
+    {
+        "uwinID": "chandler",
+        "firstName": "Krista",
+        "lastName": "Chandler",
+        "department": "Kinesiology",
+        "faculty": "HK",
+        "email": "chandler@uwindsor.ca"
+    },
+    {
+        "uwinID": "dilworth",
+        "firstName": "Thomas",
+        "lastName": "Dilworth",
+        "department": "English and Creative Writing",
+        "faculty": "FAHSS",
+        "email": "dilworth@uwindsor.ca"
+    },
+    {
+        "uwinID": "doxlog1",
+        "firstName": "Brian",
+        "lastName": "MacPherson",
+        "department": "Philosophy",
+        "faculty": "FAHSS",
+        "email": "doxlog1@uwindsor.ca"
+    },
+    {
+        "uwinID": "dandrews",
+        "firstName": "Dave",
+        "lastName": "Andrews",
+        "department": "Kinesiology",
+        "faculty": "HK",
+        "email": "dandrews@uwindsor.ca"
+    },
+    {
+        "uwinID": "ssamet",
+        "firstName": "Saeed",
+        "lastName": "Samet",
+        "department": "School of Computer Science",
+        "faculty": "Science",
+        "email": "ssamet@uwindsor.ca"
+    },
+    {
+        "uwinID": "haaser",
+        "firstName": "Rita",
+        "lastName": "Haase",
+        "department": "Women's and Gender Studies",
+        "faculty": "FAHSS",
+        "email": "haaser@uwindsor.ca"
+    },
+    {
+        "uwinID": "jluft",
+        "firstName": "Joanna",
+        "lastName": "Luft",
+        "department": "English and Creative Writing",
+        "faculty": "FAHSS",
+        "email": "jluft@uwindsor.ca"
+    },
+    {
+        "uwinID": "omorodif",
+        "firstName": "Francisca",
+        "lastName": "Omorodion",
+        "department": "Sociology, Anthropology, and Criminology",
+        "faculty": "FAHSS",
+        "email": "omorodif@uwindsor.ca"
+    },
+    {
+        "uwinID": "wlyee",
+        "firstName": "Wai Ling",
+        "lastName": "Yee",
+        "department": "Mathematics and Statistics",
+        "faculty": "Science",
+        "email": "wlyee@uwindsor.ca"
+    },
+    {
+        "uwinID": "ariahi",
+        "firstName": "Reza",
+        "lastName": "Riahi",
+        "department": "Mechanical, Automotive & Materials Engineering",
+        "faculty": "Engineering",
+        "email": "ariahi@uwindsor.ca"
+    },
+    {
+        "uwinID": "glan",
+        "firstName": "George",
+        "lastName": "Lan",
+        "department": "Odette School Of Business",
+        "faculty": "Business",
+        "email": "glan@uwindsor.ca"
+    },
+    {
+        "uwinID": "sbick",
+        "firstName": "Sally",
+        "lastName": "Bick",
+        "department": "School of Creative Arts",
+        "faculty": "FAHSS",
+        "email": "sbick@uwindsor.ca"
+    },
+    {
+        "uwinID": "nabil",
+        "firstName": "Nabil",
+        "lastName": "Abdullah",
+        "department": "School of Computer Science",
+        "faculty": "Science",
+        "email": "nabil@uwindsor.ca"
+    },
+    {
+        "uwinID": "borawski",
+        "firstName": "Bill",
+        "lastName": "Orawski",
+        "department": "Odette School Of Business",
+        "faculty": "Business",
+        "email": "borawski@uwindsor.ca"
+    },
+    {
+        "uwinID": "dutton",
+        "firstName": "Philip",
+        "lastName": "Dutton",
+        "department": "Faculty of Science",
+        "faculty": "Science",
+        "email": "dutton@uwindsor.ca"
+    },
+    {
+        "uwinID": "vanengnc",
+        "firstName": "Niel",
+        "lastName": "Van Engelen",
+        "department": "Civil and Environmental Engineering",
+        "faculty": "Engineering",
+        "email": "vanengnc@uwindsor.ca"
+    },
+    {
+        "uwinID": "dcapaldi",
+        "firstName": "Dante",
+        "lastName": "Capaldi",
+        "department": "Chemistry & Biochemistry",
+        "faculty": "Science",
+        "email": "dcapaldi@uwindsor.ca"
+    },
+    {
+        "uwinID": "aalzaher",
+        "firstName": "Abdo",
+        "lastName": "Al-Zaher",
+        "department": "Mechanical, Automotive & Materials Engineering",
+        "faculty": "Engineering",
+        "email": "aalzaher@uwindsor.ca"
+    },
+    {
+        "uwinID": "makpata",
+        "firstName": "Michelle",
+        "lastName": "Akpata",
+        "department": "School of Social Work",
+        "faculty": "FAHSS",
+        "email": "makpata@uwindsor.ca"
+    },
+    {
+        "uwinID": "cottreau",
+        "firstName": "Deborah",
+        "lastName": "Cottreau",
+        "department": "School of Dramatic Art",
+        "faculty": "FAHSS",
+        "email": "cottreau@uwindsor.ca"
+    },
+    {
+        "uwinID": "icohen",
+        "firstName": "Ira",
+        "lastName": "Cohen",
+        "department": "Continuing Education",
+        "faculty": "Education",
+        "email": "icohen@uwindsor.ca"
+    },
+    {
+        "uwinID": "fouzia1",
+        "firstName": "Fouzia",
+        "lastName": "Baki",
+        "department": "Mechanical, Automotive & Materials Engineering",
+        "faculty": "Engineering",
+        "email": "fouzia1@uwindsor.ca"
+    },
+    {
+        "uwinID": "mstewart",
+        "firstName": "Michele",
+        "lastName": "Stewart",
+        "department": "Odette School Of Business",
+        "faculty": "Business",
+        "email": "mstewart@uwindsor.ca"
+    },
+    {
+        "uwinID": "edrisy",
+        "firstName": "Afsaneh",
+        "lastName": "Edrisy",
+        "department": "Mechanical, Automotive & Materials Engineering",
+        "faculty": "Engineering",
+        "email": "edrisy@uwindsor.ca"
+    },
+    {
+        "uwinID": "mps",
+        "firstName": "Maureen",
+        "lastName": "Sterling",
+        "department": "Odette School Of Business",
+        "faculty": "Business",
+        "email": "mps@uwindsor.ca"
+    },
+    {
+        "uwinID": "soula",
+        "firstName": "Soula",
+        "lastName": "Serra",
+        "department": "Continuing Education",
+        "faculty": "Education",
+        "email": "soula@uwindsor.ca"
+    },
+    {
+        "uwinID": "amullen",
+        "firstName": "Anne",
+        "lastName": "Mullen",
+        "department": "Continuing Education",
+        "faculty": "Education",
+        "email": "amullen@uwindsor.ca"
+    },
+    {
+        "uwinID": "ksoucie",
+        "firstName": "Kendall",
+        "lastName": "Soucie",
+        "department": "Psychology",
+        "faculty": "FAHSS",
+        "email": "ksoucie@uwindsor.ca"
+    },
+    {
+        "uwinID": "kalyanis",
+        "firstName": "Kalyani",
+        "lastName": "Selvarajah",
+        "department": "School of Computer Science",
+        "faculty": "Science",
+        "email": "kalyanis@uwindsor.ca"
+    },
+    {
+        "uwinID": "parr1",
+        "firstName": "Kate",
+        "lastName": "Parr",
+        "department": "Philosophy",
+        "faculty": "FAHSS",
+        "email": "parr1@uwindsor.ca"
+    },
+    {
+        "uwinID": "lcabri",
+        "firstName": "Louis",
+        "lastName": "Cabri",
+        "department": "English and Creative Writing",
+        "faculty": "FAHSS",
+        "email": "lcabri@uwindsor.ca"
+    },
+    {
+        "uwinID": "camisha",
+        "firstName": "Camisha",
+        "lastName": "Sibblis",
+        "department": "School of Social Work",
+        "faculty": "FAHSS",
+        "email": "camisha@uwindsor.ca"
+    },
+    {
+        "uwinID": "wconkli",
+        "firstName": "William",
+        "lastName": "Conklin",
+        "department": "Faculty of Law",
+        "faculty": "Law",
+        "email": "wconkli@uwindsor.ca"
+    },
+    {
+        "uwinID": "tranum",
+        "firstName": "Tranum",
+        "lastName": "Kaur",
+        "department": "Chemistry & Biochemistry",
+        "faculty": "Science",
+        "email": "tranum@uwindsor.ca"
+    },
+    {
+        "uwinID": "smattson",
+        "firstName": "Scott",
+        "lastName": "Mattson",
+        "department": "Psychology",
+        "faculty": "FAHSS",
+        "email": "smattson@uwindsor.ca"
+    },
+    {
+        "uwinID": "ashovlin",
+        "firstName": "Amanada",
+        "lastName": "Shovlin",
+        "department": "Faculty of Law",
+        "faculty": "Law",
+        "email": "ashovlin@uwindsor.ca"
+    },
+    {
+        "uwinID": "mastr112",
+        "firstName": "Kyle",
+        "lastName": "Mastronardi",
+        "department": "Unknown",
+        "faculty": "Unknown",
+        "email": "mastr112@uwindsor.ca"
+    },
+    {
+        "uwinID": "jdefoe",
+        "firstName": "Jeff",
+        "lastName": "Defoe",
+        "department": "Mechanical, Automotive & Materials Engineering",
+        "faculty": "Engineering",
+        "email": "jdefoe@uwindsor.ca"
+    },
+    {
+        "uwinID": "overhol",
+        "firstName": "Marion",
+        "lastName": "Overholt",
+        "department": "Faculty of Law",
+        "faculty": "Law",
+        "email": "overhol@uwindsor.ca"
+    },
+    {
+        "uwinID": "billyv",
+        "firstName": "Bill",
+        "lastName": "Vaillancourt",
+        "department": "Faculty of Education",
+        "faculty": "Education",
+        "email": "billyv@uwindsor.ca"
+    },
+    {
+        "uwinID": "sp",
+        "firstName": "Sukanya",
+        "lastName": "Pillay",
+        "department": "Faculty of Law",
+        "faculty": "Law",
+        "email": "sp@uwindsor.ca"
+    },
+    {
+        "uwinID": "amahajan",
+        "firstName": "Ashish",
+        "lastName": "Mahajan",
+        "department": "Odette School Of Business",
+        "faculty": "Business",
+        "email": "amahajan@uwindsor.ca"
+    },
+    {
+        "uwinID": "izabella",
+        "firstName": "Izabella",
+        "lastName": "Kojic-Sabo",
+        "department": "Centre for English Language Development",
+        "faculty": "Administration",
+        "email": "izabella@uwindsor.ca"
+    },
+    {
+        "uwinID": "benkon",
+        "firstName": "Noah",
+        "lastName": "Benko",
+        "department": "Unknown",
+        "faculty": "Unknown",
+        "email": "benkon@uwindsor.ca"
+    },
+    {
+        "uwinID": "evaneek",
+        "firstName": "Esther",
+        "lastName": "Van Eek",
+        "department": "School of Dramatic Art",
+        "faculty": "FAHSS",
+        "email": "evaneek@uwindsor.ca"
+    },
+    {
+        "uwinID": "vmio",
+        "firstName": "Vanessa",
+        "lastName": "Mio",
+        "department": "Faculty of Education",
+        "faculty": "Education",
+        "email": "vmio@uwindsor.ca"
+    },
+    {
+        "uwinID": "cuzz",
+        "firstName": "John",
+        "lastName": "Cuzzocrea",
+        "department": "Faculty of Education",
+        "faculty": "Education",
+        "email": "cuzz@uwindsor.ca"
+    },
+    {
+        "uwinID": "pwing",
+        "firstName": "Paula",
+        "lastName": "Wing",
+        "department": "School of Dramatic Art",
+        "faculty": "FAHSS",
+        "email": "pwing@uwindsor.ca"
+    },
+    {
+        "uwinID": "mcioppa",
+        "firstName": "Maria",
+        "lastName": "Cioppa",
+        "department": "School of the Environment",
+        "faculty": "Science",
+        "email": "mcioppa@uwindsor.ca"
+    },
+    {
+        "uwinID": "nstonge",
+        "firstName": "Nancy",
+        "lastName": "St. Onge",
+        "department": "School of Social Work",
+        "faculty": "FAHSS",
+        "email": "nstonge@uwindsor.ca"
+    },
+    {
+        "uwinID": "tous",
+        "firstName": "Wayne",
+        "lastName": "Tousignant",
+        "department": "Faculty of Education",
+        "faculty": "Education",
+        "email": "tous@uwindsor.ca"
+    },
+    {
+        "uwinID": "jamieb",
+        "firstName": "Jamie",
+        "lastName": "Bumbacco",
+        "department": "Faculty of Education",
+        "faculty": "Education",
+        "email": "jamieb@uwindsor.ca"
+    },
+    {
+        "uwinID": "nasimu",
+        "firstName": "Nasim",
+        "lastName": "Uddin",
+        "department": "Unknown",
+        "faculty": "Unknown",
+        "email": "nasimu@uwindsor.ca"
+    },
+    {
+        "uwinID": "taylor",
+        "firstName": "Keith",
+        "lastName": "Taylor",
+        "department": "Chemistry & Biochemistry",
+        "faculty": "Science",
+        "email": "taylor@uwindsor.ca"
+    },
+    {
+        "uwinID": "ricciard",
+        "firstName": "Philip",
+        "lastName": "Ricciardi",
+        "department": "Psychology",
+        "faculty": "FAHSS",
+        "email": "ricciard@uwindsor.ca"
+    },
+    {
+        "uwinID": "ims",
+        "firstName": "Iain",
+        "lastName": "Samson",
+        "department": "School of the Environment",
+        "faculty": "Science",
+        "email": "ims@uwindsor.ca"
+    },
+    {
+        "uwinID": "bransabo",
+        "firstName": "Brandon",
+        "lastName": "Sabourin",
+        "department": "Faculty of Education",
+        "faculty": "Education",
+        "email": "bransabo@uwindsor.ca"
+    },
+    {
+        "uwinID": "kedmunds",
+        "firstName": "Kathryn",
+        "lastName": "Edmunds",
+        "department": "Faculty of Nursing",
+        "faculty": "Nursing",
+        "email": "kedmunds@uwindsor.ca"
+    },
+    {
+        "uwinID": "kverner",
+        "firstName": "Kristina",
+        "lastName": "Verner",
+        "department": "School of Computer Science",
+        "faculty": "Science",
+        "email": "kverner@uwindsor.ca"
+    },
+    {
+        "uwinID": "bbrodie",
+        "firstName": "Barry",
+        "lastName": "Brodie",
+        "department": "School of Dramatic Art",
+        "faculty": "FAHSS",
+        "email": "bbrodie@uwindsor.ca"
+    },
+    {
+        "uwinID": "jstare",
+        "firstName": "Jerneja",
+        "lastName": "Stare",
+        "department": "Integrative Biology",
+        "faculty": "Science",
+        "email": "jstare@uwindsor.ca"
+    },
+    {
+        "uwinID": "agilzay",
+        "firstName": "Abdul",
+        "lastName": "Gilzay",
+        "department": "Continuing Education",
+        "faculty": "Education",
+        "email": "agilzay@uwindsor.ca"
+    },
+    {
+        "uwinID": "lmiljan",
+        "firstName": "Lydia",
+        "lastName": "Miljan",
+        "department": "Political Science",
+        "faculty": "FAHSS",
+        "email": "lmiljan@uwindsor.ca"
+    },
+    {
+        "uwinID": "pvoyer",
+        "firstName": "Peter",
+        "lastName": "Voyer",
+        "department": "Odette School Of Business",
+        "faculty": "Business",
+        "email": "pvoyer@uwindsor.ca"
+    },
+    {
+        "uwinID": "gfenn",
+        "firstName": "Garnet",
+        "lastName": "Fenn",
+        "department": "Odette School Of Business",
+        "faculty": "Business",
+        "email": "gfenn@uwindsor.ca"
+    },
+    {
+        "uwinID": "kechego1",
+        "firstName": "Jaimie",
+        "lastName": "Kechego",
+        "department": "Centre for Teaching & Learning",
+        "faculty": "CTL",
+        "email": "kechego1@uwindsor.ca"
+    },
+    {
+        "uwinID": "dkane",
+        "firstName": "Debbie",
+        "lastName": "Kane",
+        "department": "Faculty of Nursing",
+        "faculty": "Nursing",
+        "email": "dkane@uwindsor.ca"
+    },
+    {
+        "uwinID": "tbrunet",
+        "firstName": "Tim",
+        "lastName": "Brunet",
+        "department": "Public Affairs and Communications",
+        "faculty": "Office of Public Affairs and Communications",
+        "email": "tbrunet@uwindsor.ca"
+    },
+    {
+        "uwinID": "rmusced",
+        "firstName": "Roberto",
+        "lastName": "Muscedere",
+        "department": "Electrical and Computer Engineering",
+        "faculty": "Engineering",
+        "email": "rmusced@uwindsor.ca"
+    },
+    {
+        "uwinID": "xxu",
+        "firstName": "Iris",
+        "lastName": "Xu",
+        "department": "Civil and Environmental Engineering",
+        "faculty": "Engineering",
+        "email": "xxu@uwindsor.ca"
+    },
+    {
+        "uwinID": "mooredo",
+        "firstName": "Dorian",
+        "lastName": "Moore",
+        "department": "School of Creative Arts",
+        "faculty": "FAHSS",
+        "email": "mooredo@uwindsor.ca"
+    },
+    {
+        "uwinID": "mguthrie",
+        "firstName": "Mary",
+        "lastName": "Guthrie",
+        "department": "Odette School Of Business",
+        "faculty": "Business",
+        "email": "mguthrie@uwindsor.ca"
+    },
+    {
+        "uwinID": "damianak",
+        "firstName": "Thecla",
+        "lastName": "Damianakis",
+        "department": "School of Social Work",
+        "faculty": "FAHSS",
+        "email": "damianak@uwindsor.ca"
+    },
+    {
+        "uwinID": "csmith",
+        "firstName": "Clayton",
+        "lastName": "Smith",
+        "department": "Faculty of Education",
+        "faculty": "Education",
+        "email": "csmith@uwindsor.ca"
+    },
+    {
+        "uwinID": "bsethi",
+        "firstName": "Bharati",
+        "lastName": "Sethi",
+        "department": "Continuing Education",
+        "faculty": "Education",
+        "email": "bsethi@uwindsor.ca"
+    },
+    {
+        "uwinID": "cstirbys",
+        "firstName": "Cynthia",
+        "lastName": "Stirbys",
+        "department": "School of Social Work",
+        "faculty": "FAHSS",
+        "email": "cstirbys@uwindsor.ca"
+    },
+    {
+        "uwinID": "anans",
+        "firstName": "Sirinart",
+        "lastName": "Ananvoranich",
+        "department": "Chemistry & Biochemistry",
+        "faculty": "Science",
+        "email": "anans@uwindsor.ca"
+    },
+    {
+        "uwinID": "zielin1",
+        "firstName": "Barbara",
+        "lastName": "Zielinski",
+        "department": "Integrative Biology",
+        "faculty": "Science",
+        "email": "zielin1@uwindsor.ca"
+    },
+    {
+        "uwinID": "kamelif",
+        "firstName": "Leila",
+        "lastName": "Kamelifar",
+        "department": "Faculty of Education",
+        "faculty": "Education",
+        "email": "kamelif@uwindsor.ca"
+    },
+    {
+        "uwinID": "marium",
+        "firstName": "Marium",
+        "lastName": "Tolson-Murtty",
+        "department": "Faculty of Education",
+        "faculty": "Education",
+        "email": "marium@uwindsor.ca"
+    },
+    {
+        "uwinID": "nharney",
+        "firstName": "Nick",
+        "lastName": "Harney",
+        "department": "Sociology, Anthropology, and Criminology",
+        "faculty": "FAHSS",
+        "email": "nharney@uwindsor.ca"
+    },
+    {
+        "uwinID": "clanoue",
+        "firstName": "Chris",
+        "lastName": "Lanoue",
+        "department": "Budgets And Financial Services",
+        "faculty": "Budgets And Financial Services",
+        "email": "clanoue@uwindsor.ca"
+    },
+    {
+        "uwinID": "aghumman",
+        "firstName": "Azra",
+        "lastName": "Ghumman",
+        "department": "Chemistry & Biochemistry",
+        "faculty": "Science",
+        "email": "aghumman@uwindsor.ca"
+    },
+    {
+        "uwinID": "albanese",
+        "firstName": "John",
+        "lastName": "Albanese",
+        "department": "Sociology, Anthropology, and Criminology",
+        "faculty": "FAHSS",
+        "email": "albanese@uwindsor.ca"
+    },
+    {
+        "uwinID": "aong",
+        "firstName": "Audra",
+        "lastName": "Ong",
+        "department": "Odette School Of Business",
+        "faculty": "Business",
+        "email": "aong@uwindsor.ca"
+    },
+    {
+        "uwinID": "nelkord",
+        "firstName": "Nesreen",
+        "lastName": "El Kord",
+        "department": "Faculty of Education",
+        "faculty": "Education",
+        "email": "nelkord@uwindsor.ca"
+    },
+    {
+        "uwinID": "vanlaerh",
+        "firstName": "Sherah",
+        "lastName": "Vanlaerhoven",
+        "department": "Integrative Biology",
+        "faculty": "Science",
+        "email": "vanlaerh@uwindsor.ca"
+    },
+    {
+        "uwinID": "craigl",
+        "firstName": "Joan",
+        "lastName": "Craig",
+        "department": "Psychology",
+        "faculty": "FAHSS",
+        "email": "craigl@uwindsor.ca"
+    },
+    {
+        "uwinID": "jennifer",
+        "firstName": "Jennifer",
+        "lastName": "Johrendt",
+        "department": "Faculty of Education",
+        "faculty": "Education",
+        "email": "jennifer@uwindsor.ca"
+    },
+    {
+        "uwinID": "odoh",
+        "firstName": "Robert",
+        "lastName": "Odoh",
+        "department": "School of Computer Science",
+        "faculty": "Science",
+        "email": "odoh@uwindsor.ca"
+    },
+    {
+        "uwinID": "megquinn",
+        "firstName": "Meaghen",
+        "lastName": "Quinn",
+        "department": "School of Dramatic Art",
+        "faculty": "FAHSS",
+        "email": "megquinn@uwindsor.ca"
+    },
+    {
+        "uwinID": "dpusca",
+        "firstName": "Daniela",
+        "lastName": "Pusca",
+        "department": "Mechanical, Automotive & Materials Engineering",
+        "faculty": "Engineering",
+        "email": "dpusca@uwindsor.ca"
+    },
+    {
+        "uwinID": "yu115",
+        "firstName": "Yuanming",
+        "lastName": "Yu",
+        "department": "Mechanical, Automotive & Materials Engineering",
+        "faculty": "Engineering",
+        "email": "yu115@uwindsor.ca"
+    },
+    {
+        "uwinID": "cmwell",
+        "firstName": "Chris",
+        "lastName": "Wellington",
+        "department": "Faculty of Nursing",
+        "faculty": "Nursing",
+        "email": "cmwell@uwindsor.ca"
+    },
+    {
+        "uwinID": "patterwa",
+        "firstName": "Wayne",
+        "lastName": "Patterson",
+        "department": "Faculty of Law",
+        "faculty": "Law",
+        "email": "patterwa@uwindsor.ca"
+    },
+    {
+        "uwinID": "nantaisc",
+        "firstName": "Cynthia",
+        "lastName": "Nantais",
+        "department": "Faculty of Law",
+        "faculty": "Law",
+        "email": "nantaisc@uwindsor.ca"
+    },
+    {
+        "uwinID": "shah13i",
+        "firstName": "Jay",
+        "lastName": "Shah",
+        "department": "Mechanical, Automotive & Materials Engineering",
+        "faculty": "Engineering",
+        "email": "shah13i@uwindsor.ca"
+    },
+    {
+        "uwinID": "aburgess",
+        "firstName": "Amanda",
+        "lastName": "Burgess",
+        "department": "Women's and Gender Studies",
+        "faculty": "FAHSS",
+        "email": "aburgess@uwindsor.ca"
+    },
+    {
+        "uwinID": "knigh11i",
+        "firstName": "Tiana",
+        "lastName": "Knight",
+        "department": "Faculty of Law",
+        "faculty": "Law",
+        "email": "knigh11i@uwindsor.ca"
+    },
+    {
+        "uwinID": "zamtul",
+        "firstName": "Zareen",
+        "lastName": "Amtul",
+        "department": "Chemistry & Biochemistry",
+        "faculty": "Science",
+        "email": "zamtul@uwindsor.ca"
+    },
+    {
+        "uwinID": "criley",
+        "firstName": "Christine",
+        "lastName": "Riley",
+        "department": "Faculty of Law",
+        "faculty": "Law",
+        "email": "criley@uwindsor.ca"
+    },
+    {
+        "uwinID": "lamr64",
+        "firstName": "Laurie",
+        "lastName": "Renaud",
+        "department": "Human Resources",
+        "faculty": "Human Resources",
+        "email": "lamr64@uwindsor.ca"
+    },
+    {
+        "uwinID": "gorey",
+        "firstName": "Kevin",
+        "lastName": "Gorey",
+        "department": "School of Social Work",
+        "faculty": "FAHSS",
+        "email": "gorey@uwindsor.ca"
+    },
+    {
+        "uwinID": "cynmac",
+        "firstName": "Cyndra",
+        "lastName": "Mac Dowall",
+        "department": "School of Creative Arts",
+        "faculty": "FAHSS",
+        "email": "cynmac@uwindsor.ca"
+    },
+    {
+        "uwinID": "ward4",
+        "firstName": "Andrew",
+        "lastName": "Ward",
+        "department": "Faculty of Nursing",
+        "faculty": "Nursing",
+        "email": "ward4@uwindsor.ca"
+    },
+    {
+        "uwinID": "mcmurphy",
+        "firstName": "Suzanne",
+        "lastName": "McMurphy",
+        "department": "Office of Research Ethics",
+        "faculty": "Office of Research Ethics",
+        "email": "mcmurphy@uwindsor.ca"
+    },
+    {
+        "uwinID": "gclayton",
+        "firstName": "Graham",
+        "lastName": "Clayton",
+        "department": "Economics",
+        "faculty": "Science",
+        "email": "gclayton@uwindsor.ca"
+    },
+    {
+        "uwinID": "franks",
+        "firstName": "Frank",
+        "lastName": "Simpson",
+        "department": "School of the Environment",
+        "faculty": "Science",
+        "email": "franks@uwindsor.ca"
+    },
+    {
+        "uwinID": "paesanom",
+        "firstName": "Mikayla",
+        "lastName": "Paesano",
+        "department": "Odette School Of Business",
+        "faculty": "Business",
+        "email": "paesanom@uwindsor.ca"
+    },
+    {
+        "uwinID": "kasprow",
+        "firstName": "Mike",
+        "lastName": "Kasprowicz",
+        "department": "Faculty of Law",
+        "faculty": "Law",
+        "email": "kasprow@uwindsor.ca"
+    },
+    {
+        "uwinID": "hae, wem",
+        "firstName": "Hoda, Waguih",
+        "lastName": "ElMaraghy,  ElMaraghy",
+        "department": "Mechanical, Automotive & Materials Engineering",
+        "faculty": "Engineering",
+        "email": "hae@uwindsor.ca\nwem@uwindsor.ca"
+    },
+    {
+        "uwinID": "sohailb",
+        "firstName": "Bilal",
+        "lastName": "Sohail",
+        "department": "School of Computer Science",
+        "faculty": "Science",
+        "email": "sohailb@uwindsor.ca"
+    },
+    {
+        "uwinID": "gsalvato",
+        "firstName": "Giuliana",
+        "lastName": "Salvato",
+        "department": "Languages, Literatures and Cultures",
+        "faculty": "FAHSS",
+        "email": "gsalvato@uwindsor.ca"
+    },
+    {
+        "uwinID": "apl",
+        "firstName": "Antonio",
+        "lastName": "Pascual-Leone",
+        "department": "Psychology",
+        "faculty": "FAHSS",
+        "email": "apl@uwindsor.ca"
+    },
+    {
+        "uwinID": "guo31",
+        "firstName": "Haojun",
+        "lastName": "Guo",
+        "department": "Faculty of Education",
+        "faculty": "Education",
+        "email": "guo31@uwindsor.ca"
+    },
+    {
+        "uwinID": "deng11w",
+        "firstName": "Yuhan",
+        "lastName": "Deng",
+        "department": "Faculty of Education",
+        "faculty": "Education",
+        "email": "deng11w@uwindsor.ca"
+    },
+    {
+        "uwinID": "alfakih",
+        "firstName": "Abdo",
+        "lastName": "Alfakih",
+        "department": "Mathematics and Statistics",
+        "faculty": "Science",
+        "email": "alfakih@uwindsor.ca"
+    },
+    {
+        "uwinID": "jfreer",
+        "firstName": "John",
+        "lastName": "Freer",
+        "department": "Faculty of Education",
+        "faculty": "Education",
+        "email": "jfreer@uwindsor.ca"
+    },
+    {
+        "uwinID": "swharton",
+        "firstName": "Sara",
+        "lastName": "Wharton",
+        "department": "Faculty of Law",
+        "faculty": "Law",
+        "email": "swharton@uwindsor.ca"
+    },
+    {
+        "uwinID": "imran",
+        "firstName": "Imran",
+        "lastName": "Ahmad",
+        "department": "School of Computer Science",
+        "faculty": "Science",
+        "email": "imran@uwindsor.ca"
+    },
+    {
+        "uwinID": "dragana",
+        "firstName": "Dragana",
+        "lastName": "Martinovic",
+        "department": "Faculty of Education",
+        "faculty": "Education",
+        "email": "dragana@uwindsor.ca"
+    },
+    {
+        "uwinID": "sabgak",
+        "firstName": "Kristie",
+        "lastName": "Sabga",
+        "department": "Psychology",
+        "faculty": "FAHSS",
+        "email": "sabgak@uwindsor.ca"
+    },
+    {
+        "uwinID": "zhiguohu",
+        "firstName": "Zhiguo",
+        "lastName": "Hu",
+        "department": "Mathematics and Statistics",
+        "faculty": "Science",
+        "email": "zhiguohu@uwindsor.ca"
+    },
+    {
+        "uwinID": "mcedwards",
+        "firstName": "Mary",
+        "lastName": "Edwards",
+        "department": "Faculty of Education",
+        "faculty": "Education",
+        "email": "mcedwards@uwindsor.ca"
+    },
+    {
+        "uwinID": "rsanjuan",
+        "firstName": "Ronan",
+        "lastName": "San Juan",
+        "department": "Chemistry & Biochemistry",
+        "faculty": "Science",
+        "email": "rsanjuan@uwindsor.ca"
+    },
+    {
+        "uwinID": "zjpasek",
+        "firstName": "Zbigniew",
+        "lastName": "Pasek",
+        "department": "Mechanical, Automotive & Materials Engineering",
+        "faculty": "Engineering",
+        "email": "zjpasek@uwindsor.ca"
+    },
+    {
+        "uwinID": "smith1ab",
+        "firstName": "Dylan",
+        "lastName": "Smith",
+        "department": "Mechanical, Automotive & Materials Engineering",
+        "faculty": "Engineering",
+        "email": "smith1ab@uwindsor.ca"
+    },
+    {
+        "uwinID": "nunesj",
+        "firstName": "Joe",
+        "lastName": "Nunes",
+        "department": "Mathematics and Statistics",
+        "faculty": "Science",
+        "email": "nunesj@uwindsor.ca"
+    },
+    {
+        "uwinID": "markotic",
+        "firstName": "Nicole",
+        "lastName": "Markotic",
+        "department": "English and Creative Writing",
+        "faculty": "FAHSS",
+        "email": "markotic@uwindsor.ca"
+    },
+    {
+        "uwinID": "joloo",
+        "firstName": "James",
+        "lastName": "Oloo",
+        "department": "Faculty of Education",
+        "faculty": "Education",
+        "email": "joloo@uwindsor.ca"
+    },
+    {
+        "uwinID": "ydaniel",
+        "firstName": "Yvette",
+        "lastName": "Daniel",
+        "department": "Faculty of Education",
+        "faculty": "Education",
+        "email": "ydaniel@uwindsor.ca"
+    },
+    {
+        "uwinID": "wood1x",
+        "firstName": "Cayla",
+        "lastName": "Wood",
+        "department": "Faculty of Human Kinetics",
+        "faculty": "HK",
+        "email": "wood1x@uwindsor.ca"
+    },
+    {
+        "uwinID": "hlynka",
+        "firstName": "Myron",
+        "lastName": "Hlynka",
+        "department": "Mathematics and Statistics",
+        "faculty": "Science",
+        "email": "hlynka@uwindsor.ca"
+    },
+    {
+        "uwinID": "macarth7",
+        "firstName": "Michelle",
+        "lastName": "Macarthur",
+        "department": "School of Dramatic Art",
+        "faculty": "FAHSS",
+        "email": "macarth7@uwindsor.ca"
+    },
+    {
+        "uwinID": "hongweix",
+        "firstName": "Hongwei",
+        "lastName": "Xu",
+        "department": "Odette School Of Business",
+        "faculty": "Business",
+        "email": "hongweix@uwindsor.ca"
+    },
+    {
+        "uwinID": "bmcla",
+        "firstName": "Brenda",
+        "lastName": "Mclaughlin",
+        "department": "Faculty of Nursing",
+        "faculty": "Nursing",
+        "email": "bmcla@uwindsor.ca"
+    },
+    {
+        "uwinID": "colosima",
+        "firstName": "Alicia",
+        "lastName": "Colosimo",
+        "department": "School of Social Work",
+        "faculty": "FAHSS",
+        "email": "colosima@uwindsor.ca"
+    },
+    {
+        "uwinID": "lallin",
+        "firstName": "Leslie",
+        "lastName": "Allin",
+        "department": "English and Creative Writing",
+        "faculty": "FAHSS",
+        "email": "lallin@uwindsor.ca"
+    },
+    {
+        "uwinID": "mcgowanc",
+        "firstName": "Cheri",
+        "lastName": "McGowan",
+        "department": "Faculty of Human Kinetics",
+        "faculty": "HK",
+        "email": "mcgowanc@uwindsor.ca"
+    },
+    {
+        "uwinID": "abreu",
+        "firstName": "Priscila",
+        "lastName": "Abreu",
+        "department": "Mechanical, Automotive & Materials Engineering",
+        "faculty": "Engineering",
+        "email": "abreu@uwindsor.ca"
+    },
+    {
+        "uwinID": "ladewitt",
+        "firstName": "Lorna",
+        "lastName": "de Witt",
+        "department": "Faculty of Nursing",
+        "faculty": "Nursing",
+        "email": "ladewitt@uwindsor.ca"
+    },
+    {
+        "uwinID": "bcowan1",
+        "firstName": "Belle",
+        "lastName": "Cowan",
+        "department": "Odette School Of Business",
+        "faculty": "Business",
+        "email": "bcowan1@uwindsor.ca"
+    },
+    {
+        "uwinID": "ndrew",
+        "firstName": "Nancy",
+        "lastName": "Drew",
+        "department": "Faculty of Education",
+        "faculty": "Education",
+        "email": "ndrew@uwindsor.ca"
+    },
+    {
+        "uwinID": "rbiss",
+        "firstName": "Renee",
+        "lastName": "Biss",
+        "department": "Psychology",
+        "faculty": "FAHSS",
+        "email": "rbiss@uwindsor.ca"
+    },
+    {
+        "uwinID": "abaird",
+        "firstName": "Anne",
+        "lastName": "Baird",
+        "department": "Psychology",
+        "faculty": "FAHSS",
+        "email": "abaird@uwindsor.ca"
+    },
+    {
+        "uwinID": "hecnar",
+        "firstName": "Victoria",
+        "lastName": "Hecnar",
+        "department": "English and Creative Writing",
+        "faculty": "FAHSS",
+        "email": "hecnar@uwindsor.ca"
+    },
+    {
+        "uwinID": "sevans",
+        "firstName": "Shelley",
+        "lastName": "Evans",
+        "department": "Faculty of Nursing",
+        "faculty": "Nursing",
+        "email": "sevans@uwindsor.ca"
+    },
+    {
+        "uwinID": "greenham",
+        "firstName": "Craig",
+        "lastName": "Greenham",
+        "department": "Kinesiology",
+        "faculty": "HK",
+        "email": "greenham@uwindsor.ca"
+    },
+    {
+        "uwinID": "ecruz",
+        "firstName": "Edward",
+        "lastName": "Cruz",
+        "department": "Faculty of Nursing",
+        "faculty": "Nursing",
+        "email": "ecruz@uwindsor.ca"
+    },
+    {
+        "uwinID": "saval115",
+        "firstName": "Ravi",
+        "lastName": "Savaliya",
+        "department": "Mechanical, Automotive & Materials Engineering",
+        "faculty": "Engineering",
+        "email": "saval115@uwindsor.ca"
+    },
+    {
+        "uwinID": "olabelle",
+        "firstName": "Onawa",
+        "lastName": "Labelle",
+        "department": "Psychology",
+        "faculty": "FAHSS",
+        "email": "olabelle@uwindsor.ca"
+    },
+    {
+        "uwinID": "spender",
+        "firstName": "Stephen",
+        "lastName": "Pender",
+        "department": "English and Creative Writing",
+        "faculty": "FAHSS",
+        "email": "spender@uwindsor.ca"
+    },
+    {
+        "uwinID": "gfeldman",
+        "firstName": "Greg",
+        "lastName": "Feldman",
+        "department": "Sociology, Anthropology, and Criminology",
+        "faculty": "FAHSS",
+        "email": "gfeldman@uwindsor.ca"
+    },
+    {
+        "uwinID": "nayak7",
+        "firstName": "Anirudhkumar",
+        "lastName": "Nayak",
+        "department": "Mechanical, Automotive & Materials Engineering",
+        "faculty": "Engineering",
+        "email": "nayak7@uwindsor.ca"
+    },
+    {
+        "uwinID": "hassan1g",
+        "firstName": "Mirza",
+        "lastName": "Hassan",
+        "department": "Economics",
+        "faculty": "Science",
+        "email": "hassan1g@uwindsor.ca"
+    },
+    {
+        "uwinID": "basok",
+        "firstName": "Tanya",
+        "lastName": "Basok",
+        "department": "Sociology, Anthropology, and Criminology",
+        "faculty": "FAHSS",
+        "email": "basok@uwindsor.ca"
+    },
+    {
+        "uwinID": "kbabb",
+        "firstName": "Kim",
+        "lastName": "Babb",
+        "department": "Psychology",
+        "faculty": "FAHSS",
+        "email": "kbabb@uwindsor.ca"
+    },
+    {
+        "uwinID": "kromero",
+        "firstName": "Kristoffer",
+        "lastName": "Romero",
+        "department": "Psychology",
+        "faculty": "FAHSS",
+        "email": "kromero@uwindsor.ca"
+    },
+    {
+        "uwinID": "wacheskd",
+        "firstName": "Devin",
+        "lastName": "Wacheski",
+        "department": "Mechanical, Automotive & Materials Engineering",
+        "faculty": "Engineering",
+        "email": "wacheskd@uwindsor.ca"
+    },
+    {
+        "uwinID": "krisloug",
+        "firstName": "Krista",
+        "lastName": "Loughead",
+        "department": "Kinesiology",
+        "faculty": "HK",
+        "email": "krisloug@uwindsor.ca"
+    },
+    {
+        "uwinID": "bazc",
+        "firstName": "Cayla",
+        "lastName": "Baz",
+        "department": "Sociology, Anthropology, and Criminology",
+        "faculty": "FAHSS",
+        "email": "bazc@uwindsor.ca"
+    },
+    {
+        "uwinID": "chwasty",
+        "firstName": "Nicole",
+        "lastName": "Chwastyk",
+        "department": "School of Social Work",
+        "faculty": "FAHSS",
+        "email": "chwasty@uwindsor.ca"
+    },
+    {
+        "uwinID": "lpaquett",
+        "firstName": "Leanne",
+        "lastName": "Paquette",
+        "department": "Faculty of Nursing",
+        "faculty": "Nursing",
+        "email": "lpaquett@uwindsor.ca"
+    },
+    {
+        "uwinID": "hsweet73",
+        "firstName": "Heather",
+        "lastName": "Sweet",
+        "department": "Faculty of Nursing",
+        "faculty": "Nursing",
+        "email": "hsweet73@uwindsor.ca"
+    },
+    {
+        "uwinID": "cheran",
+        "firstName": "Cheran",
+        "lastName": "Rudhramoorthy",
+        "department": "Sociology, Anthropology, and Criminology",
+        "faculty": "FAHSS",
+        "email": "cheran@uwindsor.ca"
+    },
+    {
+        "uwinID": "rpdatta",
+        "firstName": "Ronjon Paul",
+        "lastName": "Datta",
+        "department": "Sociology, Anthropology, and Criminology",
+        "faculty": "FAHSS",
+        "email": "rpdatta@uwindsor.ca"
+    },
+    {
+        "uwinID": "aclarke",
+        "firstName": "Andrea",
+        "lastName": "Clarke",
+        "department": "Philosophy",
+        "faculty": "FAHSS",
+        "email": "aclarke@uwindsor.ca"
+    },
+    {
+        "uwinID": "cortj",
+        "firstName": "Joel",
+        "lastName": "Cort",
+        "department": "Kinesiology",
+        "faculty": "HK",
+        "email": "cortj@uwindsor.ca"
+    },
+    {
+        "uwinID": "lehal11",
+        "firstName": "Amanpreet",
+        "lastName": "Lehal",
+        "department": "Sociology, Anthropology, and Criminology",
+        "faculty": "FAHSS",
+        "email": "lehal11@uwindsor.ca"
+    },
+    {
+        "uwinID": "etanlaka",
+        "firstName": "Eric",
+        "lastName": "Tanlaka",
+        "department": "Faculty of Nursing",
+        "faculty": "Nursing",
+        "email": "etanlaka@uwindsor.ca"
+    },
+    {
+        "uwinID": "goddard1",
+        "firstName": "Taylor",
+        "lastName": "Goddard",
+        "department": "Faculty of Arts, Humanities & Social Sciences",
+        "faculty": "FAHSS",
+        "email": "goddard1@uwindsor.ca"
+    },
+    {
+        "uwinID": "eraheem",
+        "firstName": "Esam",
+        "lastName": "Abdel-Raheem",
+        "department": "Electrical and Computer Engineering",
+        "faculty": "Engineering",
+        "email": "eraheem@uwindsor.ca"
+    },
+    {
+        "uwinID": "dcavallo",
+        "firstName": "Dora",
+        "lastName": "Cavallo-Medved",
+        "department": "Biomedical Sciences",
+        "faculty": "Science",
+        "email": "dcavallo@uwindsor.ca"
+    },
+    {
+        "uwinID": "heardcat",
+        "firstName": "Catherine",
+        "lastName": "Heard",
+        "department": "School of Creative Arts",
+        "faculty": "FAHSS",
+        "email": "heardcat@uwindsor.ca"
+    },
+    {
+        "uwinID": "vabboud",
+        "firstName": "Victoria",
+        "lastName": "Abboud",
+        "department": "Communication, Media and Film",
+        "faculty": "FAHSS",
+        "email": "vabboud@uwindsor.ca"
+    },
+    {
+        "uwinID": "vjleung",
+        "firstName": "Vicki",
+        "lastName": "Jay Leung",
+        "department": "Law Library",
+        "faculty": "Law Library",
+        "email": "vjleung@uwindsor.ca"
+    },
+    {
+        "uwinID": "ohlmann",
+        "firstName": "Judy",
+        "lastName": "Sinanga-Ohlmann",
+        "department": "Languages, Literatures and Cultures",
+        "faculty": "FAHSS",
+        "email": "ohlmann@uwindsor.ca"
+    },
+    {
+        "uwinID": "kstefan4",
+        "firstName": "Kirsten",
+        "lastName": "Stefanik",
+        "department": "Faculty of Law",
+        "faculty": "Law",
+        "email": "kstefan4@uwindsor.ca"
+    },
+    {
+        "uwinID": "swidan1",
+        "firstName": "Sara",
+        "lastName": "Swidan",
+        "department": "Odette School Of Business",
+        "faculty": "Business",
+        "email": "swidan1@uwindsor.ca"
+    },
+    {
+        "uwinID": "hortons",
+        "firstName": "Sean",
+        "lastName": "Horton",
+        "department": "Kinesiology",
+        "faculty": "HK",
+        "email": "hortons@uwindsor.ca"
+    },
+    {
+        "uwinID": "aplumb",
+        "firstName": "Anouchka",
+        "lastName": "Plumb",
+        "department": "Centre for English Language Development",
+        "faculty": "Administration",
+        "email": "aplumb@uwindsor.ca"
+    },
+    {
+        "uwinID": "bjd",
+        "firstName": "John",
+        "lastName": "Dickenson",
+        "department": "Odette School Of Business",
+        "faculty": "Business",
+        "email": "bjd@uwindsor.ca"
+    },
+    {
+        "uwinID": "natalieg",
+        "firstName": "Natalie",
+        "lastName": "Giannotti",
+        "department": "Faculty of Nursing",
+        "faculty": "Nursing",
+        "email": "natalieg@uwindsor.ca"
+    },
+    {
+        "uwinID": "chike",
+        "firstName": "Chike",
+        "lastName": "Okechuku",
+        "department": "Odette School Of Business",
+        "faculty": "Business",
+        "email": "chike@uwindsor.ca"
+    },
+    {
+        "uwinID": "dariam",
+        "firstName": "Daria",
+        "lastName": "Milenkovic",
+        "department": "Odette School Of Business",
+        "faculty": "Business",
+        "email": "dariam@uwindsor.ca"
+    },
+    {
+        "uwinID": "holloway",
+        "firstName": "Susan",
+        "lastName": "Holloway",
+        "department": "Faculty of Education",
+        "faculty": "Education",
+        "email": "holloway@uwindsor.ca"
+    },
+    {
+        "uwinID": "jmihalo",
+        "firstName": "John",
+        "lastName": "Mihalo",
+        "department": "Odette School Of Business",
+        "faculty": "Business",
+        "email": "jmihalo@uwindsor.ca"
+    },
+    {
+        "uwinID": "jhiggin",
+        "firstName": "James",
+        "lastName": "Higginson",
+        "department": "Odette School Of Business",
+        "faculty": "Business",
+        "email": "jhiggin@uwindsor.ca"
+    },
+    {
+        "uwinID": "kwli",
+        "firstName": "Kevin",
+        "lastName": "Li",
+        "department": "Odette School Of Business",
+        "faculty": "Business",
+        "email": "kwli@uwindsor.ca"
+    },
+    {
+        "uwinID": "mfields",
+        "firstName": "Mitch",
+        "lastName": "Fields",
+        "department": "Odette School Of Business",
+        "faculty": "Business",
+        "email": "mfields@uwindsor.ca"
+    },
+    {
+        "uwinID": "maz",
+        "firstName": "Zhenzhong",
+        "lastName": "Ma",
+        "department": "Odette School Of Business",
+        "faculty": "Business",
+        "email": "maz@uwindsor.ca"
+    },
+    {
+        "uwinID": "ginamp",
+        "firstName": "Gina",
+        "lastName": "Pittman",
+        "department": "Faculty of Nursing",
+        "faculty": "Nursing",
+        "email": "ginamp@uwindsor.ca"
+    },
+    {
+        "uwinID": "kbrisebo",
+        "firstName": "Kimberly",
+        "lastName": "Brisebois",
+        "department": "School of Social Work",
+        "faculty": "FAHSS",
+        "email": "kbrisebo@uwindsor.ca"
+    },
+    {
+        "uwinID": "arezoo",
+        "firstName": "Arezoo",
+        "lastName": "Emadi",
+        "department": "Electrical and Computer Engineering",
+        "faculty": "Engineering",
+        "email": "arezoo@uwindsor.ca"
+    },
+    {
+        "uwinID": "awright",
+        "firstName": "Alan",
+        "lastName": "Wright",
+        "department": "Faculty of Education",
+        "faculty": "Education",
+        "email": "awright@uwindsor.ca"
+    },
+    {
+        "uwinID": "haridos",
+        "firstName": "Ramkumar",
+        "lastName": "Haridoss",
+        "department": "Electrical and Computer Engineering",
+        "faculty": "Engineering",
+        "email": "haridos@uwindsor.ca"
+    },
+    {
+        "uwinID": "luiso",
+        "firstName": "Adrian",
+        "lastName": "Luiso",
+        "department": "Chemistry & Biochemistry",
+        "faculty": "Science",
+        "email": "luiso@uwindsor.ca"
+    },
+    {
+        "uwinID": "atoronyi",
+        "firstName": "Anita",
+        "lastName": "Toronyi",
+        "department": "Faculty of Education",
+        "faculty": "Education",
+        "email": "atoronyi@uwindsor.ca"
+    },
+    {
+        "uwinID": "rangan",
+        "firstName": "Chitra",
+        "lastName": "Rangan",
+        "department": "Physics",
+        "faculty": "Science",
+        "email": "rangan@uwindsor.ca"
+    },
+    {
+        "uwinID": "yshhsy",
+        "firstName": "Sung Hyun",
+        "lastName": "Yun",
+        "department": "School of Social Work",
+        "faculty": "FAHSS",
+        "email": "yshhsy@uwindsor.ca"
+    },
+    {
+        "uwinID": "kissoon",
+        "firstName": "Tamal",
+        "lastName": "Kissoon",
+        "department": "Faculty of Arts, Humanities & Social Sciences",
+        "faculty": "FAHSS",
+        "email": "kissoon@uwindsor.ca"
+    },
+    {
+        "uwinID": "lusu",
+        "firstName": "Louise",
+        "lastName": "Paquette",
+        "department": "Faculty of Education",
+        "faculty": "Education",
+        "email": "lusu@uwindsor.ca"
+    },
+    {
+        "uwinID": "mohamm8a",
+        "firstName": "Sameer",
+        "lastName": "Mohammed",
+        "department": "Mechanical, Automotive & Materials Engineering",
+        "faculty": "Engineering",
+        "email": "mohamm8a@uwindsor.ca"
+    },
+    {
+        "uwinID": "jnoronha",
+        "firstName": "Joanna",
+        "lastName": "V. Noronha",
+        "department": "Faculty of Law",
+        "faculty": "Law",
+        "email": "Joanna.VNoronha@uwindsor.ca"
+    },
+    {
+        "uwinID": "freerj",
+        "firstName": "John",
+        "lastName": "Freer",
+        "department": "Faculty of Education",
+        "faculty": "Education",
+        "email": "freerj@uwindsor.ca"
+    },
+    {
+        "uwinID": "jhw",
+        "firstName": "James",
+        "lastName": "Wittebols",
+        "department": "Political Science",
+        "faculty": "FAHSS",
+        "email": "jhw@uwindsor.ca"
+    },
+    {
+        "uwinID": "meloch1n",
+        "firstName": "Alexandra",
+        "lastName": "Meloche",
+        "department": "School of Creative Arts",
+        "faculty": "FAHSS",
+        "email": "meloch1n@uwindsor.ca"
+    },
+    {
+        "uwinID": "oliveraj",
+        "firstName": "Celso",
+        "lastName": "Olivera",
+        "department": "Odette School Of Business",
+        "faculty": "Business",
+        "email": "oliveraj@uwindsor.ca"
+    },
+    {
+        "uwinID": "sandran",
+        "firstName": "Sandra",
+        "lastName": "Neposlan",
+        "department": "Odette School Of Business",
+        "faculty": "Business",
+        "email": "sandran@uwindsor.ca"
+    },
+    {
+        "uwinID": "whk",
+        "firstName": "Werner",
+        "lastName": "Keller",
+        "department": "Odette School Of Business",
+        "faculty": "Business",
+        "email": "whk@uwindsor.ca"
+    },
+    {
+        "uwinID": "arnoldr",
+        "firstName": "Bob",
+        "lastName": "Arnold",
+        "department": "Sociology, Anthropology, and Criminology",
+        "faculty": "FAHSS",
+        "email": "arnoldr@uwindsor.ca"
+    },
+    {
+        "uwinID": "joshi97",
+        "firstName": "Rudresh",
+        "lastName": "Joshi",
+        "department": "Mechanical, Automotive & Materials Engineering",
+        "faculty": "Engineering",
+        "email": "joshi97@uwindsor.ca"
+    },
+    {
+        "uwinID": "abreuc",
+        "firstName": "Cindy",
+        "lastName": "Abreu",
+        "department": "Faculty of Law",
+        "faculty": "Law",
+        "email": "abreuc@uwindsor.ca"
+    },
+    {
+        "uwinID": "bootaki",
+        "firstName": "Behrang",
+        "lastName": "Bootaki",
+        "department": "Mechanical, Automotive & Materials Engineering",
+        "faculty": "Engineering",
+        "email": "bootaki@uwindsor.ca"
+    },
+    {
+        "uwinID": "giduwah",
+        "firstName": "Sandra",
+        "lastName": "Muse",
+        "department": "English and Creative Writing",
+        "faculty": "FAHSS",
+        "email": "Sandra.Muse@uwindsor.ca"
+    },
+    {
+        "uwinID": "vmabboud",
+        "firstName": "Victoria",
+        "lastName": "Abboud",
+        "department": "Communication, Media and Film",
+        "faculty": "FAHSS",
+        "email": "vmabboud@uwindsor.ca"
+    },
+    {
+        "uwinID": "parekh5",
+        "firstName": "Radhika",
+        "lastName": "Parekh",
+        "department": "Electrical and Computer Engineering",
+        "faculty": "Engineering",
+        "email": "parekh5@uwindsor.ca"
+    },
+    {
+        "uwinID": "mirandan",
+        "firstName": "Nyah",
+        "lastName": "Miranda",
+        "department": "Faculty of Science",
+        "faculty": "Science",
+        "email": "mirandan@uwindsor.ca"
+    },
+    {
+        "uwinID": "witalecd",
+        "firstName": "Dawid",
+        "lastName": "Witalec",
+        "department": "Sociology, Anthropology, and Criminology",
+        "faculty": "FAHSS",
+        "email": "witalecd@uwindsor.ca"
+    },
+    {
+        "uwinID": "rajeev",
+        "firstName": "Rajeev",
+        "lastName": "Ruparathna",
+        "department": "Civil and Environmental Engineering",
+        "faculty": "Engineering",
+        "email": "rajeev@uwindsor.ca"
+    },
+    {
+        "uwinID": "Unknown",
+        "firstName": "Unknown",
+        "lastName": "Unknown",
+        "department": "Unknown",
+        "faculty": "Unknown",
+        "email": "Unknown"
+    },
+    {
+        "uwinID": "mpkrause",
+        "firstName": "Matthew",
+        "lastName": "Krause",
+        "department": "Kinesiology",
+        "faculty": "HK",
+        "email": "mpkrause@uwindsor.ca"
+    },
+    {
+        "uwinID": "llee",
+        "firstName": "Lana",
+        "lastName": "Lee",
+        "department": "Chemistry & Biochemistry",
+        "faculty": "Science",
+        "email": "llee@uwindsor.ca"
+    },
+    {
+        "uwinID": "smcnorto",
+        "firstName": "Sara",
+        "lastName": "McNorton",
+        "department": "Biomedical Sciences",
+        "faculty": "Science",
+        "email": "smcnorto@uwindsor.ca"
+    },
+    {
+        "uwinID": "lewis3",
+        "firstName": "Jackie",
+        "lastName": "Lewis",
+        "department": "Sociology, Anthropology, and Criminology",
+        "faculty": "FAHSS",
+        "email": "lewis3@uwindsor.ca"
+    },
+    {
+        "uwinID": "smcadam",
+        "firstName": "Sylvia",
+        "lastName": "McAdam",
+        "department": "Faculty of Law",
+        "faculty": "Law",
+        "email": "smcadam@uwindsor.ca"
+    },
+    {
+        "uwinID": "csenn",
+        "firstName": "Charlene",
+        "lastName": "Senn",
+        "department": "Psychology",
+        "faculty": "FAHSS",
+        "email": "csenn@uwindsor.ca"
+    },
+    {
+        "uwinID": "arahimi",
+        "firstName": "Afshin",
+        "lastName": "Rahimi",
+        "department": "Mechanical, Automotive & Materials Engineering",
+        "faculty": "Engineering",
+        "email": "arahimi@uwindsor.ca"
+    },
+    {
+        "uwinID": "danwu",
+        "firstName": "Dan",
+        "lastName": "Wu",
+        "department": "School of Computer Science",
+        "faculty": "Science",
+        "email": "danwu@uwindsor.ca"
+    },
+    {
+        "uwinID": "agreco",
+        "firstName": "Adelle",
+        "lastName": "Greco",
+        "department": "School of Social Work",
+        "faculty": "FAHSS",
+        "email": "agreco@uwindsor.ca"
+    },
+    {
+        "uwinID": "jdecou",
+        "firstName": "Judy",
+        "lastName": "Decou",
+        "department": "Odette School Of Business",
+        "faculty": "Business",
+        "email": "jdecou@uwindsor.ca"
+    },
+    {
+        "uwinID": "nakhaie",
+        "firstName": "Reza",
+        "lastName": "Nakhaie",
+        "department": "Sociology, Anthropology, and Criminology",
+        "faculty": "FAHSS",
+        "email": "nakhaie@uwindsor.ca"
+    },
+    {
+        "uwinID": "virdi",
+        "firstName": "Jyotika",
+        "lastName": "Virdi",
+        "department": "Communication, Media and Film",
+        "faculty": "FAHSS",
+        "email": "virdi@uwindsor.ca"
+    },
+    {
+        "uwinID": "vasanthi",
+        "firstName": "Vasanthi",
+        "lastName": "Venkatesh",
+        "department": "Faculty of Law",
+        "faculty": "Law",
+        "email": "vasanthi@uwindsor.ca"
+    },
+    {
+        "uwinID": "boulos",
+        "firstName": "Pierre",
+        "lastName": "Boulos",
+        "department": "Centre for Teaching & Learning",
+        "faculty": "CTL",
+        "email": "boulos@uwindsor.ca"
+    },
+    {
+        "uwinID": "parasch",
+        "firstName": "Vicky",
+        "lastName": "Paraschak",
+        "department": "Kinesiology",
+        "faculty": "HK",
+        "email": "parasch@uwindsor.ca"
+    },
+    {
+        "uwinID": "urvashi",
+        "firstName": "Urvashi",
+        "lastName": "Soni-Sinha",
+        "department": "Sociology, Anthropology, and Criminology",
+        "faculty": "FAHSS",
+        "email": "urvashi@uwindsor.ca"
+    },
+    {
+        "uwinID": "ytong",
+        "firstName": "Yufeng",
+        "lastName": "Tong",
+        "department": "Chemistry & Biochemistry",
+        "faculty": "Science",
+        "email": "ytong@uwindsor.ca"
+    },
+    {
+        "uwinID": "amamwiko",
+        "firstName": "Ashley",
+        "lastName": "Falzetti",
+        "department": "Women's and Gender Studies",
+        "faculty": "FAHSS",
+        "email": "amamwiko@uwindsor.ca"
+    },
+    {
+        "uwinID": "bsavic",
+        "firstName": "Bob",
+        "lastName": "Savic",
+        "department": "Faculty of Education",
+        "faculty": "Education",
+        "email": "bsavic@uwindsor.ca"
+    },
+    {
+        "uwinID": "ttiegs",
+        "firstName": "Tim",
+        "lastName": "Tiegs",
+        "department": "Faculty of Education",
+        "faculty": "Education",
+        "email": "ttiegs@uwindsor.ca"
+    },
+    {
+        "uwinID": "qin21",
+        "firstName": "Manling",
+        "lastName": "Qin",
+        "department": "Civil and Environmental Engineering",
+        "faculty": "Engineering",
+        "email": "qin21@uwindsor.ca"
+    },
+    {
+        "uwinID": "amya",
+        "firstName": "Amy",
+        "lastName": "Alberton",
+        "department": "School of Social Work",
+        "faculty": "FAHSS",
+        "email": "amya@uwindsor.ca"
+    },
+    {
+        "uwinID": "beliciud",
+        "firstName": "Daniel",
+        "lastName": "Beliciu",
+        "department": "Psychology",
+        "faculty": "FAHSS",
+        "email": "beliciud@uwindsor.ca"
+    },
+    {
+        "uwinID": "abarnable",
+        "firstName": "Alexia",
+        "lastName": "Barnable",
+        "department": "Faculty of Nursing",
+        "faculty": "Nursing",
+        "email": "abarnable@uwindsor.ca"
+    },
+    {
+        "uwinID": "kuhnd",
+        "firstName": "Beth",
+        "lastName": "Archer-Kuhn",
+        "department": "School of Social Work",
+        "faculty": "FAHSS",
+        "email": "kuhnd@uwindsor.ca"
+    },
+    {
+        "uwinID": "jmaron",
+        "firstName": "Jeff",
+        "lastName": "Marontate",
+        "department": "Faculty of Education",
+        "faculty": "Education",
+        "email": "jmaron@uwindsor.ca"
+    },
+    {
+        "uwinID": "gzhang",
+        "firstName": "Guoqing",
+        "lastName": "Zhang",
+        "department": "Mechanical, Automotive & Materials Engineering",
+        "faculty": "Engineering",
+        "email": "gzhang@uwindsor.ca"
+    },
+    {
+        "uwinID": "stagner",
+        "firstName": "Jacqueline",
+        "lastName": "Stagner",
+        "department": "Faculty of Education",
+        "faculty": "Education",
+        "email": "stagner@uwindsor.ca"
+    },
+    {
+        "uwinID": "alnidawy",
+        "firstName": "Nedhal",
+        "lastName": "Al-Nidawy",
+        "department": "Chemistry & Biochemistry",
+        "faculty": "Science",
+        "email": "alnidawy@uwindsor.ca"
+    },
+    {
+        "uwinID": "moore12v",
+        "firstName": "Alan",
+        "lastName": "Moore",
+        "department": "Continuing Education",
+        "faculty": "Education",
+        "email": "moore12v@uwindsor.ca"
+    },
+    {
+        "uwinID": "dsirek",
+        "firstName": "Danielle",
+        "lastName": "Sirek",
+        "department": "Faculty of Education",
+        "faculty": "Education",
+        "email": "dsirek@uwindsor.ca"
+    },
+    {
+        "uwinID": "ndolbec",
+        "firstName": "Nathalie",
+        "lastName": "Dolbec",
+        "department": "Languages, Literatures And Cultures",
+        "faculty": "FAHSS",
+        "email": "ndolbec@uwindsor.ca"
+    },
+    {
+        "uwinID": "henderin",
+        "firstName": "Chris",
+        "lastName": "Henderin",
+        "department": "Provost",
+        "faculty": "Provost",
+        "email": "henderin@uwindsor.ca"
+    },
+    {
+        "uwinID": "queenvi",
+        "firstName": "Rachelle",
+        "lastName": "Quenneville",
+        "department": "Faculty of Education",
+        "faculty": "Education",
+        "email": "queenvi@uwindsor.ca"
+    },
+    {
+        "uwinID": "keatin5",
+        "firstName": "Michael",
+        "lastName": "Keating",
+        "department": "School of Dramatic Art",
+        "faculty": "FAHSS",
+        "email": "keatin5@uwindsor.ca"
+    },
+    {
+        "uwinID": "imizel",
+        "firstName": "Ilana",
+        "lastName": "Mizel",
+        "department": "Faculty of Law",
+        "faculty": "Law",
+        "email": "imizel@uwindsor.ca"
+    },
+    {
+        "uwinID": "mpilling",
+        "firstName": "Merrick",
+        "lastName": "Pilling",
+        "department": "Women's and Gender Studies",
+        "faculty": "FAHSS",
+        "email": "mpilling@uwindsor.ca"
+    },
+    {
+        "uwinID": "pjp11",
+        "firstName": "Barry",
+        "lastName": "Elliott",
+        "department": "Faculty of Education",
+        "faculty": "Education",
+        "email": "pjp11@uwindsor.ca"
+    },
+    {
+        "uwinID": "maroca",
+        "firstName": "Marcela",
+        "lastName": "Aroca",
+        "department": "Faculty of Law",
+        "faculty": "Law",
+        "email": "maroca@uwindsor.ca"
+    },
+    {
+        "uwinID": "froes112",
+        "firstName": "Skyla",
+        "lastName": "Froese",
+        "department": "English and Creative Writing",
+        "faculty": "FAHSS",
+        "email": "froes112@uwindsor.ca"
+    },
+    {
+        "uwinID": "lzb",
+        "firstName": "Lorenzo",
+        "lastName": "Buj",
+        "department": "Languages, Literatures and Cultures",
+        "faculty": "FAHSS",
+        "email": "lzb@uwindsor.ca"
+    },
+    {
+        "uwinID": "pardeepj",
+        "firstName": "Pardeep",
+        "lastName": "Jasra",
+        "department": "School of the Environment",
+        "faculty": "Science",
+        "email": "pardeepj@uwindsor.ca"
+    },
+    {
+        "uwinID": "hinchi",
+        "firstName": "Isabelle",
+        "lastName": "Hinch",
+        "department": "Integrative Biology",
+        "faculty": "Science",
+        "email": "hinchi@uwindsor.ca"
+    },
+    {
+        "uwinID": "glazure",
+        "firstName": "Guy",
+        "lastName": "Lazure",
+        "department": "History",
+        "faculty": "FAHSS",
+        "email": "glazure@uwindsor.ca"
+    },
+    {
+        "uwinID": "jwaldron",
+        "firstName": "Janice",
+        "lastName": "Waldron",
+        "department": "School of Creative Arts",
+        "faculty": "FAHSS",
+        "email": "jwaldron@uwindsor.ca"
+    },
+    {
+        "uwinID": "ademers",
+        "firstName": "Annette",
+        "lastName": "Demers",
+        "department": "Law Library",
+        "faculty": "Law Library",
+        "email": "ademers@uwindsor.ca"
+    },
+    {
+        "uwinID": "rehse",
+        "firstName": "Steven",
+        "lastName": "Rehse",
+        "department": "Physics",
+        "faculty": "Science",
+        "email": "rehse@uwindsor.ca"
+    },
+    {
+        "uwinID": "hirschk",
+        "firstName": "Katie",
+        "lastName": "Hirsch",
+        "department": "Kinesiology",
+        "faculty": "HK",
+        "email": "hirschk@uwindsor.ca"
+    },
+    {
+        "uwinID": "joesisco",
+        "firstName": "Joe",
+        "lastName": "Sisco",
+        "department": "Faculty of Education",
+        "faculty": "Education",
+        "email": "joesisco@uwindsor.ca"
+    },
+    {
+        "uwinID": "liu94",
+        "firstName": "Cady",
+        "lastName": "Liu",
+        "department": "School of Computer Science",
+        "faculty": "Science",
+        "email": "liu94@uwindsor.ca"
+    },
+    {
+        "uwinID": "jsmit",
+        "firstName": "Julie",
+        "lastName": "Smit",
+        "department": "Integrative Biology",
+        "faculty": "Science",
+        "email": "jsmit@uwindsor.ca"
+    },
+    {
+        "uwinID": "rmenna",
+        "firstName": "Rosanne",
+        "lastName": "Menna",
+        "department": "Psychology",
+        "faculty": "FAHSS",
+        "email": "rmenna@uwindsor.ca"
+    },
+    {
+        "uwinID": "cmfebria",
+        "firstName": "Catherine",
+        "lastName": "Febria",
+        "department": "Integrative Biology",
+        "faculty": "Science",
+        "email": "cmfebria@uwindsor.ca"
+    },
+    {
+        "uwinID": "plam",
+        "firstName": "Phebe",
+        "lastName": "Lam",
+        "department": "School of Dramatic Art",
+        "faculty": "FAHSS",
+        "email": "plam@uwindsor.ca"
+    },
+    {
+        "uwinID": "angusyao",
+        "firstName": "Angus",
+        "lastName": "Yao",
+        "department": "Odette School Of Business",
+        "faculty": "Business",
+        "email": "angusyao@uwindsor.ca"
+    },
+    {
+        "uwinID": "creader",
+        "firstName": "Carol",
+        "lastName": "Reader",
+        "department": "Mechanical, Automotive & Materials Engineering",
+        "faculty": "Engineering",
+        "email": "creader@uwindsor.ca"
+    },
+    {
+        "uwinID": "torinus",
+        "firstName": "Sigi",
+        "lastName": "Torinus",
+        "department": "School of Creative Arts",
+        "faculty": "FAHSS",
+        "email": "torinus@uwindsor.ca"
+    },
+    {
+        "uwinID": "wmiller7",
+        "firstName": "Wayne",
+        "lastName": "Ambrose-Miller",
+        "department": "School of Social Work",
+        "faculty": "FAHSS",
+        "email": "wmiller7@uwindsor.ca"
+    },
+    {
+        "uwinID": "ldean",
+        "firstName": "Lloyd",
+        "lastName": "Dean",
+        "department": "Faculty of Law",
+        "faculty": "Law",
+        "email": "ldean@uwindsor.ca"
+    },
+    {
+        "uwinID": "delaneye",
+        "firstName": "Elysse",
+        "lastName": "Delaney",
+        "department": "School of Dramatic Art",
+        "faculty": "FAHSS",
+        "email": "delaneye@uwindsor.ca"
+    },
+    {
+        "uwinID": "schramek",
+        "firstName": "Kristin",
+        "lastName": "Schramer",
+        "department": "Psychology",
+        "faculty": "FAHSS",
+        "email": "schramek@uwindsor.ca"
+    },
+    {
+        "uwinID": "cunial",
+        "firstName": "Luca",
+        "lastName": "Cunial",
+        "department": "School of Creative Arts",
+        "faculty": "FAHSS",
+        "email": "cunial@uwindsor.ca"
+    },
+    {
+        "uwinID": "tetzlafa",
+        "firstName": "Amanda",
+        "lastName": "Tetzlaff",
+        "department": "Faculty of Human Kinetics",
+        "faculty": "HK",
+        "email": "tetzlafa@uwindsor.ca"
+    },
+    {
+        "uwinID": "jcheval",
+        "firstName": "James",
+        "lastName": "Chevalier",
+        "department": "Faculty of Education",
+        "faculty": "Education",
+        "email": "jcheval@uwindsor.ca"
+    },
+    {
+        "uwinID": "mbou",
+        "firstName": "Jean-Guy",
+        "lastName": "Mboudjeke",
+        "department": "Languages, Literatures and Cultures",
+        "faculty": "FAHSS",
+        "email": "mbou@uwindsor.ca"
+    },
+    {
+        "uwinID": "jrenaud",
+        "firstName": "Jessica",
+        "lastName": "Renaud",
+        "department": "Faculty of Law",
+        "faculty": "Law",
+        "email": "jrenaud@uwindsor.ca"
+    },
+    {
+        "uwinID": "parasra",
+        "firstName": "Kathyani",
+        "lastName": "Parasram",
+        "department": "Integrative Biology",
+        "faculty": "Science",
+        "email": "parasra@uwindsor.ca"
+    },
+    {
+        "uwinID": "mabida",
+        "firstName": "Abida",
+        "lastName": "Mansoora",
+        "department": "Mathematics and Statistics",
+        "faculty": "Science",
+        "email": "mabida@uwindsor.ca"
+    },
+    {
+        "uwinID": "dilling",
+        "firstName": "Hayden",
+        "lastName": "Dilling",
+        "department": "Alumni",
+        "faculty": "Alumni",
+        "email": "dilling@uwindsor.ca"
+    },
+    {
+        "uwinID": "li195",
+        "firstName": "Jiahui",
+        "lastName": "Li",
+        "department": "Mechanical, Automotive & Materials Engineering",
+        "faculty": "Engineering",
+        "email": "li195@uwindsor.ca"
+    },
+    {
+        "uwinID": "fu11w",
+        "firstName": "Ning",
+        "lastName": "Fu",
+        "department": "Faculty of Education",
+        "faculty": "Education",
+        "email": "fu11w@uwindsor.ca"
+    },
+    {
+        "uwinID": "bbarrett",
+        "firstName": "Betty",
+        "lastName": "Barrett",
+        "department": "Women's and Gender Studies",
+        "faculty": "FAHSS",
+        "email": "bbarrett@uwindsor.ca"
+    },
+    {
+        "uwinID": "ssavoni",
+        "firstName": "Stephanie",
+        "lastName": "Savoni",
+        "department": "Faculty of Law",
+        "faculty": "Law",
+        "email": "Stephanie.Savoni@uwindsor.ca"
+    },
+    {
+        "uwinID": "aneja",
+        "firstName": "Yash",
+        "lastName": "Aneja",
+        "department": "Odette School Of Business",
+        "faculty": "Business",
+        "email": "aneja@uwindsor.ca"
+    },
+    {
+        "uwinID": "abbyn",
+        "firstName": "Abigail",
+        "lastName": "Nakhaie",
+        "department": "Faculty of Education",
+        "faculty": "Education",
+        "email": "abbyn@uwindsor.ca"
+    },
+    {
+        "uwinID": "dong11q",
+        "firstName": "Lily",
+        "lastName": "Dong",
+        "department": "Odette School Of Business",
+        "faculty": "Business",
+        "email": "dong11q@uwindsor.ca"
+    },
+    {
+        "uwinID": "jbrennan",
+        "firstName": "John",
+        "lastName": "Brennan",
+        "department": "Faculty of Law",
+        "faculty": "Law",
+        "email": "J.Brennan@uwindsor.ca"
+    },
+    {
+        "uwinID": "gordo11l",
+        "firstName": "Susan",
+        "lastName": "Lindsay",
+        "department": "Faculty of Arts, Humanities & Social Sciences",
+        "faculty": "FAHSS",
+        "email": "gordo11l@uwindsor.ca"
+    },
+    {
+        "uwinID": "kulatun",
+        "firstName": "Kulathum Mudiyanselage Piumi",
+        "lastName": "Kulatunga",
+        "department": "Chemistry & Biochemistry",
+        "faculty": "Science",
+        "email": "kulatun@uwindsor.ca"
+    },
+    {
+        "uwinID": "branana",
+        "firstName": "Anne-Elise",
+        "lastName": "Branan",
+        "department": "English and Creative Writing",
+        "faculty": "FAHSS",
+        "email": "branana@uwindsor.ca"
+    },
+    {
+        "uwinID": "guetter",
+        "firstName": "David",
+        "lastName": "Guetter",
+        "department": "Philosophy",
+        "faculty": "FAHSS",
+        "email": "guetter@uwindsor.ca"
+    },
+    {
+        "uwinID": "tinap",
+        "firstName": "Assunta",
+        "lastName": "Pugliese",
+        "department": "School of Dramatic Art",
+        "faculty": "FAHSS",
+        "email": "tinap@uwindsor.ca"
+    },
+    {
+        "uwinID": "hamiltou",
+        "firstName": "Umber",
+        "lastName": "Hamilton",
+        "department": "School of Social Work",
+        "faculty": "FAHSS",
+        "email": "hamiltou@uwindsor.ca"
+    },
+    {
+        "uwinID": "izyjonah",
+        "firstName": "Mbodja",
+        "lastName": "Mougoue",
+        "department": "Continuing Education",
+        "faculty": "Education",
+        "email": "Mbodja.Mougoue@uwindsor.ca"
+    },
+    {
+        "uwinID": "duquette",
+        "firstName": "Adriana",
+        "lastName": "Duquette",
+        "department": "Kinesiology",
+        "faculty": "HK",
+        "email": "duquette@uwindsor.ca"
+    },
+    {
+        "uwinID": "chammat",
+        "firstName": "Amira",
+        "lastName": "Chammat",
+        "department": "Faculty of Human Kinetics",
+        "faculty": "HK",
+        "email": "chammat@uwindsor.ca"
+    },
+    {
+        "uwinID": "shaikh51",
+        "firstName": "Muhammad Mubashir",
+        "lastName": "Shaikh",
+        "department": "Mechanical, Automotive & Materials Engineering",
+        "faculty": "Engineering",
+        "email": "shaikh51@uwindsor.ca"
+    },
+    {
+        "uwinID": "pereir21",
+        "firstName": "Jennifer",
+        "lastName": "Pereira",
+        "department": "Faculty of Science",
+        "faculty": "Science",
+        "email": "pereir21@uwindsor.ca"
+    },
+    {
+        "uwinID": "-",
+        "firstName": "Christine",
+        "lastName": "-",
+        "department": "Outside of University (Guest Speaker)",
+        "faculty": "-",
+        "email": "-"
+    },
+    {
+        "uwinID": "tsefton",
+        "firstName": "Terry",
+        "lastName": "Sefton",
+        "department": "Faculty of Education",
+        "faculty": "Education",
+        "email": "tsefton@uwindsor.ca"
+    },
+    {
+        "uwinID": "admenard",
+        "firstName": "Amy",
+        "lastName": "Menard",
+        "department": "Psychology",
+        "faculty": "FAHSS",
+        "email": "Dana.Menard@uwindsor.ca"
+    },
+    {
+        "uwinID": "jjackson",
+        "firstName": "Jill",
+        "lastName": "Singleton-Jackson",
+        "department": "Faculty of Arts, Humanities & Social Sciences",
+        "faculty": "FAHSS",
+        "email": "jjackson@uwindsor.ca"
+    },
+    {
+        "uwinID": "lacey17",
+        "firstName": "Lacey",
+        "lastName": "Rivest",
+        "department": "Faculty of Nursing",
+        "faculty": "Nursing",
+        "email": "Lacey.Rivest@uwindsor.ca"
+    },
+    {
+        "uwinID": "daramold",
+        "firstName": "Divine",
+        "lastName": "Daramola",
+        "department": "School of Social Work",
+        "faculty": "FAHSS",
+        "email": "daramold@uwindsor.ca"
+    },
+    {
+        "uwinID": "macki11h",
+        "firstName": "Maggie",
+        "lastName": "Mackinnon",
+        "department": "Psychology",
+        "faculty": "FAHSS",
+        "email": "macki11h@uwindsor.ca"
+    },
+    {
+        "uwinID": "james1k",
+        "firstName": "Hollie",
+        "lastName": "James",
+        "department": "Psychology",
+        "faculty": "FAHSS",
+        "email": "james1k@uwindsor.ca"
+    },
+    {
+        "uwinID": "chittlel",
+        "firstName": "Laura",
+        "lastName": "Chittle",
+        "department": "Faculty of Human Kinetics",
+        "faculty": "HK",
+        "email": "chittlel@uwindsor.ca"
+    },
+    {
+        "uwinID": "gallh",
+        "firstName": "Hannah",
+        "lastName": "Gall",
+        "department": "Mechanical, Automotive & Materials Engineering",
+        "faculty": "Engineering",
+        "email": "gallh@uwindsor.ca"
+    },
+    {
+        "uwinID": "gupta03",
+        "firstName": "Anoop",
+        "lastName": "Gupta",
+        "department": "Faculty of Education",
+        "faculty": "Education",
+        "email": "gupta03@uwindsor.ca"
+    },
+    {
+        "uwinID": "rsinha",
+        "firstName": "Rajeeva",
+        "lastName": "Sinha",
+        "department": "Odette School Of Business",
+        "faculty": "Business",
+        "email": "rsinha@uwindsor.ca"
+    },
+    {
+        "uwinID": "lchittle",
+        "firstName": "Laura",
+        "lastName": "Chittle",
+        "department": "Centre for Teaching & Learning",
+        "faculty": "CTL",
+        "email": "Laura.Chittle@uwindsor.ca"
+    },
+    {
+        "uwinID": "jvoronka",
+        "firstName": "Jijian",
+        "lastName": "Voronka",
+        "department": "School of Social Work",
+        "faculty": "FAHSS",
+        "email": "Jijian.Voronka@uwindsor.ca"
+    },
+    {
+        "uwinID": "doski",
+        "firstName": "Joanne",
+        "lastName": "Doski",
+        "department": "Psychology",
+        "faculty": "FAHSS",
+        "email": "doski@uwindsor.ca"
+    },
+    {
+        "uwinID": "jsoutter",
+        "firstName": "Jennifer",
+        "lastName": "Soutter",
+        "department": "Leddy Library - Information Services",
+        "faculty": "Leddy Library - Information Services",
+        "email": "jsoutter@uwindsor.ca"
+    },
+    {
+        "uwinID": "penny112",
+        "firstName": "Shana",
+        "lastName": "Penny",
+        "department": "Psychology",
+        "faculty": "FAHSS",
+        "email": "penny112@uwindsor.ca"
+    },
+    {
+        "uwinID": "cpchandr",
+        "firstName": "Charukeshi",
+        "lastName": "Chandrasekera",
+        "department": "Faculty of Science",
+        "faculty": "Science",
+        "email": "cpchandr@uwindsor.ca"
+    },
+    {
+        "uwinID": "lsalfi",
+        "firstName": "Lisa",
+        "lastName": "Salfi",
+        "department": "Faculty of Engineering",
+        "faculty": "Engineering",
+        "email": "Lisa.Salfi@uwindsor.ca"
+    },
+    {
+        "uwinID": "kalsiv",
+        "firstName": "Virender Singh",
+        "lastName": "Kalsi",
+        "department": "Mechanical, Automotive & Materials Engineering",
+        "faculty": "Engineering",
+        "email": "kalsiv@uwindsor.ca"
+    },
+    {
+        "uwinID": "kristies",
+        "firstName": "Kristine",
+        "lastName": "Sabga",
+        "department": "Faculty of Law",
+        "faculty": "Law",
+        "email": "Kristie.Sabga@uwindsor.ca"
+    },
+    {
+        "uwinID": "parryb",
+        "firstName": "Brittany",
+        "lastName": "Parry",
+        "department": "School of Social Work",
+        "faculty": "FAHSS",
+        "email": "parryb@uwindsor.ca"
+    },
+    {
+        "uwinID": "madi1",
+        "firstName": "Aya",
+        "lastName": "Madi",
+        "department": "Odette School Of Business",
+        "faculty": "Business",
+        "email": "madi1@uwindsor.ca"
+    },
+    {
+        "uwinID": "wu1ad",
+        "firstName": "Hanyu",
+        "lastName": "Wu",
+        "department": "Chemistry & Biochemistry",
+        "faculty": "Science",
+        "email": "wu1ad@uwindsor.ca"
+    },
+    {
+        "uwinID": "vanderch",
+        "firstName": "Christine",
+        "lastName": "Vanderkooy",
+        "department": "Faculty of Education",
+        "faculty": "Education",
+        "email": "Christine.Vanderkooy@uwindsor.ca"
+    },
+    {
+        "uwinID": "kumar94",
+        "firstName": "Adithya",
+        "lastName": "Kumar",
+        "department": "Odette School Of Business",
+        "faculty": "Business",
+        "email": "kumar94@uwindsor.ca"
+    },
+    {
+        "uwinID": "panchal4",
+        "firstName": "Anmol",
+        "lastName": "Panchal",
+        "department": "Electrical and Computer Engineering",
+        "faculty": "Engineering",
+        "email": "panchal4@uwindsor.ca"
+    },
+    {
+        "uwinID": "barbaror",
+        "firstName": "Raenah",
+        "lastName": "Barbarossa",
+        "department": "Integrative Biology",
+        "faculty": "Science",
+        "email": "barbaror@uwindsor.ca"
+    },
+    {
+        "uwinID": "hallyh",
+        "firstName": "Heidi",
+        "lastName": "Hally",
+        "department": "Sociology, Anthropology, and Criminology",
+        "faculty": "FAHSS",
+        "email": "hallyh@uwindsor.ca"
+    },
+    {
+        "uwinID": "middlemc",
+        "firstName": "Christina",
+        "lastName": "Middlemore",
+        "department": "English and Creative Writing",
+        "faculty": "FAHSS",
+        "email": "middlemc@uwindsor.ca"
+    },
+    {
+        "uwinID": "maharjar",
+        "firstName": "Riva",
+        "lastName": "Maharjan",
+        "department": "Odette School Of Business",
+        "faculty": "Business",
+        "email": "maharjar@uwindsor.ca"
+    },
+    {
+        "uwinID": "amukama",
+        "firstName": "Elvis-Celes",
+        "lastName": "Amukamara",
+        "department": "Mechanical, Automotive & Materials Engineering",
+        "faculty": "Engineering",
+        "email": "amukama@uwindsor.ca"
+    },
+    {
+        "uwinID": "mayheada",
+        "firstName": "Alexander",
+        "lastName": "Mayhead",
+        "department": "Odette School Of Business",
+        "faculty": "Business",
+        "email": "mayheada@uwindsor.ca"
+    },
+    {
+        "uwinID": "dstanley",
+        "firstName": "Darren",
+        "lastName": "Stanley",
+        "department": "Faculty of Education",
+        "faculty": "Education",
+        "email": "dstanley@uwindsor.ca"
+    },
+    {
+        "uwinID": "ghasemil",
+        "firstName": "Laleh",
+        "lastName": "Ghasemi",
+        "department": "Civil and Environmental Engineering",
+        "faculty": "Engineering",
+        "email": "ghasemil@uwindsor.ca"
+    },
+    {
+        "uwinID": "redkoa",
+        "firstName": "Aleksandra",
+        "lastName": "Redko",
+        "department": "Psychology",
+        "faculty": "FAHSS",
+        "email": "redkoa@uwindsor.ca"
+    },
+    {
+        "uwinID": "serra2",
+        "firstName": "Soula Tester",
+        "lastName": "Serra",
+        "department": "Continuing Education",
+        "faculty": "Education",
+        "email": "serra2@uwindsor.ca"
+    },
+    {
+        "uwinID": "paquet9",
+        "firstName": "Leanne",
+        "lastName": "Paquette",
+        "department": "Faculty of Nursing",
+        "faculty": "Nursing",
+        "email": "paquet9@uwindsor.ca"
+    },
+    {
+        "uwinID": "sosanya",
+        "firstName": "Olubukola",
+        "lastName": "Sosanya",
+        "department": "Mechanical, Automotive & Materials Engineering",
+        "faculty": "Engineering",
+        "email": "sosanya@uwindsor.ca"
+    },
+    {
+        "uwinID": "josephu",
+        "firstName": "Urvashi Sirohi",
+        "lastName": "Joseph",
+        "department": "School of Social Work",
+        "faculty": "FAHSS",
+        "email": "josephu@uwindsor.ca"
+    },
+    {
+        "uwinID": "plum",
+        "firstName": "Peter",
+        "lastName": "Miller",
+        "department": "Odette School Of Business",
+        "faculty": "Business",
+        "email": "plum@uwindsor.ca"
+    },
+    {
+        "uwinID": "scharoun",
+        "firstName": "Sara",
+        "lastName": "Scharoun-Benson",
+        "department": "Kinesiology",
+        "faculty": "HK",
+        "email": "scharoun@uwindsor.ca"
+    },
+    {
+        "uwinID": "bethdaly",
+        "firstName": "Beth",
+        "lastName": "Daly",
+        "department": "Faculty of Arts, Humanities & Social Sciences",
+        "faculty": "FAHSS",
+        "email": "bethdaly@uwindsor.ca"
+    },
+    {
+        "uwinID": "gao41",
+        "firstName": "Hekun",
+        "lastName": "Gao",
+        "department": "Odette School Of Business",
+        "faculty": "Business",
+        "email": "gao41@uwindsor.ca"
+    },
+    {
+        "uwinID": "ursel",
+        "firstName": "Nancy",
+        "lastName": "Ursel",
+        "department": "Odette School Of Business",
+        "faculty": "Business",
+        "email": "ursel@uwindsor.ca"
+    },
+    {
+        "uwinID": "tirupati",
+        "firstName": "Tirupati",
+        "lastName": "Bolisetti",
+        "department": "Civil and Environmental Engineering",
+        "faculty": "Engineering",
+        "email": "tirupati@uwindsor.ca"
+    },
+    {
+        "uwinID": "zakoorf",
+        "firstName": "Falan",
+        "lastName": "Zakoor",
+        "department": "Faculty of Nursing",
+        "faculty": "Nursing",
+        "email": "zakoorf@uwindsor.ca"
+    },
+    {
+        "uwinID": "jlorito",
+        "firstName": "Joyceln",
+        "lastName": "Lorito",
+        "department": "Student Accessibility Services",
+        "faculty": "Student Accessibility Services",
+        "email": "jlorito@uwindsor.ca"
+    },
+    {
+        "uwinID": "vtr",
+        "firstName": "Vesselina",
+        "lastName": "Roussinova",
+        "department": "Mechanical, Automotive & Materials Engineering",
+        "faculty": "Engineering",
+        "email": "vtr@uwindsor.ca"
+    },
+    {
+        "uwinID": "pfritz",
+        "firstName": "Patti",
+        "lastName": "Fritz",
+        "department": "Psychology",
+        "faculty": "FAHSS",
+        "email": "pfritz@uwindsor.ca"
+    },
+    {
+        "uwinID": "leann",
+        "firstName": "Leann",
+        "lastName": "Sassine",
+        "department": "Continuing Education",
+        "faculty": "Education",
+        "email": "leann@uwindsor.ca"
+    },
+    {
+        "uwinID": "hae",
+        "firstName": "Hoda",
+        "lastName": "ElMaraghy",
+        "department": "Mechanical, Automotive & Materials Engineering",
+        "faculty": "Engineering",
+        "email": "hae@uwindsor.ca"
+    },
+    {
+        "uwinID": "dvanrijt",
+        "firstName": "David",
+        "lastName": "Van Rijt",
+        "department": "Odette School Of Business",
+        "faculty": "Business",
+        "email": "dvanrijt@uwindsor.ca"
+    },
+    {
+        "uwinID": "priscila",
+        "firstName": "Priscila",
+        "lastName": "Correa",
+        "department": "Faculty of Education",
+        "faculty": "Education",
+        "email": "priscila@uwindsor.ca"
+    },
+    {
+        "uwinID": "ismailf",
+        "firstName": "Mohammed",
+        "lastName": "Ismail",
+        "department": "Mechanical, Automotive & Materials Engineering",
+        "faculty": "Engineering",
+        "email": "ismailf@uwindsor.ca"
+    },
+    {
+        "uwinID": "abouhaiz",
+        "firstName": "Zeina",
+        "lastName": "Abou haidar",
+        "department": "Philosophy",
+        "faculty": "FAHSS",
+        "email": "abouhaiz@uwindsor.ca"
+    },
+    {
+        "uwinID": "hkrohn",
+        "firstName": "Heather",
+        "lastName": "Krohn",
+        "department": "Faculty of Nursing",
+        "faculty": "Nursing",
+        "email": "hkrohn@uwindsor.ca"
+    },
+    {
+        "uwinID": "makwana5",
+        "firstName": "Jay",
+        "lastName": "Makwana",
+        "department": "Mechanical, Automotive & Materials Engineering",
+        "faculty": "Engineering",
+        "email": "makwana5@uwindsor.ca"
+    },
+    {
+        "uwinID": "mdrover",
+        "firstName": "Walter",
+        "lastName": "Drover",
+        "department": "Chemistry & Biochemistry",
+        "faculty": "Science",
+        "email": "Marcus.Drover@uwindsor.ca"
+    },
+    {
+        "uwinID": "driedges",
+        "firstName": "Shae",
+        "lastName": "Driedger",
+        "department": "Faculty of Nursing",
+        "faculty": "Nursing",
+        "email": "driedges@uwindsor.ca"
+    },
+    {
+        "uwinID": "terriml",
+        "firstName": "Terri",
+        "lastName": "Lawrence",
+        "department": "Biomedical Sciences",
+        "faculty": "FAHSS",
+        "email": "Terri.Lawrence@uwindsor.ca"
+    },
+    {
+        "uwinID": "solomo6",
+        "firstName": "Bethel",
+        "lastName": "Solomon",
+        "department": "Faculty of Education",
+        "faculty": "Education",
+        "email": "solomo6@uwindsor.ca"
+    },
+    {
+        "uwinID": "coheni",
+        "firstName": "Ira",
+        "lastName": "Cohen",
+        "department": "Centre for Executive and Professional Education",
+        "faculty": "Administration",
+        "email": "coheni@uwindsor.ca"
+    },
+    {
+        "uwinID": "jkichler",
+        "firstName": "Jessica",
+        "lastName": "Kichler",
+        "department": "Psychology",
+        "faculty": "FAHSS",
+        "email": "Jessica.Kichler@uwindsor.ca"
+    },
+    {
+        "uwinID": "gagno11d",
+        "firstName": "Matthew",
+        "lastName": "Gagnon",
+        "department": "Languages, Literatures and Cultures",
+        "faculty": "FAHSS",
+        "email": "gagno11d@uwindsor.ca"
+    },
+    {
+        "uwinID": "kuttner",
+        "firstName": "Thomas",
+        "lastName": "Kuttner",
+        "department": "Faculty of Law",
+        "faculty": "Law",
+        "email": "kuttner@uwindsor.ca"
+    },
+    {
+        "uwinID": "ericmc",
+        "firstName": "Eric",
+        "lastName": "Mcfarlane",
+        "department": "Centre for Teaching & Learning",
+        "faculty": "CTL",
+        "email": "Eric.Mcfarlane@uwindsor.ca"
+    },
+    {
+        "uwinID": "walsha",
+        "firstName": "Lionel",
+        "lastName": "Walsh",
+        "department": "School of Dramatic Art",
+        "faculty": "FAHSS",
+        "email": "walsha@uwindsor.ca"
+    },
+    {
+        "uwinID": "arossini",
+        "firstName": "Antonio",
+        "lastName": "Rossini",
+        "department": "Languages, Literatures and Cultures",
+        "faculty": "FAHSS",
+        "email": "arossini@uwindsor.ca"
+    },
+    {
+        "uwinID": "ccollier",
+        "firstName": "Cheryl",
+        "lastName": "Collier",
+        "department": "Political Science",
+        "faculty": "FAHSS",
+        "email": "ccollier@uwindsor.ca"
+    },
+    {
+        "uwinID": "fgerra",
+        "firstName": "Fred",
+        "lastName": "Gerra",
+        "department": "Faculty of Law",
+        "faculty": "Law",
+        "email": "fgerra@uwindsor.ca"
+    },
+    {
+        "uwinID": "shelby",
+        "firstName": "Shelby",
+        "lastName": "Marchand",
+        "department": "Centre for English Language Development",
+        "faculty": "Administration",
+        "email": "shelby@uwindsor.ca"
+    },
+    {
+        "uwinID": "scowan",
+        "firstName": "Scott",
+        "lastName": "Cowan",
+        "department": "Leddy Library - Information Services",
+        "faculty": "Leddy Library - Information Services",
+        "email": "scowan@uwindsor.ca"
+    },
+    {
+        "uwinID": "gesmyth",
+        "firstName": "Gemma",
+        "lastName": "Smyth",
+        "department": "Faculty of Law",
+        "faculty": "Law",
+        "email": "Gemma.Smyth@uwindsor.ca"
+    }
+]

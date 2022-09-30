@@ -1,8 +1,7 @@
-import { query, check } from "express-validator";
+import { check } from "express-validator";
+import { offsetSanitizer } from "./offset";
 
-export const facultySanitizer = [
-
-    query("offset").optional().toInt(),
-    query("limit").optional().toInt(),
-    check("email").optional().isEmail()
+export const querySanitizer = [
+    ...offsetSanitizer,
+    check("email").optional().isEmail(),
 ]

@@ -1,9 +1,10 @@
-import { TOPICS_LIST } from "@config/topics";
 import request from "supertest";
 import db from "@utils/dbconn";
 import app from "../app";
 
 describe("API:Topic", () => {
+
+    const TOPICS_LIST = require("./data/topic.json");
 
     beforeAll(() => {
         const createTopic = async (topic: any) => db.topic.create({ data: topic });
@@ -20,13 +21,13 @@ describe("API:Topic", () => {
     offset          | limit
     ${1}            | ${10}
     ${undefined}    | ${20}
-    ${undefined}    | ${30}
+    ${undefined}    | ${29}
     `("GET /topic offset=$offset&limit=$limit", async (query) => {
         const result = await request(app)
             .get("/topic")
             .query(query);
         expect(result.statusCode).toEqual(200);
-        expect(result.body.length).toBe(query.limit || TOPICS_LIST.length);
+        expect(result.body.length).toBe(query.limit);
     })
 
     it("POST /topic", async () => {
@@ -51,22 +52,22 @@ describe("API:Topic", () => {
             error: "duplicate entry",
             code: 'P2002'
         });
-    
+
         // PUT /topic
         input = { id, topic: "ball" };
         result = await request(app)
             .put(`/topic/${input.id}`)
             .send(input);
-        
+
         output = result.body;
         expect(result.statusCode).toEqual(201);
         expect(result.body).toMatchObject(input);
-       
+
         // DELETE /topic 
         result = await request(app)
             .delete(`/topic/${id}`);
         expect(result.statusCode).toEqual(201);
-  
+
     })
 
     it("PUT /topic (doesnot exist)", async () => {

@@ -1,7 +1,16 @@
+import db from "@utils/dbconn";
 import request from "supertest";
 import app from "../app";
 
 describe("API:Faculty", () => {
+
+    const FACULTY_LIST = require("./data/faculty.json");
+
+    beforeAll(() => {
+        const createTopic = async (topic: any) => db.faculty.create({ data: topic });
+        const arr = FACULTY_LIST.map(createTopic);
+        Promise.all(arr).catch(_ => { });
+    })
 
     it("GET /faculty", async () => {
         const result = await request(app).get("/faculty");

@@ -1,0 +1,142 @@
+[
+    {
+        "id": 1,
+        "topic": "SafeAssign"
+    },
+    {
+        "id": 2,
+        "topic": "Other - Please Provide Details in the \"Topic(s)\" Text-Field"
+    },
+    {
+        "id": 3,
+        "topic": "LTI Integration (iclicker, Mobius, Leganto, etc.)"
+    },
+    {
+        "id": 4,
+        "topic": "Site Availability (Student)"
+    },
+    {
+        "id": 5,
+        "topic": "Groups and Group Work"
+    },
+    {
+        "id": 6,
+        "topic": "Course Site Merge/Term Adjustment"
+    },
+    {
+        "id": 7,
+        "topic": "User Interface"
+    },
+    {
+        "id": 8,
+        "topic": "Microsoft Teams"
+    },
+    {
+        "id": 9,
+        "topic": "Custom Site Request"
+    },
+    {
+        "id": 10,
+        "topic": "Statistics (Custom requests)"
+    },
+    {
+        "id": 11,
+        "topic": "Video/File Sharing and Collaboration"
+    },
+    {
+        "id": 12,
+        "topic": "Reporting System Downtime"
+    },
+    {
+        "id": 13,
+        "topic": "Feature Request (Tool Recommendations)"
+    },
+    {
+        "id": 14,
+        "topic": "Mobile and App Concerns"
+    },
+    {
+        "id": 15,
+        "topic": "Copy/Import/Export Site Contents"
+    },
+    {
+        "id": 16,
+        "topic": "Make Course Available to Students/Launch Course"
+    },
+    {
+        "id": 17,
+        "topic": "UWin Account Issues / No UWin Account"
+    },
+    {
+        "id": 18,
+        "topic": "Microsoft Stream"
+    },
+    {
+        "id": 19,
+        "topic": "Discussion Forums"
+    },
+    {
+        "id": 20,
+        "topic": "Assignments (Incl. BB Annotate, Portfolios, Self, and Peer Assessments)"
+    },
+    {
+        "id": 21,
+        "topic": "Test, Surveys, and Pools"
+    },
+    {
+        "id": 22,
+        "topic": "Grade Centre (Transfering Final Grade; incl. Import, Export, Scantron)"
+    },
+    {
+        "id": 23,
+        "topic": "Adaptive Release"
+    },
+    {
+        "id": 24,
+        "topic": "Announcement, Email, and Course Messages"
+    },
+    {
+        "id": 25,
+        "topic": "Test Generator/BetterExaminations"
+    },
+    {
+        "id": 26,
+        "topic": "Course Reports, Performance Dashboard, and Retention Centre"
+    },
+    {
+        "id": 27,
+        "topic": "Rubrics"
+    },
+    {
+        "id": 28,
+        "topic": "Other - Please Provide Details in the \"Description\" Text-Field"
+    },
+    {
+        "id": 29,
+        "topic": "Customize Course Properties"
+    },
+    {
+        "id": 30,
+        "topic": "Interactive Tools (Blogs, Journals, Wiki, and External)"
+    },
+    {
+        "id": 31,
+        "topic": "Blackboard Collaborate Ultra (Virtual Classroom)"
+    },
+    {
+        "id": 32,
+        "topic": "Student was looking for access to email. Directed student to ITS chat."
+    },
+    {
+        "id": 33,
+        "topic": "Users, Roles, and Roster (Manual Adjustments)"
+    },
+    {
+        "id": 34,
+        "topic": "Course Content, Menu, or Setting Issues"
+    },
+    {
+        "id": 35,
+        "topic": "Grade Centre (incl. Delegated Grading)"
+    }
+]

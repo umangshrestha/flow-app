@@ -1,9 +1,9 @@
-import { prisma, Prisma } from "@prisma/client";
+import {  Prisma } from "@prisma/client";
 import logger from "@logger";
 import { Request, Response, NextFunction } from "express";
 
 export default (error: Error, req: Request, res: Response, next: NextFunction) => {
-    logger.warn(req.method, "@", req.originalUrl);
+    logger.warn(req.method, " ", req.originalUrl);
     logger.error(error);
 
     if (error instanceof Prisma.PrismaClientKnownRequestError) {
@@ -19,7 +19,11 @@ export default (error: Error, req: Request, res: Response, next: NextFunction) =
             error: msg,
             code: error.errorCode
         })
-    } else {
+    } else if (error instanceof Prisma.PrismaClientUnknownRequestError){
+        res.status(422).json({
+            error: error.message,
+        })
+    }else {
         res.status(500).json({ error: error });
     }
 }

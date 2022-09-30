@@ -1,6 +1,6 @@
 import db from "@utils/dbconn";
 import { hashPassword } from "@utils/validator";
-import {Request, Response, NextFunction} from "express";
+import { Request, Response, NextFunction } from "express";
 
 export default async (req: Request, res: Response, next: NextFunction) => {
     try {
@@ -8,7 +8,7 @@ export default async (req: Request, res: Response, next: NextFunction) => {
         body.password = await hashPassword(body.password);
         const user = await db.user.create({ data: req.body })
         res.status(201).json(user);
-    } catch (err){
+    } catch (err) {
         next(err);
     }
 }

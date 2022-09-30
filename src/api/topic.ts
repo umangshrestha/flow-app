@@ -10,6 +10,6 @@ let router = express.Router();
 export default router
     .use(addmodel(db.topic))
     .get("/:id?", topicSanitizer, sanitizer, handler.Get)
-    .post("/",  topicSanitizer, sanitizer, handler.Post)
-    .delete("/:id", topicSanitizer, sanitizer,  handler.Delete)
-    .put("/:id",  topicSanitizer, sanitizer, handler.Put)
+    .post("/", topicSanitizer, sanitizer, handler.Post)
+    .delete("/:id", topicSanitizer, sanitizer, handler.Delete)
+    .put("/:id", topicSanitizer, sanitizer, handler.Put)
