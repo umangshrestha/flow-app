@@ -1,6 +1,5 @@
 import request from "supertest";
-import db from "@utils/dbconn";
-import app from "../src/app";
+import app from "../app";
 
 describe("API:Faculty", () => {
 

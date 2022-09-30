@@ -1,6 +1,6 @@
 
-export declare namespace Model {
-    export interface Topic {
+export declare namespace model {
+    interface TopicModel {
         id: number,
         topic: string,
     }

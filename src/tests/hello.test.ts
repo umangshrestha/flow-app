@@ -1,6 +1,7 @@
 import request from "supertest";
-import app from "../src/app";
+import app from "../app";
 import { ALLOWED_ORIGIN } from "@config/settings";
+
 describe("API:Hello", () => {
 
     it("GET /hello", async () => {

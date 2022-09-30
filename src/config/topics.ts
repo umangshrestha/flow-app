@@ -1,6 +1,6 @@
-import {Model} from "src/types/model";
+import {model} from "src/types/model";
 
-export const TOPICS_LIST: Model.Topic[] = [
+export const TOPICS_LIST: model.TopicModel[] = [
     { "id": 1, "topic": "SafeAssign" },
     { "id": 2, "topic": "Other - Please Provide Details in the \"Topic(s)\" Text-Field" },
     { "id": 3, "topic": "LTI Integration (iclicker, Mobius, Leganto, etc.)" },

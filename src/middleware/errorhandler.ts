@@ -1,10 +1,10 @@
-import { Prisma } from "@prisma/client";
+import { prisma, Prisma } from "@prisma/client";
 import logger from "@logger";
 import { Request, Response, NextFunction } from "express";
 
 export default (error: Error, req: Request, res: Response, next: NextFunction) => {
     logger.warn(req.method, "@", req.originalUrl);
-    logger.silly(error);
+    logger.error(error);
 
     if (error instanceof Prisma.PrismaClientKnownRequestError) {
         let msg: any = error.meta.cause;
@@ -13,8 +13,14 @@ export default (error: Error, req: Request, res: Response, next: NextFunction) =
             error: msg,
             code: error.code
         })
+    } else if (error instanceof Prisma.PrismaClientInitializationError) {
+        let msg = (error.errorCode === "P2002") ? "duplicate entry" : "unknown";
+        res.status(422).json({
+            error: msg,
+            code: error.errorCode
+        })
     } else {
-        res.status(500).json({ error: "ERROR" });
+        res.status(500).json({ error: error });
     }
 }
 

@@ -26,6 +26,9 @@
 			],
 			"@logger": [
 				"src/logger"
+			],
+			"@sanitizer/*": [
+				"src/sanitizer/*"
 			]
 		},
 
@@ -36,6 +39,6 @@
 	},
 	"include": [
 		"src/**/*",
-		"tests/**/*"
+		"src/tests/**/*"
 	]
 }

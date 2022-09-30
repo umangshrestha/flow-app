@@ -2,12 +2,14 @@ import express from "express";
 import { handler } from "@middleware/requesthandler";
 import addmodel from "@middleware/addmodel";
 import db from "@utils/dbconn";
+import { facultySanitizer } from "@sanitizer/faculty";
+import sanitizer from "@middleware/sanitizer";
 
 let router = express.Router();
 
 export default router
     .use(addmodel(db.faculty))
-    .get("/:uwinID?", handler.Get)
-    .post("/", handler.Post)
-    .delete("/:uwinID", handler.Delete)
-    .put("/:uwinID", handler.Put)
+    .get("/:uwinID?",facultySanitizer, sanitizer, handler.Get)
+    .post("/", facultySanitizer, sanitizer, handler.Post)
+    .delete("/:uwinID", facultySanitizer, sanitizer, handler.Delete)
+    .put("/:uwinID", facultySanitizer, sanitizer, handler.Put)
