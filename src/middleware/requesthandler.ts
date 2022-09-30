@@ -1,4 +1,5 @@
 import logger from "@logger";
+import { count } from "console";
 import { Request, Response, NextFunction } from "express";
 
 export namespace handler {
@@ -11,7 +12,10 @@ export namespace handler {
             let where = req.params;
             Object.assign(where, req.query);
             const func: CallableFunction = req.model.findMany;
-            let out = await func({ skip, take, where });
+            let out = await func({ skip, take, where , include: {_count: true}});
+            out.forEach((element: any) => {
+                element._count = element._count.query;
+            });
             res.status(200).json(out);
         } catch (err) {
             next(err)

@@ -3,7 +3,7 @@ import logger from "@logger";
 import { Request, Response, NextFunction } from "express";
 
 export default (error: Error, req: Request, res: Response, next: NextFunction) => {
-    logger.warn(req.method, " ", req.originalUrl);
+    logger.warn(req.method, req.originalUrl);
     logger.error(error);
 
     if (error instanceof Prisma.PrismaClientKnownRequestError) {

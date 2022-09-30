@@ -33,7 +33,6 @@ const Post = async (req: Request, res: Response, next: NextFunction) => {
         const topics: { [key: string]: number }[] = data.topic.map((x: number | string) => {
             return { id: x };
         });
-        console.log(uwinID)
         delete data.topic;
         const faculty = await db.faculty.update({
             where: { uwinID },
@@ -59,7 +58,6 @@ const Post = async (req: Request, res: Response, next: NextFunction) => {
 
         res.status(200).json(out);
     } catch (err) {
-        console.log(typeof err, err)
         next(err)
     }
 }
