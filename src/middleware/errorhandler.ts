@@ -1,4 +1,4 @@
-import {  Prisma } from "@prisma/client";
+import { Prisma } from "@prisma/client";
 import logger from "@logger";
 import { Request, Response, NextFunction } from "express";
 
@@ -11,20 +11,23 @@ export default (error: Error, req: Request, res: Response, next: NextFunction) =
         msg ||= (error.code === "P2002") ? "duplicate entry" : "unknown";
         res.status(422).json({
             error: msg,
+            type: "KnownRequestError",
             code: error.code
         })
     } else if (error instanceof Prisma.PrismaClientInitializationError) {
         let msg = (error.errorCode === "P2002") ? "duplicate entry" : "unknown";
         res.status(422).json({
             error: msg,
+            type: "InitializationError",
             code: error.errorCode
         })
-    } else if (error instanceof Prisma.PrismaClientUnknownRequestError){
+    } else if (error instanceof Prisma.PrismaClientUnknownRequestError) {
         res.status(422).json({
+            type: "UnknownRequestError",
             error: error.message,
         })
-    }else {
-        res.status(500).json({ error: error });
+    } else {
+        res.status(500).json({ type: typeof error, error: error.message });
     }
 }
 

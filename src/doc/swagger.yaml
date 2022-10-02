@@ -1,0 +1,252 @@
+swagger: "2.0"
+info: 
+    version: "1.0.0"
+    title: Flow-App API
+    description: Endpoints for flow-app API
+    license: 
+        name: MIT
+        url: https://opensource.org/licenses/MIT
+        
+host: localhost:8000
+basePath: /
+schemes:
+    - http
+    - https
+    
+consumes:
+    - application/json
+    
+produces: 
+    - application/json
+    
+tags:
+    - name: hello
+      description: API for pinging to server
+    - name: topic
+      description: API for topics
+    - name: faculty
+      description: API for faculty
+      
+paths:
+    /hello:
+      get:
+        summary: Returns Hello, World!.
+        description: Default ping for testing connection
+        tags:
+          - hello
+        responses:
+            200:
+              description: OK
+              schema:
+                $ref: "#/definitions/hello"    
+    /topic: 
+      get: 
+        summary: get all topics
+        tags:
+          - topic
+        parameters:
+          - $ref: "#/parameters/offset"
+          - $ref: "#/parameters/limit"
+          - $ref: "#/parameters/id"
+          - $ref: "#/parameters/topic"
+
+        responses:
+          200:
+            description: list of topics
+            schema:
+              type: array
+              items:
+                allOf:
+                  - type: object
+                  - $ref: "#/definitions/topic"
+                  - $ref: "#/definitions/count"
+          400:
+            description: sanitization error
+            schema:
+              $ref: "#/definitions/sanitizationerror"
+          422:
+            description: db error
+            schema:
+              $ref: "#/definitions/dberror"
+
+      post:
+        summary: add new topic
+        tags:
+          - topic
+        parameters:
+          - $ref: "#/parameters/topicBody"
+        responses:
+          200:
+            description: list of topics
+            schema:
+              $ref: "#/definitions/topic"
+          400:
+            description: sanitization error
+            schema:
+              $ref: "#/definitions/sanitizationerror"
+          422:
+            description: db error
+            schema:
+              $ref: "#/definitions/dberror"
+              
+  
+    /topic/{id}: 
+      parameters:
+        - $ref: "#/parameters/pathid"
+   
+      get: 
+        summary: Get unique topic 
+        tags:
+          - topic
+        responses:
+          200:
+            description: retrieve unique topic
+            schema:
+              $ref: "#/definitions/topic"
+          400:
+            description: sanitization error
+            schema:
+              $ref: "#/definitions/sanitizationerror"
+          422:
+            description: db error
+            schema:
+              $ref: "#/definitions/dberror"
+              
+      put:
+        summary: update topic 
+        tags:
+          - topic
+        parameters:
+          - $ref: "#/parameters/topicBody"
+        responses:
+          200:
+            description: updated unique topic
+            schema:
+              $ref: "#/definitions/topic"
+          400:
+            description: sanitization error
+            schema:
+              $ref: "#/definitions/sanitizationerror"
+          422:
+            description: db error
+            schema:
+              $ref: "#/definitions/dberror"
+              
+      delete:
+        summary: delete topic 
+        tags:
+          - topic
+        responses:
+          200:
+            description: deleted unique topic
+            schema:
+              $ref: "#/definitions/topic"
+          400:
+            description: sanitization error
+            schema:
+              $ref: "#/definitions/sanitizationerror"
+          422:
+            description: db error
+            schema:
+              $ref: "#/definitions/dberror"
+      
+    
+definitions:
+  hello:
+    type: object
+    properties:    
+      name: 
+        type: string
+        description: "Hello, World!"
+
+  count:
+    type: object
+    properties:    
+      _count:
+        type: integer
+        description: number of queries linked
+
+  topic:
+    type: object
+    properties:
+      id: 
+        type: integer
+        description: unique Id for given topic
+      topic:
+        type: string
+        description: unique string for given topic
+        
+  dberror:
+    type: object
+    properties:
+      error: 
+        type: string
+        description: message of error
+      type:
+        type: string
+        description: type of error
+      code: 
+        type: string
+        description: optional error code
+
+  sanitizationerror:
+    type: object
+    properties:
+      error: 
+        type: string
+        description: message of error
+      errors:
+        type: array
+        items:
+          type: string
+          additionalProperties:
+            type: string
+                 
+ 
+parameters:
+  offset:
+    in: query
+    name: offset
+    required: false
+    description: The number of items to skip before starting to collect the result set
+    type: integer
+  
+  limit: 
+    in: query
+    name: limit
+    type: integer
+    required: false
+    description: The numbers of items to return.
+    
+  id:
+    in: query
+    name: id
+    type: integer
+    required: false
+    description: unique id mapped to topic
+    
+  pathid:
+    in: path
+    name: id
+    type: integer
+    required: true
+    description: unique id mapped to db
+
+  topic:
+    in: query
+    name: topic
+    type: string
+    required: true
+    description: name of topic
+    
+  topicBody:
+    in: body
+    name: topic body
+    schema:
+      type: object
+      required:
+        - topic
+      properties:
+        topic:
+          type: string
+          description: name of topic

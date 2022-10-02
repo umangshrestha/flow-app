@@ -1,5 +1,5 @@
 import { Request, Response, NextFunction } from "express";
-import { DB } from "src/types/db";
+import { DB } from "types/db";
 
 export default (model: DB.Any) => {
 

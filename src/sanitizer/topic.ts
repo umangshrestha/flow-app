@@ -1,11 +1,22 @@
-import { check } from "express-validator";
+import { body, check, param } from "express-validator";
 import isNotNaN from "./custom/nan";
-import isNotNull from "./custom/null";
 import { offsetSanitizer } from "./offset";
 
-export const topicSanitizer = [
+export const GetValidator = [
     ...offsetSanitizer,
     check("id").optional().toInt().custom(isNotNaN),
-    check("topic").optional().custom(isNotNull)
+    check("topic").optional().isString()
 ]
 
+export const IdValidator = [
+    param("id").exists().toInt().custom(isNotNaN),
+]
+
+export const PostValidator = [
+    body("topic").isString(),  
+]
+
+export const PutValidator = [
+    param("id").notEmpty().toInt().custom(isNotNaN),
+    ...PostValidator,
+]

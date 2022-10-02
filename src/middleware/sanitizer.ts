@@ -10,7 +10,8 @@ export default (req: Request, res: Response, next: NextFunction) => {
   const extractedErrors: { [x: string]: any }[] = []
   errors.array().forEach(err => extractedErrors.push({ [err.param]: err.msg }))
 
-  return res.status(422).json({
+  return res.status(400).json({
+    error: "sanitizer error",
     errors: extractedErrors,
   })
 }

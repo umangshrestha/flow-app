@@ -9,7 +9,8 @@ let router = express.Router();
 
 export default router
     .use(addmodel(db.faculty))
-    .get("/:uwinID?",facultySanitizer, sanitizer, handler.Get)
+    .get("/",facultySanitizer, sanitizer, handler.Get)
+    .get("/:uwinID",facultySanitizer, sanitizer, handler.GetByID)
     .post("/", facultySanitizer, sanitizer, handler.Post)
     .delete("/:uwinID", facultySanitizer, sanitizer, handler.Delete)
     .put("/:uwinID", facultySanitizer, sanitizer, handler.Put)

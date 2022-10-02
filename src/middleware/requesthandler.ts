@@ -9,13 +9,26 @@ export namespace handler {
             let { offset: skip, limit: take } = req.query;
             delete req.query.offset;
             delete req.query.limit;
-            let where = req.params;
-            Object.assign(where, req.query);
+            let where = req.query;
             const func: CallableFunction = req.model.findMany;
-            let out = await func({ skip, take, where , include: {_count: true}});
+            let out = await func({ skip, take, where, include: { _count: true } });
             out.forEach((element: any) => {
                 element._count = element._count.query;
             });
+            res.status(200).json(out);
+        } catch (err) {
+            next(err)
+        }
+    }
+
+
+    export const GetByID = async (req: Request, res: Response, next: NextFunction) => {
+        try {
+            let where = req.params;
+            console.log()
+            const func: CallableFunction = req.model.findUnique;
+            let out = await func({ where, include: { _count: true } });
+            out._count = out._count.query;
             res.status(200).json(out);
         } catch (err) {
             next(err)

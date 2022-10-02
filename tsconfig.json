@@ -2,33 +2,37 @@
 	"compilerOptions": {
 		"module": "commonjs",
 		"esModuleInterop": true,
+		"resolveJsonModule": true,
 		"target": "es2022",
 		"noImplicitAny": true,
 		"moduleResolution": "node",
 		"sourceMap": true,
 		"outDir": "dist",
-		"baseUrl": ".",
+		"baseUrl": "src",
 		"paths": {
 			"@config/*": [
-				"src/config/*"
+				"config/*"
 			],
 			"@api/*": [
-				"src/api/*"
+				"api/*"
 			],
 			"@utils/*": [
-				"src/utils/*"
+				"utils/*"
 			],
 			"@middleware/*": [
-				"src/middleware/*"
+				"middleware/*"
 			],
 			"@types/*": [
-				"src/types/*"
+				"types/*"
 			],
 			"@logger": [
-				"src/logger"
+				"logger"
 			],
 			"@sanitizer/*": [
-				"src/sanitizer/*"
+				"sanitizer/*"
+			],
+			"@doc/*": [
+				"doc/*"
 			]
 		},
 
@@ -39,6 +43,6 @@
 	},
 	"include": [
 		"src/**/*",
-		"src/tests/**/*"
+		"tests/**/*"
 	]
 }
