@@ -8,7 +8,19 @@ export default (error: Error, req: Request, res: Response, next: NextFunction) =
 
     if (error instanceof Prisma.PrismaClientKnownRequestError) {
         let msg: any = error.meta.cause;
-        msg ||= (error.code === "P2002") ? "duplicate entry" : "unknown";
+        if (!msg) {
+            switch (error.code) {
+                case "P2002":
+                    msg = "duplicate entry";
+                    break;
+                case "P2021":
+                    msg = "database does not exist";
+                    break;
+                default:
+                    msg = "unknown";
+            }
+
+        }
         res.status(422).json({
             error: msg,
             type: "KnownRequestError",
