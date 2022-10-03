@@ -25,9 +25,8 @@ export namespace handler {
     export const GetByID = async (req: Request, res: Response, next: NextFunction) => {
         try {
             let where = req.params;
-            console.log()
             const func: CallableFunction = req.model.findUnique;
-            let out = await func({ where, include: { _count: true } });
+            let out = await func({ where, include: { query:true, _count: true } });
             out._count = out._count.query;
             res.status(200).json(out);
         } catch (err) {

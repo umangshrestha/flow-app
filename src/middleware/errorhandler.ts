@@ -1,8 +1,8 @@
 import { Prisma } from "@prisma/client";
 import logger from "@logger";
-import { Request, Response, NextFunction } from "express";
+import { NextFunction, Request, Response } from "express";
 
-export default (error: Error, req: Request, res: Response, next: NextFunction) => {
+export default (error: Error, req: Request, res: Response, _: NextFunction) => {
     logger.warn(req.method, req.originalUrl);
     logger.error(error);
 
@@ -22,24 +22,22 @@ export default (error: Error, req: Request, res: Response, next: NextFunction) =
 
         }
         res.status(422).json({
-            error: msg,
-            type: "KnownRequestError",
-            code: error.code
+            name: "DBKnownRequestError",
+            errors: [msg],
         })
     } else if (error instanceof Prisma.PrismaClientInitializationError) {
         let msg = (error.errorCode === "P2002") ? "duplicate entry" : "unknown";
         res.status(422).json({
-            error: msg,
-            type: "InitializationError",
-            code: error.errorCode
+            name: "DBInitializationError",
+            erros: [msg]
         })
     } else if (error instanceof Prisma.PrismaClientUnknownRequestError) {
         res.status(422).json({
-            type: "UnknownRequestError",
-            error: error.message,
+            name: "DBUnknownRequestError",
+            errors: [error.message],
         })
     } else {
-        res.status(500).json({ type: typeof error, error: error.message });
+        res.status(500).json({ name: "Unknown", errors: [error.message] });
     }
 }
 
