@@ -3,7 +3,7 @@ from os.path import join
 URL = "http://127.0.0.1:8000"
 
 TOPIC_URL = URL + "/topic"
-QUERY_URL = URL + "/query/"
+POST_URL = URL + "/post/"
 FACULTY_URL = URL + "/faculty/"
 
 SHEET_NAME = "BB Cafe Reporting V2.0"

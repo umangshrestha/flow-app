@@ -2,7 +2,7 @@ from loadxlsx import df
 import json
 import requests
 
-from  settings import QUERY_URL, TOPIC_URL, HEADERS
+from  settings import POST_URL, TOPIC_URL, HEADERS
 
 
 resp = requests.get(TOPIC_URL).json()
@@ -14,7 +14,7 @@ for body in json.loads(query.to_json(orient="records")):
     try:
         body["topic"] = json.loads(body["topic"])
         body["topic"] =  [topics[x] for x in body["topic"]]
-        resp = requests.post(QUERY_URL,
+        resp = requests.post(POST_URL,
         headers=HEADERS,
             data= json.dumps(body))
         print(resp)
