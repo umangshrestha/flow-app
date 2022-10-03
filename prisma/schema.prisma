@@ -19,22 +19,22 @@ model User {
 }
 
 model Faculty {
-  uwinID     String  @id @unique
+  uwinID     String @id @unique
   firstName  String
   lastName   String
   department String
   faculty    String
-  email      String  @unique
-  query      Query[]
+  email      String @unique
+  query      Post[]
 }
 
 model Topic {
-  id    Int     @id @default(autoincrement())
-  topic String  @unique
-  query Query[]
+  id    Int    @id @default(autoincrement())
+  topic String @unique
+  query Post[]
 }
 
-model Query {
+model Post {
   id          Int      @id @default(autoincrement())
   faculty     Faculty  @relation(fields: [uwinID], references: [uwinID])
   uwinID      String
