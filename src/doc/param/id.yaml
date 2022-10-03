@@ -1,0 +1,6 @@
+name: id
+in: path
+description: unique id mapped to db
+required: true
+schema:
+  type: integer

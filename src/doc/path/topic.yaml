@@ -1,0 +1,39 @@
+get:
+    tags:
+    - topic
+    summary: get all topics
+    parameters:
+      - $ref: "../query/limit-offset.yaml#/offset"
+      - $ref: "../query/limit-offset.yaml#/limit"
+      - $ref: "../query/id.yaml#/id"
+      - name: topic
+        in: query
+        description: name of topic
+        schema:
+          type: string
+    responses:
+      200:
+        description: list of topics
+        content:
+          application/json:  
+            schema:          
+              $ref: '../schema/topic.yaml#/arr'
+      400:
+        $ref: "../resp/400.yaml"
+      422:
+        $ref: "../resp/422.yaml"
+
+post:
+  tags:
+    - topic
+  summary: add new topic
+  requestBody: 
+    $ref: '../body/topic.yaml'
+  responses:
+    200:
+      $ref: "../resp/topic.yaml"
+    400:
+      $ref: "../resp/400.yaml"
+    422:
+      $ref: "../resp/422.yaml"
+  x-codegen-request-body-name: topic body

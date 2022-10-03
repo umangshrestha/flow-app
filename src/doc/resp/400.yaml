@@ -1,0 +1,5 @@
+description: sanitization error
+content:
+  application/json:
+    schema:
+      $ref: "../schema/error.yaml"

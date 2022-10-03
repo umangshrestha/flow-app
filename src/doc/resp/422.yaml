@@ -1,0 +1,5 @@
+description: db error
+content:
+  application/json:
+    schema:
+      $ref: "../schema/error.yaml"

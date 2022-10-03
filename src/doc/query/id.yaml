@@ -1,0 +1,13 @@
+id:
+  name: id
+  in: query
+  description: Unique Identifier
+  schema:
+    type: integer
+  
+uwinID:
+  name: uwinID
+  in: query
+  description: Unique Identifier for faculty
+  schema:
+    type: string

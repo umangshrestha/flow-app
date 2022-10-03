@@ -1,0 +1,12 @@
+get:
+  tags:
+    - hello
+  summary: returns "Hello, World!"".
+  description: API for ensuring connection
+  responses:
+    200:
+      description: OK
+      content:
+        application/json:
+          schema:
+            $ref: '../schema/hello.yaml'

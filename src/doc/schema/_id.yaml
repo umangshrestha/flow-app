@@ -1,0 +1,5 @@
+type: object
+properties:
+  id:
+    type: integer
+    description: unique Id for given topic

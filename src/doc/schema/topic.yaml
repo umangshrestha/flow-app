@@ -1,0 +1,27 @@
+topic:
+  type: object
+  properties:
+    topic:
+      type: string
+      description: unique string for given topic
+
+withID:
+  type: object
+  allOf:
+    - type: object
+      properties: {}  
+    - $ref: "#/topic"
+    - $ref: "./_id.yaml"
+
+      
+arr:
+  type: array
+  items:
+    type: object
+    allOf:
+      - type: object
+        properties: {}  
+      - $ref: "#/withID"
+      - $ref: "./_count.yaml"
+    
+    
