@@ -1,7 +1,7 @@
 import json
 import requests
 from loadxlsx import df
-from urls import FACULTY_URL, HEADERS;
+from settings import FACULTY_URL, HEADERS;
 
 faculty  = df[["firstName", "lastName", "uwinID", "email", "department", "faculty" ]].drop_duplicates()
 
