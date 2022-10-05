@@ -4,7 +4,8 @@ import { TopicEntityWithCount } from "./entities/transform-topic.entity";
 
 
 const tansformPostData = (data): TopicEntityWithCount => {
-    data._count = data._count.query;
+    if (data && data._count)
+        data._count = data._count.query;
     return data
 }
 
@@ -16,7 +17,6 @@ export class TransformFindManyResponse implements NestInterceptor {
         );
     }
 }
-
 
 @Injectable()
 export class TransformFindResponse implements NestInterceptor {

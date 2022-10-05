@@ -4,7 +4,8 @@ import { FacultyEntityWithCount } from "./entities/transform-faculty.entity";
 
 
 const tansformPostData = (data): FacultyEntityWithCount => {
-    data._count = data._count.query;
+    if (data && data._count)
+        data._count = data._count.query;
     return data
 }
 

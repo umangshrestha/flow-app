@@ -1,12 +1,15 @@
-import { Controller, Get, Post, Body, Patch, Param, Delete, ValidationPipe, Query, UseInterceptors } from '@nestjs/common';
+import { Controller, Get, Post, Body, Patch, Param, Delete, ValidationPipe, Query, UseInterceptors, UseFilters } from '@nestjs/common';
 import { PostsService as Service } from './posts.service';
 import { CreatePostDto as CreateDto } from './dto/connect-post.dto';
 import { UpdatePostDto as UpdateDto } from './dto/update-post.dto';
 import {PostResponseEntity  as ResponseEntity } from './entities/post.entity';
-import { ApiCreatedResponse, ApiOkResponse, ApiTags } from '@nestjs/swagger';
+import { ApiBadGatewayResponse, ApiCreatedResponse, ApiNotFoundResponse, ApiOkResponse, ApiTags } from '@nestjs/swagger';
 import { QueryPostDto as QueryDto} from './dto/query-post.dto';
 import { TransformFindManyResponse, TransformFindResponse } from './posts.interceptor';
 import { PostGetEntity } from './entities/transform-post.entity';
+import { PrismaNotFoundExceptionFilter } from 'src/errors/filter/not-found.filter';
+import { ErrorEntity } from 'src/errors/entries/error.entity';
+import { ValidationErrorEntity } from 'src/errors/entries/validation-error.entity';
 
 @Controller('posts')
 @ApiTags('posts')
@@ -22,6 +25,7 @@ export class PostsController {
   @Get()
   @UseInterceptors(TransformFindManyResponse)
   @ApiOkResponse({ type: PostGetEntity, isArray: true })
+  @ApiBadGatewayResponse({type: ValidationErrorEntity})
   async findAll( @Query(new ValidationPipe({
     transform: true,
     transformOptions: { enableImplicitConversion: true },
@@ -32,7 +36,9 @@ export class PostsController {
 
   @Get(':id')
   @UseInterceptors(TransformFindResponse)
+  @UseFilters(new PrismaNotFoundExceptionFilter)
   @ApiCreatedResponse({ type: PostGetEntity })
+  @ApiNotFoundResponse({type:ErrorEntity })
   findOne(@Param('id') id: string) {
     return this.service.findOne(+id);
   }

@@ -20,9 +20,9 @@ export class TopicsService {
       }
     });
   }
-
+  
   findOne(id: number) {
-    return this.prisma.topic.findUnique({
+    return this.prisma.topic.findUniqueOrThrow({
       where: { id },
       include: {
         _count: true,
