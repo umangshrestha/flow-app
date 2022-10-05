@@ -1,5 +1,0 @@
-description: processed topic description
-content:
-  application/json:  
-    schema:          
-      $ref: '../schema/topic.yaml#/withID'

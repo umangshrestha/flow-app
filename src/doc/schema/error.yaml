@@ -1,9 +1,0 @@
-type: object
-properties:
-  error:
-    type: string
-    description: message of error
-  errors:
-    type: array
-    items:
-      type: string

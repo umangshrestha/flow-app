@@ -1,48 +1,21 @@
 {
-	"compilerOptions": {
-		"module": "commonjs",
-		"esModuleInterop": true,
-		"resolveJsonModule": true,
-		"target": "es2022",
-		"noImplicitAny": true,
-		"moduleResolution": "node",
-		"sourceMap": true,
-		"outDir": "dist",
-		"baseUrl": "src",
-		"paths": {
-			"@config/*": [
-				"config/*"
-			],
-			"@api/*": [
-				"api/*"
-			],
-			"@utils/*": [
-				"utils/*"
-			],
-			"@middleware/*": [
-				"middleware/*"
-			],
-			"@types/*": [
-				"types/*"
-			],
-			"@logger": [
-				"logger"
-			],
-			"@sanitizer/*": [
-				"sanitizer/*"
-			],
-			"@doc/*": [
-				"doc/*"
-			]
-		},
-
-		"typeRoots": [
-			"src/types/",
-			"node_modules/@types"
-		]
-	},
-	"include": [
-		"src/**/*",
-		"tests/**/*"
-	]
+  "compilerOptions": {
+    "module": "commonjs",
+    "declaration": true,
+    "removeComments": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "allowSyntheticDefaultImports": true,
+    "target": "es2017",
+    "sourceMap": true,
+    "outDir": "./dist",
+    "baseUrl": "./",
+    "incremental": true,
+    "skipLibCheck": true,
+    "strictNullChecks": false,
+    "noImplicitAny": false,
+    "strictBindCallApply": false,
+    "forceConsistentCasingInFileNames": false,
+    "noFallthroughCasesInSwitch": false
+  }
 }
