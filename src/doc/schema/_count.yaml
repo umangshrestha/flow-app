@@ -1,5 +1,0 @@
-type: object
-properties:
-  _count:
-    type: integer
-    description: number of queries linked
