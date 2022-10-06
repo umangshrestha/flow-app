@@ -5,7 +5,7 @@ import {
 import { UsersService } from './users.service';
 import { CreateUserDto } from './dto/create-user.dto';
 import { UpdateUserDto } from './dto/update-user.dto';
-import { ApiSecurity, ApiTags } from '@nestjs/swagger';
+import { ApiBearerAuth, ApiSecurity, ApiTags } from '@nestjs/swagger';
 import { JwtAuthGuard } from 'src/auth/auth.gaurd';
 
 @Controller('users')
@@ -25,10 +25,10 @@ export class UsersController {
 
   @UseGuards(JwtAuthGuard)
   @ApiSecurity('access-key')
+  @ApiBearerAuth()
   @UseInterceptors(ClassSerializerInterceptor)
   @Get('personal-details')
   findOne(@Request() req) {
-    console.log(req)
     return this.usersService.findOne(req);
   }
 

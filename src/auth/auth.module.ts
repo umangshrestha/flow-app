@@ -20,7 +20,7 @@ import { PrismaService } from 'src/prisma/prisma.service';
     PassportModule.register({
       defaultStratefy: "jwt",
       property: "user",
-      session: false
+      session: true
     }),
     JwtModule.register({
       secret: process.env.SECRET_KEY,
