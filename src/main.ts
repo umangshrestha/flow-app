@@ -13,8 +13,14 @@ async function bootstrap() {
     .setTitle(process.env.npm_package_name)
     .setDescription(`The API description`)
     .setVersion(process.env.npm_package_version)
-    .addBearerAuth({ type: 'http', scheme: 'bearer', bearerFormat: 'JWT' },
-      'access-token')
+    .addBearerAuth({
+      description: "add JWT key",
+      type: 'http', 
+      scheme: 'bearer', 
+      bearerFormat: 'JWT',  
+      in: 'header',
+    },
+      'token')
     .build();
 
   app.useGlobalFilters(new PrismaClientInitializationFilter)

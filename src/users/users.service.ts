@@ -2,15 +2,8 @@ import { HttpException, HttpStatus, Injectable } from '@nestjs/common';
 import { PrismaService } from 'src/prisma/prisma.service';
 import { CreateUserDto } from './dto/create-user.dto';
 import { UpdateUserDto } from './dto/update-user.dto';
-import { hash, compare } from "bcryptjs";
 import { LoginUserDto } from './dto/login-user.dto';
-
-
-const SALT = parseInt(process.env.SALT) || 10
-
-
-
-const hashPassword = async (password: string) =>  await hash(password, SALT)
+import { hashPassword, verifyPassword } from '../utils/password-validator';
 
 @Injectable()
 export class UsersService {
@@ -32,19 +25,23 @@ export class UsersService {
     );
   }
 
-  findOne(email: string) {
+  findOne(id: number) {
     return this.prisma.user.findUniqueOrThrow({
-      where: {
-        email: email
-      },
+      where: { id }
+    })
+  }
+
+  findOneByEmail(email: string) {
+    return this.prisma.user.findUniqueOrThrow({
+      where: { email },
     })
   }
 
 
   async login({ email, password }: LoginUserDto) {
     try {
-      const { password: hashed, ...data } = await this.findOne(email);
-      const isEqual = await compare(password, hashed);
+      const { password: hashed, ...data } = await this.findOneByEmail(email);
+      const isEqual = await verifyPassword(password, hashed);
       if (isEqual)
         return data;
     } catch (_) {
@@ -53,20 +50,20 @@ export class UsersService {
     }
   }
 
-  async update(email: string, { newPassword, oldPassword }: UpdateUserDto) {
-    const { password: hashed } = await this.findOne(email);
-    const isEqual = await compare(oldPassword, hashed);
+  async update(id: number, { newPassword, oldPassword }: UpdateUserDto) {
+    const { password: hashed } = await this.findOne(id);
+    const isEqual = await verifyPassword(oldPassword, hashed);
     if (!isEqual)
       throw new HttpException("invalid_credentials",
         HttpStatus.UNAUTHORIZED);
 
     return this.prisma.user.update({
-      where: { email },
+      where: { id },
       data: { password: await hashPassword(newPassword) }
     });
   }
 
   remove(id: number) {
-    return this.prisma.user.delete({where:{id}});
+    return this.prisma.user.delete({ where: { id } });
   }
 }
