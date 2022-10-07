@@ -1,4 +1,5 @@
 import { Injectable } from '@nestjs/common';
+import { query } from 'express';
 import { PrismaService } from 'src/prisma/prisma.service';
 import { CreateTopicDto } from './dto/create-topic.dto';
 import { QueryTopicDto } from './dto/query-topic.dto';
@@ -12,9 +13,13 @@ export class TopicsService {
     return this.prisma.topic.create({ data: createTopicDto });
   }
 
-  findAll(query: QueryTopicDto) {
+  findAll({ orderBy, sortOrder, ...query}: QueryTopicDto) {
+    
     return this.prisma.topic.findMany({
       ...query,
+      orderBy: {
+        [orderBy]: sortOrder,    
+      },
       include: {
         _count: true,
       }

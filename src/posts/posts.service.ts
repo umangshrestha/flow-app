@@ -20,7 +20,7 @@ export class PostsService {
     });
   }
 
-  findAll({ skip, take, uwinID, isMultiple, isTeams, fromDate, toDate }: QueryPostDto) {
+  findAll({ skip, take, uwinID, isMultiple, isTeams, fromDate, toDate, sortOrder, orderBy }: QueryPostDto) {
     return this.prisma.post.findMany({
       skip,
       take,
@@ -38,7 +38,10 @@ export class PostsService {
             topic: true,
           }
         }
-      }
+      },
+      orderBy: {
+        [orderBy]: sortOrder,
+      },
     });
   }
 

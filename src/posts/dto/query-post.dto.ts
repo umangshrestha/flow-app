@@ -39,4 +39,13 @@ export class QueryPostDto {
     @ApiProperty({default: new Date("2022-10-15T00:00:00.000Z"), required: false})
     toDate: Date;
 
+
+    @IsOptional()
+    @ApiProperty({required: false, default:"id", enum:["id", "createdAt", "uwinID", "updatedAt", "description"]})
+    orderBy:  string;
+
+    @IsOptional()
+    @ApiProperty({required: false, default:"asc", enum:["asc", "desc"]})
+    sortOrder:  string;
+
 }

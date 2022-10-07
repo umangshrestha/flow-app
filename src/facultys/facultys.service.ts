@@ -1,4 +1,5 @@
 import { Injectable } from '@nestjs/common';
+import { Prisma } from '@prisma/client';
 import { PrismaService } from 'src/prisma/prisma.service';
 import { CreateFacultyDto } from './dto/create-faculty.dto';
 import { QueryFacultyDto } from './dto/query-faculty.dto';
@@ -12,8 +13,7 @@ export class FacultysService {
     return this.prisma.faculty.create({ data: createFacultyDto });
   }
 
-  findAll(query: QueryFacultyDto) {
-    const {skip, take, department, faculty} = query;
+  findAll({skip, take, department, faculty, sortOrder, orderBy}: QueryFacultyDto) {
     return this.prisma.faculty.findMany({
       skip,
       take,
@@ -23,7 +23,11 @@ export class FacultysService {
       },
       include: {
         _count: true,
-      }
+      },
+      orderBy: {
+        [orderBy]: sortOrder,
+      },
+
     });
   }
 

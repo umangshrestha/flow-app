@@ -21,4 +21,13 @@ export class QueryFacultyDto {
     @IsString()
     @ApiProperty({ required: false })
     faculty: string;
+
+
+    @IsOptional()
+    @ApiProperty({ required: false , default:"uwinID", enum:["department", "faculty", "uwinID", "firstName", "lastName"]})
+    orderBy:  string;
+
+    @IsOptional()
+    @ApiProperty({required: false,default:"asc", enum:["asc", "desc"]})
+    sortOrder:  string;
 }
