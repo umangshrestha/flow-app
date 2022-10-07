@@ -32,7 +32,7 @@ export class AuthController {
 
     @Post('login')
     login(@Body() loginUserDto: LoginUserDto) {
-        return this.authService.findOne(loginUserDto);
+        return this.authService.login(loginUserDto);
     }
 
 }

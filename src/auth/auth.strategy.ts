@@ -1,11 +1,12 @@
 import {PassportStrategy} from '@nestjs/passport';
 import {ExtractJwt, Strategy} from 'passport-jwt';
 import {AuthService} from "./auth.service";
-import {HttpException, HttpStatus, Injectable} from "@nestjs/common";
+import { Injectable} from "@nestjs/common";
+import { LoginUserDto } from 'src/users/dto/login-user.dto';
 
 
 @Injectable()
-export class JwtStrategy extends PassportStrategy(Strategy) {
+export class JwtStrategy extends PassportStrategy(Strategy, 'jwt') {
     constructor(private readonly authService: AuthService) {
         super({
             jwtFromRequest:   
@@ -15,14 +16,8 @@ export class JwtStrategy extends PassportStrategy(Strategy) {
         });
     }
 
-    async validate(payload: JwtPayload): Promise<any> {
-        const user = await this.authService.findOne(payload);
-        if (!user) {
-            throw new HttpException('Invalid token', 
-                HttpStatus.UNAUTHORIZED);
-        }
-        return user;
+    async validate(payload: LoginUserDto){
+        return  payload;
     }
 }
 
-export interface JwtPayload {  email: string;}
