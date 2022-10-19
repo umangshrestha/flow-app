@@ -1,12 +1,11 @@
-import { ObjectType, Field, Int } from '@nestjs/graphql';
-import { defaultTypeResolver } from 'graphql';
+import { ObjectType, Field, Int, ID } from '@nestjs/graphql';
 
 @ObjectType()
 export class Faculty {
   @Field(() => Int, { nullable: true })
   readonly id: number;
-  @Field(() => Int, { nullable: true })
-  faculty: number;
+  @Field(() => ID, { nullable: true })
+  faculty: string;
 
   @Field(() => Date, { nullable: true })
   readonly createdAt: Date;

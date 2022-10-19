@@ -13,6 +13,7 @@ export class FacultysService {
   }
 
   findAll({ orderBy, sortOrder, ...query }: QueryInput) {
+    console.log(orderBy, sortOrder)
     return this.prisma.faculty.findMany({
       ...query,
       orderBy: {

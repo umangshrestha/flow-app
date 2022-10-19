@@ -13,7 +13,7 @@ type Hello {
 
 type Faculty {
   id: Int
-  faculty: Int
+  faculty: ID
   createdAt: DateTime
   updatedAt: DateTime
 }
@@ -70,5 +70,5 @@ input CreateFacultyInput {
 
 input UpdateFacultyInput {
   faculty: ID!
-  id: ID!
+  id: Int!
 }
