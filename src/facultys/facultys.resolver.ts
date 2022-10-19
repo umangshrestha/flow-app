@@ -5,8 +5,7 @@ import { CreateFacultyInput as CreateInput } from './dto/create-faculty.input';
 import { UpdateFacultyInput as UpdateInput } from './dto/update-faculty.input';
 import { QueryInput } from '../shared/dto/query.input';
 import { UseFilters } from '@nestjs/common';
-import { PrismaClientInitializationFilter } from 'src/prisma/filter/intiialization.filter';
-import { PrismaClientKnownRequestFilter } from 'src/prisma/filter/known-request.filter';
+import { PrismaClientKnownRequestFilter } from '../prisma/filter/known-request.filter';
 
 @Resolver(() => Faculty)
 export class FacultysResolver {

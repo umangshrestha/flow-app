@@ -25,7 +25,9 @@ import { Prisma } from '@prisma/client';
       },
       context: ({ req }) => ({ req }),
       formatError: (error: GraphQLError) => {
-        console.error('error', error.extensions.exception)
+        if (process.env.NODE_ENV === "developement") {
+          console.error('error', error.extensions.exception)
+        }
         return error
       },
     }),
