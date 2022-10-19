@@ -1,23 +1,16 @@
-import { ApiProperty } from "@nestjs/swagger"
-import { Faculty } from "@prisma/client"
+import { ObjectType, Field, Int } from '@nestjs/graphql';
+import { defaultTypeResolver } from 'graphql';
 
-export class FacultyEntity implements Faculty {
-    @ApiProperty({required: true})
-    uwinID:     string
-    @ApiProperty({required: true})
-    firstName:  string
-    @ApiProperty({required: true})
-    lastName:   string
-    @ApiProperty({required: true})
-    department: string
-    @ApiProperty({required: true})
-    faculty:    string
-    @ApiProperty({required: true})
-    email:      string 
+@ObjectType()
+export class Faculty {
+  @Field(() => Int, { nullable: true })
+  readonly id: number;
+  @Field(() => Int, { nullable: true })
+  faculty: number;
+
+  @Field(() => Date, { nullable: true })
+  readonly createdAt: Date;
+  @Field(() => Date, { nullable: true })
+  readonly updatedAt: Date;
+
 }
-
-export class FacultyEntityWithCount extends FacultyEntity {
-    @ApiProperty({required: true})
-    _count:      number 
-}
-

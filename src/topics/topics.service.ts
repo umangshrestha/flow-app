@@ -1,48 +1,26 @@
 import { Injectable } from '@nestjs/common';
-import { query } from 'express';
-import { PrismaService } from 'src/prisma/prisma.service';
-import { CreateTopicDto } from './dto/create-topic.dto';
-import { QueryTopicDto } from './dto/query-topic.dto';
-import { UpdateTopicDto } from './dto/update-topic.dto';
+import { CreateTopicInput } from './dto/create-topic.input';
+import { UpdateTopicInput } from './dto/update-topic.input';
 
 @Injectable()
 export class TopicsService {
-  constructor(private prisma: PrismaService) { }
-
-  create(createTopicDto: CreateTopicDto) {
-    return this.prisma.topic.create({ data: createTopicDto });
+  create(createTopicInput: CreateTopicInput) {
+    return 'This action adds a new topic';
   }
 
-  findAll({ orderBy, sortOrder, ...query}: QueryTopicDto) {
-    
-    return this.prisma.topic.findMany({
-      ...query,
-      orderBy: {
-        [orderBy]: sortOrder,    
-      },
-      include: {
-        _count: true,
-      }
-    });
+  findAll() {
+    return `This action returns all topics`;
   }
-  
+
   findOne(id: number) {
-    return this.prisma.topic.findUniqueOrThrow({
-      where: { id },
-      include: {
-        _count: true,
-      }
-    });
+    return `This action returns a #${id} topic`;
   }
 
-  update(id: number, updateTopicDto: UpdateTopicDto) {
-    return this.prisma.topic.update({
-      where: { id },
-      data: updateTopicDto,
-    });
+  update(id: number, updateTopicInput: UpdateTopicInput) {
+    return `This action updates a #${id} topic`;
   }
 
   remove(id: number) {
-    return this.prisma.topic.delete({ where: { id } });;
+    return `This action removes a #${id} topic`;
   }
 }

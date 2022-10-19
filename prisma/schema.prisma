@@ -10,40 +10,88 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model User {
-  id        Int     @id @default(autoincrement())
-  email     String  @unique
-  firstName String?
-  lastName  String?
-  password  String
+model Instructor {
+  uwinId       String     @id @unique
+  email        String     @unique
+  firstName    String
+  lastName     String
+  department   Department @relation(fields: [departmentId], references: [id])
+  departmentId Int
+  flows        Flow[]
 }
 
 model Faculty {
-  uwinID     String @id @unique
-  firstName  String
-  lastName   String
-  department String
-  faculty    String
-  email      String @unique
-  query      Post[]
+  id         Int          @id @default(autoincrement())
+  faculty    String       @unique
+  createdAt   DateTime   @default(now())
+  updatedAt   DateTime   @updatedAt
+  department Department[]
+}
+
+model Department {
+  id         Int          @id @default(autoincrement())
+  department String       @unique
+  createdAt   DateTime   @default(now())
+  updatedAt   DateTime   @updatedAt
+  Staff      Instructor[]
+  Faculty    Faculty      @relation(fields: [facultyId], references: [id])
+  facultyId  Int
+}
+
+model Flow {
+  id          Int        @id @default(autoincrement())
+  createdAt   DateTime   @default(now())
+  updatedAt   DateTime   @updatedAt
+  createdBy   String
+  topics      Topic[]
+  description String
+  location    String     @default("BBCafe")
+  tags        Tag[]
+  Staff       Instructor @relation(fields: [uwinId], references: [uwinId])
+  uwinId      String
 }
 
 model Topic {
-  id    Int    @id @default(autoincrement())
-  topic String @unique
-  query Post[]
+  id          Int           @id @default(autoincrement())
+  createdAt   DateTime      @default(now())
+  updatedAt   DateTime      @updatedAt
+  topic       String
+  links       Link[]
+  flows       Flow[]
+  FormElement FormElement[]
 }
 
-model Post {
-  id          Int      @id @default(autoincrement())
-  faculty     Faculty  @relation(fields: [uwinID], references: [uwinID])
-  uwinID      String
-  createdAt   DateTime @default(now())
-  createdBy   String
-  updatedAt   DateTime @updatedAt
-  topic       Topic[]
-  location    String   @default("BBCafe")
+model Link {
+  id      Int    @id @default(autoincrement())
+  link    String
+  Topic   Topic? @relation(fields: [topicId], references: [id])
+  topicId Int?
+}
+
+model Tag {
+  id        Int      @id @default(autoincrement())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  flows     Flow[]
+}
+
+model Form {
+  id          Int           @id @default(autoincrement())
+  name        String
   description String
-  isTeams     Boolean  @default(false)
-  isMultiple  Boolean  @default(false)
+  isDefault   Boolean       @default(false)
+  items       FormElement[]
+}
+
+model FormElement {
+  id Int @id @default(autoincrement())
+
+  Form   Form? @relation(fields: [formId], references: [id])
+  formId Int?
+
+  formType    String
+  placeholder String
+  isRequired  String
+  helpInfo    String
+  body        Topic[]
 }

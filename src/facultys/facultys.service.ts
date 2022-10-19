@@ -1,53 +1,38 @@
 import { Injectable } from '@nestjs/common';
-import { Prisma } from '@prisma/client';
-import { PrismaService } from 'src/prisma/prisma.service';
-import { CreateFacultyDto } from './dto/create-faculty.dto';
-import { QueryFacultyDto } from './dto/query-faculty.dto';
-import { UpdateFacultyDto } from './dto/update-faculty.dto';
+import { PrismaService } from '../prisma/prisma.service';
+import { QueryInput } from '../shared/dto/query.input';
+import { CreateFacultyInput as CreateInput } from './dto/create-faculty.input';
+import { UpdateFacultyInput as UpdateInput } from './dto/update-faculty.input';
 
 @Injectable()
 export class FacultysService {
   constructor(private prisma: PrismaService) { }
 
-  create(createFacultyDto: CreateFacultyDto) {
-    return this.prisma.faculty.create({ data: createFacultyDto });
+  create(data: CreateInput) {
+    return this.prisma.faculty.create({ data });
   }
 
-  findAll({skip, take, department, faculty, sortOrder, orderBy}: QueryFacultyDto) {
+  findAll({ orderBy, sortOrder, ...query }: QueryInput) {
     return this.prisma.faculty.findMany({
-      skip,
-      take,
-      where: {
-        department,
-        faculty,
-      },
-      include: {
-        _count: true,
-      },
+      ...query,
       orderBy: {
         [orderBy]: sortOrder,
-      },
-
-    });
-  }
-
-  findOne(uwinID: string) {
-    return this.prisma.faculty.findUniqueOrThrow({
-      where: { uwinID }, include: {
-        _count: true,
       }
     });
   }
 
-
-  update(uwinID: string, updateFacultyDto: UpdateFacultyDto) {
-    return this.prisma.faculty.update({
-      where: { uwinID },
-      data: updateFacultyDto,
-    });;
+  findOne(id: number) {
+    return this.prisma.faculty.findUniqueOrThrow({ where: { id } });
   }
 
-  remove(uwinID: string) {
-    return this.prisma.faculty.delete({ where: { uwinID } });;
+  update({ id, ...updateInput }: UpdateInput) {
+    return this.prisma.faculty.update({
+      where: { id },
+      data: updateInput,
+    });
+  }
+
+  remove(id: number) {
+    return this.prisma.faculty.delete({ where: { id } });
   }
 }
