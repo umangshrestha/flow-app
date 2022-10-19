@@ -19,6 +19,10 @@ import { Prisma } from '@prisma/client';
         Order: orderStateResolver
       },
       introspection: true,
+      cors: {
+        origin: process.env.ALLOWED_ORIGIN || "*",
+        credentials: true
+      },
       context: ({ req }) => ({ req }),
       formatError: (error: GraphQLError) => {
         console.error('error', error.extensions.exception)
