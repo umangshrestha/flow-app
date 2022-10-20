@@ -1,27 +1,32 @@
 import { Injectable } from '@nestjs/common';
 import { PrismaService } from '../prisma/prisma.service';
 import { QueryInput } from '../shared/dto/query.input';
-import { CreateFacultyInput as CreateInput } from './dto/create-faculty.input';
-import { UpdateFacultyInput as UpdateInput } from './dto/update-faculty.input';
-
+import { CreateDepartmentInput as CreateInput } from './dto/create-department.input';
+import { UpdateDepartmentInput as UpdateInput } from './dto/update-department.input';
 
 const include = {
   _count: true,
-  department: true
-};
+  Staff: true
+}
+
 @Injectable()
-export class FacultysService {
+export class DepartmentsService {
   constructor(private prisma: PrismaService) { }
 
-  create(data: CreateInput) {
-    return this.prisma.faculty.create({
-      data,
+  create({ department, faculty }: CreateInput) {
+    return this.prisma.department.create({
+      data: {
+        department,
+        Faculty: {
+          connect: { faculty }
+        }
+      },
       include
     });
   }
 
   findAll({ orderBy, sortOrder, ...query }: QueryInput) {
-    return this.prisma.faculty.findMany({
+    return this.prisma.department.findMany({
       ...query,
       orderBy: {
         [orderBy]: sortOrder,
@@ -31,14 +36,14 @@ export class FacultysService {
   }
 
   findOne(id: number) {
-    return this.prisma.faculty.findUniqueOrThrow({
+    return this.prisma.department.findUniqueOrThrow({
       where: { id },
       include
     });
   }
 
   update({ id, ...updateInput }: UpdateInput) {
-    return this.prisma.faculty.update({
+    return this.prisma.department.update({
       where: { id },
       data: updateInput,
       include
@@ -46,7 +51,7 @@ export class FacultysService {
   }
 
   remove(id: number) {
-    return this.prisma.faculty.delete({
+    return this.prisma.department.delete({
       where: { id },
       include
     });

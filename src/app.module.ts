@@ -8,6 +8,7 @@ import { FacultysModule } from './facultys/facultys.module';
 import { orderStateResolver } from './shared/interface/interface';
 import { GraphQLError } from 'graphql';
 import { Prisma } from '@prisma/client';
+import { DepartmentsModule } from './departments/departments.module';
 
 
 @Module({
@@ -34,6 +35,7 @@ import { Prisma } from '@prisma/client';
     TopicsModule,
     HelloModule,
     FacultysModule,
+    DepartmentsModule,
   ],
   controllers: [],
   providers: [],
