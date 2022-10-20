@@ -43,6 +43,25 @@ type Faculty {
   departments: [Department!]
 }
 
+type FormSection {
+  """Example field (placeholder)"""
+  id: Int!
+  formType: ID!
+  paceholder: ID!
+  isRequred: Boolean!
+  helpInfo: ID!
+  items: [ID!]!
+}
+
+type Form {
+  id: Int!
+  name: ID!
+  description: ID!
+  parentTopic: ID!
+  isDefault: Boolean!
+  sections: [FormSection!]!
+}
+
 type Query {
   topics(query: QueryInput): [Topic!]!
   topic(id: Int!): Topic!
@@ -54,6 +73,8 @@ type Query {
   department(id: Int!): Department!
   parentTopics(query: QueryInput): [ParentTopic!]!
   parentTopic(id: Int!): ParentTopic!
+  forms(query: QueryInput): [Form!]!
+  form(id: Int!): Form!
 }
 
 input QueryInput {
@@ -81,6 +102,11 @@ type Mutation {
   createParentTopic(create: CreateParentTopicInput!): ParentTopic!
   updateParentTopic(update: UpdateParentTopicInput!): ParentTopic!
   removeParentTopic(id: Int!): ParentTopic!
+  createForm(createFormInput: CreateFormInput!): Form!
+  updateForm(update: UpdateFormInput!): Form!
+  removeForm(id: Int!): Form!
+  updateFormSection(update: UpdateFormSectionInput!): FormSection!
+  removeFormSection(id: Int!): FormSection!
 }
 
 input CreateTopicInput {
@@ -121,4 +147,39 @@ input CreateParentTopicInput {
 input UpdateParentTopicInput {
   topic: ID
   id: Int!
+}
+
+input CreateFormInput {
+  name: ID!
+  description: ID!
+  parentTopic: ID!
+  isDefault: Boolean!
+  sections: [CreateFormSectionInput!]!
+}
+
+input CreateFormSectionInput {
+  formType: ID!
+  paceholder: ID!
+  isRequred: Boolean!
+  helpInfo: ID!
+  items: [ID!]!
+}
+
+input UpdateFormInput {
+  name: ID
+  description: ID
+  parentTopic: ID
+  isDefault: Boolean
+  sections: [CreateFormSectionInput!]
+  id: Int!
+}
+
+input UpdateFormSectionInput {
+  formType: ID
+  paceholder: ID
+  isRequred: Boolean
+  helpInfo: ID
+  items: [ID!]
+  id: Int!
+  parentTopic: ID
 }

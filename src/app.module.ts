@@ -7,9 +7,10 @@ import { HelloModule } from './hello/hello.module';
 import { FacultysModule } from './facultys/facultys.module';
 import { orderStateResolver } from './shared/interface/interface';
 import { GraphQLError } from 'graphql';
-import { Prisma } from '@prisma/client';
 import { DepartmentsModule } from './departments/departments.module';
 import { ParentTopicsModule } from './parent-topics/parent-topics.module';
+import { FormsModule } from './forms/forms.module';
+import { FormSectionModule } from './form-section/form-section.module';
 
 
 @Module({
@@ -38,6 +39,8 @@ import { ParentTopicsModule } from './parent-topics/parent-topics.module';
     FacultysModule,
     DepartmentsModule,
     ParentTopicsModule,
+    FormsModule,
+    FormSectionModule,
   ],
   controllers: [],
   providers: [],

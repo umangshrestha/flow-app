@@ -63,10 +63,10 @@ model Topic {
   id            Int           @id @default(autoincrement())
   createdAt     DateTime      @default(now())
   updatedAt     DateTime      @updatedAt
-  topic         String    @unique
+  topic         String        @unique
   links         Link[]
   flows         Flow[]
-  formElement   FormElement[]
+  formElement   FormSection[]
   parentTopic   ParentTopic?  @relation(fields: [parentTopicId], references: [id])
   parentTopicId Int?
 }
@@ -75,7 +75,7 @@ model Link {
   id          Int    @id @default(autoincrement())
   link        String
   description String
-  majorTopic       Topic? @relation(fields: [topicId], references: [id])
+  majorTopic  Topic? @relation(fields: [topicId], references: [id])
   topicId     Int?
 }
 
@@ -90,11 +90,12 @@ model Form {
   id          Int           @id @default(autoincrement())
   name        String
   description String
+  parentTopic String
   isDefault   Boolean       @default(false)
-  items       FormElement[]
+  sections    FormSection[]
 }
 
-model FormElement {
+model FormSection {
   id Int @id @default(autoincrement())
 
   Form   Form? @relation(fields: [formId], references: [id])
@@ -104,5 +105,5 @@ model FormElement {
   placeholder String
   isRequired  String
   helpInfo    String
-  body        Topic[]
+  items       Topic[]
 }
