@@ -4,4 +4,6 @@ import { InputType, Field, ID } from '@nestjs/graphql';
 export class CreateTopicInput {
   @Field(() => ID)
   topic: string;
+  @Field(() => ID)
+  parentTopic: string;
 }

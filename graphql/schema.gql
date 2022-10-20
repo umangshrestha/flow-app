@@ -2,9 +2,25 @@
 # THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
 # ------------------------------------------------------
 
+type ParentTopic {
+  id: Int
+  topic: ID
+  createdAt: DateTime
+  updatedAt: DateTime
+  majorTopics: [Topic!]
+}
+
+"""
+A date-time string at UTC, such as 2019-12-03T09:54:33Z, compliant with the date-time format.
+"""
+scalar DateTime
+
 type Topic {
-  """Example field (placeholder)"""
-  exampleField: Int!
+  id: Int
+  topic: ID
+  createdAt: DateTime
+  updatedAt: DateTime
+  parentTopic: ParentTopic
 }
 
 type Hello {
@@ -19,11 +35,6 @@ type Department {
   faculty: Faculty
 }
 
-"""
-A date-time string at UTC, such as 2019-12-03T09:54:33Z, compliant with the date-time format.
-"""
-scalar DateTime
-
 type Faculty {
   id: Int
   faculty: ID
@@ -32,15 +43,8 @@ type Faculty {
   departments: [Department!]
 }
 
-type ParentTopic {
-  id: Int
-  topic: ID
-  createdAt: DateTime
-  updatedAt: DateTime
-}
-
 type Query {
-  topics: [Topic!]!
+  topics(query: QueryInput): [Topic!]!
   topic(id: Int!): Topic!
   hello(name: String!): Hello!
   helloWorld: String!
@@ -65,8 +69,8 @@ enum Order {
 }
 
 type Mutation {
-  createTopic(createTopicInput: CreateTopicInput!): Topic!
-  updateTopic(updateTopicInput: UpdateTopicInput!): Topic!
+  createTopic(create: CreateTopicInput!): Topic!
+  updateTopic(update: UpdateTopicInput!): Topic!
   removeTopic(id: Int!): Topic!
   createFaculty(create: CreateFacultyInput!): Faculty!
   updateFaculty(update: UpdateFacultyInput!): Faculty!
@@ -81,10 +85,12 @@ type Mutation {
 
 input CreateTopicInput {
   topic: ID!
+  parentTopic: ID!
 }
 
 input UpdateTopicInput {
   topic: ID
+  parentTopic: ID
   id: Int!
 }
 
