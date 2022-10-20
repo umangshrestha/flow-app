@@ -32,6 +32,13 @@ type Faculty {
   departments: [Department!]
 }
 
+type ParentTopic {
+  id: Int
+  topic: ID
+  createdAt: DateTime
+  updatedAt: DateTime
+}
+
 type Query {
   topics: [Topic!]!
   topic(id: Int!): Topic!
@@ -41,6 +48,8 @@ type Query {
   faculty(id: Int!): Faculty!
   departments(query: QueryInput): [Department!]!
   department(id: Int!): Department!
+  parentTopics(query: QueryInput): [ParentTopic!]!
+  parentTopic(id: Int!): ParentTopic!
 }
 
 input QueryInput {
@@ -65,16 +74,17 @@ type Mutation {
   createDepartment(create: CreateDepartmentInput!): Department!
   updateDepartment(update: UpdateDepartmentInput!): Department!
   removeDepartment(id: Int!): Department!
+  createParentTopic(create: CreateParentTopicInput!): ParentTopic!
+  updateParentTopic(update: UpdateParentTopicInput!): ParentTopic!
+  removeParentTopic(id: Int!): ParentTopic!
 }
 
 input CreateTopicInput {
-  """Example field (placeholder)"""
-  exampleField: Int!
+  topic: ID!
 }
 
 input UpdateTopicInput {
-  """Example field (placeholder)"""
-  exampleField: Int
+  topic: ID
   id: Int!
 }
 
@@ -95,5 +105,14 @@ input CreateDepartmentInput {
 input UpdateDepartmentInput {
   department: ID!
   faculty: ID!
+  id: Int!
+}
+
+input CreateParentTopicInput {
+  topic: ID!
+}
+
+input UpdateParentTopicInput {
+  topic: ID
   id: Int!
 }

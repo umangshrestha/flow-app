@@ -9,6 +9,7 @@ import { orderStateResolver } from './shared/interface/interface';
 import { GraphQLError } from 'graphql';
 import { Prisma } from '@prisma/client';
 import { DepartmentsModule } from './departments/departments.module';
+import { ParentTopicsModule } from './parent-topics/parent-topics.module';
 
 
 @Module({
@@ -36,6 +37,7 @@ import { DepartmentsModule } from './departments/departments.module';
     HelloModule,
     FacultysModule,
     DepartmentsModule,
+    ParentTopicsModule,
   ],
   controllers: [],
   providers: [],
