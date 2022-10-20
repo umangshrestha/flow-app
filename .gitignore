@@ -34,3 +34,12 @@ migrations/*
 !.vscode/tasks.json
 !.vscode/launch.json
 !.vscode/extensions.json
+
+
+#python
+.venv
+*.pyc
+__pycache__/*
+
+#file
+*.xlsx

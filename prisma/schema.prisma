@@ -23,16 +23,16 @@ model Instructor {
 model Faculty {
   id         Int          @id @default(autoincrement())
   faculty    String       @unique
-  createdAt   DateTime   @default(now())
-  updatedAt   DateTime   @updatedAt
+  createdAt  DateTime     @default(now())
+  updatedAt  DateTime     @updatedAt
   department Department[]
 }
 
 model Department {
   id         Int          @id @default(autoincrement())
   department String       @unique
-  createdAt   DateTime   @default(now())
-  updatedAt   DateTime   @updatedAt
+  createdAt  DateTime     @default(now())
+  updatedAt  DateTime     @updatedAt
   Staff      Instructor[]
   Faculty    Faculty      @relation(fields: [facultyId], references: [id])
   facultyId  Int
@@ -43,7 +43,7 @@ model Flow {
   createdAt   DateTime   @default(now())
   updatedAt   DateTime   @updatedAt
   createdBy   String
-  topics      Topic[]
+  majorTopics Topic[]
   description String
   location    String     @default("BBCafe")
   tags        Tag[]
@@ -51,21 +51,31 @@ model Flow {
   uwinId      String
 }
 
+model ParentTopic {
+  id          Int      @id @default(autoincrement())
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  majorTopics Topic[]
+}
+
 model Topic {
-  id          Int           @id @default(autoincrement())
-  createdAt   DateTime      @default(now())
-  updatedAt   DateTime      @updatedAt
-  topic       String
-  links       Link[]
-  flows       Flow[]
-  FormElement FormElement[]
+  id            Int           @id @default(autoincrement())
+  createdAt     DateTime      @default(now())
+  updatedAt     DateTime      @updatedAt
+  topic         String
+  links         Link[]
+  flows         Flow[]
+  FormElement   FormElement[]
+  ParentTopic   ParentTopic?  @relation(fields: [parentTopicId], references: [id])
+  parentTopicId Int?
 }
 
 model Link {
-  id      Int    @id @default(autoincrement())
-  link    String
-  Topic   Topic? @relation(fields: [topicId], references: [id])
-  topicId Int?
+  id          Int    @id @default(autoincrement())
+  link        String
+  description String
+  Topic       Topic? @relation(fields: [topicId], references: [id])
+  topicId     Int?
 }
 
 model Tag {
