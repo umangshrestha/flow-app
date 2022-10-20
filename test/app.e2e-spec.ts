@@ -75,17 +75,39 @@ describe('AppController (e2e)', () => {
       request(app.getHttpServer())
         .post('/graphql')
         .send({ query })
+        .expect(200)
         .expect((res) => {
           id = res.body.data.createFaculty.id;
           expect(res.body.data.createFaculty.faculty).toBe(input)
         })
+
+      // find 
+      query = `
+      faculty(id:${id}){
+        faculty
+      }`
+      request(app.getHttpServer())
+        .post('/graphql')
+        .send({ query })
+        .expect(200)
+        .expect((res) => {
+          expect(res.body.data.createFaculty.faculty).toBe(input)
+        })
+
+      input = `${input}-${input}`
       //  update
       query = `mutation {
-      updateFaculty(update: {faculty: "${input}"}) {
-        id
-        faculty
-      }
-    }`
+        updateFaculty(update: {id: ${id}faculty: "${input}"}) {
+          faculty
+        }
+      }`
+      request(app.getHttpServer())
+        .post('/graphql')
+        .send({ query })
+        .expect(200)
+        .expect((res) => {
+          expect(res.body.data.createFaculty.faculty).toBe(input)
+        })
 
     })
 });

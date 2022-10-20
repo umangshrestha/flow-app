@@ -9,7 +9,6 @@ df = pd.read_excel(XLSX_FILE, sheet_name=FACULTY_SHEET)
 
 # add faculty
 for _, data in df.iterrows():
-    print(data.Department)
     try:
         result = client.execute(gql("""
             mutation {

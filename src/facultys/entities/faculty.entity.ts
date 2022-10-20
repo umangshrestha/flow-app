@@ -1,4 +1,5 @@
 import { ObjectType, Field, Int, ID } from '@nestjs/graphql';
+import { Department } from 'src/departments/entities/department.entity';
 
 @ObjectType()
 export class Faculty {
@@ -10,4 +11,6 @@ export class Faculty {
   readonly createdAt: Date;
   @Field(() => Date, { nullable: true })
   readonly updatedAt: Date;
+  @Field(() => [Department], { nullable: true })
+  readonly departments: Department[];
 }

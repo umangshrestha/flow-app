@@ -7,8 +7,9 @@ import { UpdateFacultyInput as UpdateInput } from './dto/update-faculty.input';
 
 const include = {
   _count: true,
-  department: true
+  departments: true
 };
+
 @Injectable()
 export class FacultysService {
   constructor(private prisma: PrismaService) { }

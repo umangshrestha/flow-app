@@ -6,7 +6,8 @@ import { UpdateDepartmentInput as UpdateInput } from './dto/update-department.in
 
 const include = {
   _count: true,
-  Staff: true
+  staffs: true,
+  faculty: true,
 }
 
 @Injectable()
@@ -17,7 +18,7 @@ export class DepartmentsService {
     return this.prisma.department.create({
       data: {
         department,
-        Faculty: {
+        faculty: {
           connect: { faculty }
         }
       },
@@ -42,10 +43,15 @@ export class DepartmentsService {
     });
   }
 
-  update({ id, ...updateInput }: UpdateInput) {
+  update({ id, department, faculty }: UpdateInput) {
     return this.prisma.department.update({
       where: { id },
-      data: updateInput,
+      data: {
+        department,
+        faculty: {
+          connect: { faculty }
+        }
+      },
       include
     });
   }
