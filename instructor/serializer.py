@@ -22,5 +22,6 @@ class InstructorOutputSerializer(serializers.ModelSerializer):
 
     def to_representation(self, instance):
         rep = super().to_representation(instance)
-        print(rep["department"])
+        rep["faculty"] = instance.department.faculty.faculty
+        rep["department"] = instance.department.department
         return rep
