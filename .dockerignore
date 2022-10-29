@@ -2,3 +2,4 @@
 .env.local
 .venv
 .xlsx_parser
+backup
