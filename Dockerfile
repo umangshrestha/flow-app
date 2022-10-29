@@ -7,5 +7,5 @@ COPY prisma /code/
 RUN npm install -g npm@latest
 RUN npm install
 RUN npx prisma generate
-RUN npx prisma db push
+
 

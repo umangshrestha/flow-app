@@ -4,6 +4,7 @@ import { Department } from './entities/department.entity';
 import { CreateDepartmentInput as CreateInput} from './dto/create-department.input';
 import { UpdateDepartmentInput as UpdateInput} from './dto/update-department.input';
 import { QueryInput } from 'src/shared/dto/query.input';
+import { UseInterceptors } from '@nestjs/common';
 
 @Resolver(() => Department)
 export class DepartmentsResolver {

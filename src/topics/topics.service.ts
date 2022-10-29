@@ -5,7 +5,6 @@ import { CreateTopicInput as CreateInput } from './dto/create-topic.input';
 import { UpdateTopicInput as UpdateInput } from './dto/update-topic.input';
 
 const include = {
-  _count: true,
   parentTopic: true,
 }
 
@@ -19,8 +18,9 @@ export class TopicsService {
       data: {
         topic,
         parentTopic: {
-          connect: {
-            topic: parentTopic
+          connectOrCreate: {
+            where:{topic: parentTopic},
+            create:{topic: parentTopic},
           }
         }
       },
@@ -51,8 +51,9 @@ export class TopicsService {
       data: {
         topic,
         parentTopic: {
-          connect: {
-            topic: parentTopic
+          connectOrCreate: {
+            where:{topic: parentTopic},
+            create:{topic: parentTopic},
           }
         },
       },

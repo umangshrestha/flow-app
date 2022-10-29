@@ -1,41 +1,46 @@
 import { Resolver, Query, Mutation, Args, Int } from '@nestjs/graphql';
 import { FacultysService as Service } from './facultys.service';
-import { Faculty } from './entities/faculty.entity';
-import { CreateFacultyInput as CreateInput } from './dto/create-faculty.input';
-import { UpdateFacultyInput as UpdateInput } from './dto/update-faculty.input';
+import { FacultyEntity as Entity } from './entities/faculty.entity';
 import { QueryInput } from '../shared/dto/query.input';
 import { UseFilters } from '@nestjs/common';
 import { PrismaClientKnownRequestFilter } from '../prisma/filter/known-request.filter';
+import { CreateFacultyInput as CreateInput } from './dto/create-faculty.input';
+import { UpdateFacultyInput as UpdateInput } from './dto/update-faculty.input';
 
-@Resolver(() => Faculty)
+
+@Resolver(() => Entity)
 export class FacultysResolver {
   constructor(private readonly service: Service) { }
 
-  @Mutation(() => Faculty)
-  createFaculty(@Args('create') createInput: CreateInput) {
-    return this.service.create(createInput);
+  @Mutation(() => Entity)
+  createFaculty(
+    @Args('create') create: CreateInput) {
+    return this.service.create(create);
   }
 
-  @Query(() => [Faculty], { name: 'facultys' })
-  findAll(@Args("query", { nullable: true }) query: QueryInput) {
+  @Query(() => [Entity], { name: 'facultys' })
+  findAll(
+    @Args("query", { nullable: true }) query: QueryInput) {
     return this.service.findAll(query);
   }
 
-  @Query(() => Faculty, { name: 'faculty' })
+  @Query(() => Entity, { name: 'faculty' })
   findOne(
     @Args('id', { type: () => Int }) id: number) {
     return this.service.findOne(id);
   }
 
-  @Mutation(() => Faculty)
+  @Mutation(() => Entity)
   @UseFilters(new PrismaClientKnownRequestFilter)
-  updateFaculty(@Args('update') updateInput: UpdateInput) {
-    return this.service.update(updateInput);
+  updateFaculty(
+    @Args('update') update: UpdateInput) {
+    return this.service.update(update);
   }
 
-  @Mutation(() => Faculty)
+  @Mutation(() => Entity)
   @UseFilters(new PrismaClientKnownRequestFilter)
-  removeFaculty(@Args('id', { type: () => Int }) id: number) {
+  removeFaculty(
+    @Args('id', { type: () => Int }) id: number) {
     return this.service.remove(id);
   }
 }

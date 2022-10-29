@@ -6,15 +6,14 @@ generator client {
 }
 
 datasource db {
-  provider = "sqlite"
+  provider = "postgres"
   url      = env("DATABASE_URL")
 }
 
 model Instructor {
-  uwinId       String     @id @unique
+  id       String     @id @unique
   email        String     @unique
-  firstName    String
-  lastName     String
+  fullName     String
   department   Department @relation(fields: [departmentId], references: [id])
   departmentId Int
   flows        Flow[]
@@ -23,16 +22,12 @@ model Instructor {
 model Faculty {
   id          Int          @id @default(autoincrement())
   faculty     String       @unique
-  createdAt   DateTime     @default(now())
-  updatedAt   DateTime     @updatedAt
   departments Department[]
 }
 
 model Department {
   id         Int          @id @default(autoincrement())
   department String       @unique
-  createdAt  DateTime     @default(now())
-  updatedAt  DateTime     @updatedAt
   staffs     Instructor[]
   faculty    Faculty      @relation(fields: [facultyId], references: [id])
   facultyId  Int
@@ -43,11 +38,11 @@ model Flow {
   createdAt   DateTime   @default(now())
   updatedAt   DateTime   @updatedAt
   createdBy   String
-  majorTopics Topic[]
+  topics Topic[]
   description String
   location    String     @default("BBCafe")
   tags        Tag[]
-  staff       Instructor @relation(fields: [uwinId], references: [uwinId])
+  staff       Instructor @relation(fields: [uwinId], references: [id])
   uwinId      String
 }
 
@@ -56,7 +51,7 @@ model ParentTopic {
   createdAt   DateTime @default(now())
   updatedAt   DateTime @updatedAt
   topic       String   @unique
-  majorTopics Topic[]
+  topics Topic[]
 }
 
 model Topic {

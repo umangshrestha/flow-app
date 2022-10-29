@@ -6,7 +6,6 @@ import { UpdateFacultyInput as UpdateInput } from './dto/update-faculty.input';
 
 
 const include = {
-  _count: true,
   departments: true
 };
 

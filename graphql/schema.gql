@@ -2,6 +2,10 @@
 # THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
 # ------------------------------------------------------
 
+type Hello {
+  name: ID!
+}
+
 type ParentTopic {
   id: Int
   topic: ID
@@ -23,23 +27,16 @@ type Topic {
   parentTopic: ParentTopic
 }
 
-type Hello {
-  name: ID!
-}
-
 type Department {
-  id: Int
+  id: Int!
   department: ID!
-  createdAt: DateTime
-  updatedAt: DateTime
-  faculty: Faculty
+  faculty: FacultyEntity!
 }
 
-type Faculty {
+type FacultyEntity {
   id: Int
   faculty: ID
-  createdAt: DateTime
-  updatedAt: DateTime
+  code: ID
   departments: [Department!]
 }
 
@@ -62,24 +59,31 @@ type Form {
   sections: [FormSection!]!
 }
 
+type Instructor {
+  """Example field (placeholder)"""
+  exampleField: Int!
+}
+
 type Query {
   topics(query: QueryInput): [Topic!]!
   topic(id: Int!): Topic!
   hello(name: String!): Hello!
   helloWorld: String!
-  facultys(query: QueryInput): [Faculty!]!
-  faculty(id: Int!): Faculty!
+  facultys(query: QueryInput): [FacultyEntity!]!
+  faculty(id: Int!): FacultyEntity!
   departments(query: QueryInput): [Department!]!
   department(id: Int!): Department!
   parentTopics(query: QueryInput): [ParentTopic!]!
   parentTopic(id: Int!): ParentTopic!
   forms(query: QueryInput): [Form!]!
   form(id: Int!): Form!
+  instructors: [Instructor!]!
+  instructor(id: Int!): Instructor!
 }
 
 input QueryInput {
-  skip: ID = 0
-  take: ID = 50
+  skip: Int = 0
+  take: Int = 50
   orderBy: ID = "id"
   sortOrder: Order = ASC
 }
@@ -93,9 +97,9 @@ type Mutation {
   createTopic(create: CreateTopicInput!): Topic!
   updateTopic(update: UpdateTopicInput!): Topic!
   removeTopic(id: Int!): Topic!
-  createFaculty(create: CreateFacultyInput!): Faculty!
-  updateFaculty(update: UpdateFacultyInput!): Faculty!
-  removeFaculty(id: Int!): Faculty!
+  createFaculty(create: CreateFacultyInput!): FacultyEntity!
+  updateFaculty(update: UpdateFacultyInput!): FacultyEntity!
+  removeFaculty(id: Int!): FacultyEntity!
   createDepartment(create: CreateDepartmentInput!): Department!
   updateDepartment(update: UpdateDepartmentInput!): Department!
   removeDepartment(id: Int!): Department!
@@ -107,6 +111,9 @@ type Mutation {
   removeForm(id: Int!): Form!
   updateFormSection(update: UpdateFormSectionInput!): FormSection!
   removeFormSection(id: Int!): FormSection!
+  createInstructor(createInstructorInput: CreateInstructorInput!): Instructor!
+  updateInstructor(updateInstructorInput: UpdateInstructorInput!): Instructor!
+  removeInstructor(id: Int!): Instructor!
 }
 
 input CreateTopicInput {
@@ -121,10 +128,12 @@ input UpdateTopicInput {
 }
 
 input CreateFacultyInput {
+  department: ID!
   faculty: ID!
 }
 
 input UpdateFacultyInput {
+  department: ID!
   faculty: ID!
   id: Int!
 }
@@ -182,4 +191,15 @@ input UpdateFormSectionInput {
   items: [ID!]
   id: Int!
   parentTopic: ID
+}
+
+input CreateInstructorInput {
+  """Example field (placeholder)"""
+  exampleField: Int!
+}
+
+input UpdateInstructorInput {
+  """Example field (placeholder)"""
+  exampleField: Int
+  id: Int!
 }
