@@ -15,6 +15,7 @@ lerna-debug.log*
 # OS
 .DS_Store
 *.db*
+data
 # Tests
 /coverage
 /.nyc_output
@@ -40,6 +41,6 @@ migrations/*
 .venv
 *.pyc
 __pycache__/*
-
+,jest
 #file
 *.xlsx

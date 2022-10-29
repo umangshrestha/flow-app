@@ -1,0 +1,4 @@
+.node_modules
+.env.local
+.venv
+.xlsx_parser
