@@ -1,8 +1,8 @@
 import { ObjectType, Field, Int, ID } from '@nestjs/graphql';
-import { ParentTopic } from 'src/parent-topics/entities/parent-topic.entity';
+import { ParentTopicEntity } from 'src/parent-topics/entities/parent-topic.entity';
 
 @ObjectType()
-export class Topic {
+export class TopicEntity {
   @Field(() => Int, { nullable: true })
   readonly id: number;
   @Field(() => ID, { nullable: true })
@@ -11,7 +11,7 @@ export class Topic {
   readonly createdAt: Date;
   @Field(() => Date, { nullable: true })
   readonly updatedAt: Date;
-  @Field(() => ParentTopic, { nullable: true })
-  parentTopic: ParentTopic;
+  @Field(() => ParentTopicEntity, { nullable: true })
+  parentTopic: ParentTopicEntity;
   
 }

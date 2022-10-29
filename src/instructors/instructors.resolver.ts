@@ -1,35 +1,36 @@
-import { Resolver, Query, Mutation, Args, Int } from '@nestjs/graphql';
-import { InstructorsService } from './instructors.service';
-import { Instructor } from './entities/instructor.entity';
-import { CreateInstructorInput } from './dto/create-instructor.input';
-import { UpdateInstructorInput } from './dto/update-instructor.input';
+import { Resolver, Query, Mutation, Args, ID } from '@nestjs/graphql';
+import { InstructorsService as Service } from './instructors.service';
+import { InstructorEntity as Entity } from './entities/instructor.entity';
+import { CreateInstructorInput as CreateInput } from './dto/create-instructor.input';
+import { UpdateInstructorInput as UpdateInput } from './dto/update-instructor.input';
+import { QueryInput } from 'src/shared/dto/query.input';
 
-@Resolver(() => Instructor)
+@Resolver(() => Entity)
 export class InstructorsResolver {
-  constructor(private readonly instructorsService: InstructorsService) {}
+  constructor(private readonly service: Service) { }
 
-  @Mutation(() => Instructor)
-  createInstructor(@Args('createInstructorInput') createInstructorInput: CreateInstructorInput) {
-    return this.instructorsService.create(createInstructorInput);
+  @Mutation(() => Entity)
+  createInstructor(@Args('create') createInput: CreateInput) {
+    return this.service.create(createInput);
   }
 
-  @Query(() => [Instructor], { name: 'instructors' })
-  findAll() {
-    return this.instructorsService.findAll();
+  @Query(() => [Entity], { name: 'instructors' })
+  findAll(@Args("query", { nullable: true }) query: QueryInput) {
+    return this.service.findAll(query);
   }
 
-  @Query(() => Instructor, { name: 'instructor' })
-  findOne(@Args('id', { type: () => Int }) id: number) {
-    return this.instructorsService.findOne(id);
+  @Query(() => Entity, { name: 'instructor' })
+  findOne(@Args('id', { type: () => ID }) id: string) {
+    return this.service.findOne(id);
   }
 
-  @Mutation(() => Instructor)
-  updateInstructor(@Args('updateInstructorInput') updateInstructorInput: UpdateInstructorInput) {
-    return this.instructorsService.update(updateInstructorInput.id, updateInstructorInput);
+  @Mutation(() => Entity)
+  updateInstructor(@Args('update') updateInput: UpdateInput) {
+    return this.service.update(updateInput);
   }
 
-  @Mutation(() => Instructor)
-  removeInstructor(@Args('id', { type: () => Int }) id: number) {
-    return this.instructorsService.remove(id);
+  @Mutation(() => Entity)
+  removeInstructor(@Args('id', { type: () => ID }) id: string) {
+    return this.service.remove(id);
   }
 }

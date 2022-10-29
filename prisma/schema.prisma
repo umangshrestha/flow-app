@@ -11,7 +11,7 @@ datasource db {
 }
 
 model Instructor {
-  id       String     @id @unique
+  id           String     @id @unique
   email        String     @unique
   fullName     String
   department   Department @relation(fields: [departmentId], references: [id])
@@ -26,11 +26,11 @@ model Faculty {
 }
 
 model Department {
-  id         Int          @id @default(autoincrement())
-  department String       @unique
-  staffs     Instructor[]
-  faculty    Faculty      @relation(fields: [facultyId], references: [id])
-  facultyId  Int
+  id          Int          @id @default(autoincrement())
+  department  String       @unique
+  instructors Instructor[]
+  faculty     Faculty      @relation(fields: [facultyId], references: [id])
+  facultyId   Int
 }
 
 model Flow {
@@ -38,7 +38,7 @@ model Flow {
   createdAt   DateTime   @default(now())
   updatedAt   DateTime   @updatedAt
   createdBy   String
-  topics Topic[]
+  topics      Topic[]
   description String
   location    String     @default("BBCafe")
   tags        Tag[]
@@ -47,11 +47,11 @@ model Flow {
 }
 
 model ParentTopic {
-  id          Int      @id @default(autoincrement())
-  createdAt   DateTime @default(now())
-  updatedAt   DateTime @updatedAt
-  topic       String   @unique
-  topics Topic[]
+  id        Int      @id @default(autoincrement())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  topic     String   @unique
+  topics    Topic[]
 }
 
 model Topic {

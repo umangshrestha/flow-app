@@ -6,12 +6,12 @@ type Hello {
   name: ID!
 }
 
-type ParentTopic {
+type ParentTopicEntity {
   id: Int
   topic: ID
   createdAt: DateTime
   updatedAt: DateTime
-  majorTopics: [Topic!]
+  majorTopics: [TopicEntity!]
 }
 
 """
@@ -19,15 +19,15 @@ A date-time string at UTC, such as 2019-12-03T09:54:33Z, compliant with the date
 """
 scalar DateTime
 
-type Topic {
+type TopicEntity {
   id: Int
   topic: ID
   createdAt: DateTime
   updatedAt: DateTime
-  parentTopic: ParentTopic
+  parentTopic: ParentTopicEntity
 }
 
-type Department {
+type DepartmentEntity {
   id: Int!
   department: ID!
   faculty: FacultyEntity!
@@ -37,7 +37,7 @@ type FacultyEntity {
   id: Int
   faculty: ID
   code: ID
-  departments: [Department!]
+  departments: [DepartmentEntity!]
 }
 
 type FormSection {
@@ -59,26 +59,28 @@ type Form {
   sections: [FormSection!]!
 }
 
-type Instructor {
-  """Example field (placeholder)"""
-  exampleField: Int!
+type InstructorEntity {
+  id: ID!
+  email: ID!
+  fullName: ID!
+  department: DepartmentEntity!
 }
 
 type Query {
-  topics(query: QueryInput): [Topic!]!
-  topic(id: Int!): Topic!
+  topics(query: QueryInput): [TopicEntity!]!
+  topic(id: Int!): TopicEntity!
   hello(name: String!): Hello!
   helloWorld: String!
   facultys(query: QueryInput): [FacultyEntity!]!
   faculty(id: Int!): FacultyEntity!
-  departments(query: QueryInput): [Department!]!
-  department(id: Int!): Department!
-  parentTopics(query: QueryInput): [ParentTopic!]!
-  parentTopic(id: Int!): ParentTopic!
+  departments(query: QueryInput): [DepartmentEntity!]!
+  department(id: Int!): DepartmentEntity!
+  parentTopics(query: QueryInput): [ParentTopicEntity!]!
+  parentTopic(id: Int!): ParentTopicEntity!
   forms(query: QueryInput): [Form!]!
   form(id: Int!): Form!
-  instructors: [Instructor!]!
-  instructor(id: Int!): Instructor!
+  instructors(query: QueryInput): [InstructorEntity!]!
+  instructor(id: ID!): InstructorEntity!
 }
 
 input QueryInput {
@@ -94,26 +96,26 @@ enum Order {
 }
 
 type Mutation {
-  createTopic(create: CreateTopicInput!): Topic!
-  updateTopic(update: UpdateTopicInput!): Topic!
-  removeTopic(id: Int!): Topic!
+  createTopic(create: CreateTopicInput!): TopicEntity!
+  updateTopic(update: UpdateTopicInput!): TopicEntity!
+  removeTopic(id: Int!): TopicEntity!
   createFaculty(create: CreateFacultyInput!): FacultyEntity!
   updateFaculty(update: UpdateFacultyInput!): FacultyEntity!
   removeFaculty(id: Int!): FacultyEntity!
-  createDepartment(create: CreateDepartmentInput!): Department!
-  updateDepartment(update: UpdateDepartmentInput!): Department!
-  removeDepartment(id: Int!): Department!
-  createParentTopic(create: CreateParentTopicInput!): ParentTopic!
-  updateParentTopic(update: UpdateParentTopicInput!): ParentTopic!
-  removeParentTopic(id: Int!): ParentTopic!
+  createDepartment(create: CreateDepartmentInput!): DepartmentEntity!
+  updateDepartment(update: UpdateDepartmentInput!): DepartmentEntity!
+  removeDepartment(id: Int!): DepartmentEntity!
+  createParentTopic(create: CreateParentTopicInput!): ParentTopicEntity!
+  updateParentTopic(update: UpdateParentTopicInput!): ParentTopicEntity!
+  removeParentTopic(id: Int!): ParentTopicEntity!
   createForm(createFormInput: CreateFormInput!): Form!
   updateForm(update: UpdateFormInput!): Form!
   removeForm(id: Int!): Form!
   updateFormSection(update: UpdateFormSectionInput!): FormSection!
   removeFormSection(id: Int!): FormSection!
-  createInstructor(createInstructorInput: CreateInstructorInput!): Instructor!
-  updateInstructor(updateInstructorInput: UpdateInstructorInput!): Instructor!
-  removeInstructor(id: Int!): Instructor!
+  createInstructor(create: CreateInstructorInput!): InstructorEntity!
+  updateInstructor(update: UpdateInstructorInput!): InstructorEntity!
+  removeInstructor(id: ID!): InstructorEntity!
 }
 
 input CreateTopicInput {
@@ -194,12 +196,15 @@ input UpdateFormSectionInput {
 }
 
 input CreateInstructorInput {
-  """Example field (placeholder)"""
-  exampleField: Int!
+  id: ID!
+  department: ID!
+  email: ID!
+  fullName: ID!
 }
 
 input UpdateInstructorInput {
-  """Example field (placeholder)"""
-  exampleField: Int
-  id: Int!
+  id: ID!
+  department: ID!
+  email: ID!
+  fullName: ID!
 }

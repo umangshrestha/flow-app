@@ -5,7 +5,7 @@ import { CreateDepartmentInput as CreateInput } from './dto/create-department.in
 import { UpdateDepartmentInput as UpdateInput } from './dto/update-department.input';
 
 const include = {
-  staffs: true,
+  instructors: true,
   faculty: true,
 }
 
