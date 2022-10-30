@@ -1,8 +1,10 @@
-import { InputType, Field, Int } from '@nestjs/graphql';
-import { CreateFacultyInput } from './create-faculty.input';
+import { InputType, Field, Int, ID } from '@nestjs/graphql';
 
 @InputType()
-export class UpdateFacultyInput extends CreateFacultyInput {
+export class UpdateFacultyInput {
   @Field(() => Int)
   id: number;
+  @Field(() => ID)
+  faculty: string;
+  
 }

@@ -2,7 +2,7 @@ import { ObjectType, Field, Int, ID } from '@nestjs/graphql';
 
 @ObjectType()
 export class FormSection {
-  @Field(() => Int, { description: 'Example field (placeholder)' })
+  @Field(() => Int)
   id: number;
   @Field(() => ID)
   formType: string;

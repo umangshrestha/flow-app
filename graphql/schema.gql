@@ -6,27 +6,6 @@ type Hello {
   name: ID!
 }
 
-type ParentTopicEntity {
-  id: Int
-  topic: ID
-  createdAt: DateTime
-  updatedAt: DateTime
-  majorTopics: [TopicEntity!]
-}
-
-"""
-A date-time string at UTC, such as 2019-12-03T09:54:33Z, compliant with the date-time format.
-"""
-scalar DateTime
-
-type TopicEntity {
-  id: Int
-  topic: ID
-  createdAt: DateTime
-  updatedAt: DateTime
-  parentTopic: ParentTopicEntity
-}
-
 type DepartmentEntity {
   id: Int!
   department: ID!
@@ -40,8 +19,35 @@ type FacultyEntity {
   departments: [DepartmentEntity!]
 }
 
+type TopicEntity {
+  id: Int
+  topic: ID
+  createdAt: DateTime
+  updatedAt: DateTime
+  tag: TagEntity
+}
+
+"""
+A date-time string at UTC, such as 2019-12-03T09:54:33Z, compliant with the date-time format.
+"""
+scalar DateTime
+
+type TagEntity {
+  id: Int
+  tag: ID
+  createdAt: DateTime
+  updatedAt: DateTime
+  topics: [TopicEntity!]
+}
+
+type InstructorEntity {
+  id: ID!
+  email: ID!
+  fullName: ID!
+  department: DepartmentEntity!
+}
+
 type FormSection {
-  """Example field (placeholder)"""
   id: Int!
   formType: ID!
   paceholder: ID!
@@ -59,28 +65,32 @@ type Form {
   sections: [FormSection!]!
 }
 
-type InstructorEntity {
-  id: ID!
-  email: ID!
-  fullName: ID!
-  department: DepartmentEntity!
+type FlowEntity {
+  id: Int!
+  createdBy: ID!
+  topics: [TopicEntity!]!
+  description: ID!
+  tags: [TagEntity!]!
+  uwinID: ID!
 }
 
 type Query {
-  topics(query: QueryInput): [TopicEntity!]!
-  topic(id: Int!): TopicEntity!
   hello(name: String!): Hello!
   helloWorld: String!
   facultys(query: QueryInput): [FacultyEntity!]!
   faculty(id: Int!): FacultyEntity!
   departments(query: QueryInput): [DepartmentEntity!]!
   department(id: Int!): DepartmentEntity!
-  parentTopics(query: QueryInput): [ParentTopicEntity!]!
-  parentTopic(id: Int!): ParentTopicEntity!
+  tags(query: QueryInput): [TagEntity!]!
+  tag(id: Int!): TagEntity!
+  topics(query: QueryInput): [TopicEntity!]!
+  topic(id: Int!): TopicEntity!
   forms(query: QueryInput): [Form!]!
   form(id: Int!): Form!
   instructors(query: QueryInput): [InstructorEntity!]!
   instructor(id: ID!): InstructorEntity!
+  flows(query: QueryInput): [FlowEntity!]!
+  flow(id: Int!): FlowEntity!
 }
 
 input QueryInput {
@@ -96,18 +106,18 @@ enum Order {
 }
 
 type Mutation {
-  createTopic(create: CreateTopicInput!): TopicEntity!
-  updateTopic(update: UpdateTopicInput!): TopicEntity!
-  removeTopic(id: Int!): TopicEntity!
-  createFaculty(create: CreateFacultyInput!): FacultyEntity!
+  createFaculty(faculty: String!): FacultyEntity!
   updateFaculty(update: UpdateFacultyInput!): FacultyEntity!
   removeFaculty(id: Int!): FacultyEntity!
   createDepartment(create: CreateDepartmentInput!): DepartmentEntity!
   updateDepartment(update: UpdateDepartmentInput!): DepartmentEntity!
   removeDepartment(id: Int!): DepartmentEntity!
-  createParentTopic(create: CreateParentTopicInput!): ParentTopicEntity!
-  updateParentTopic(update: UpdateParentTopicInput!): ParentTopicEntity!
-  removeParentTopic(id: Int!): ParentTopicEntity!
+  createTag(tag: String!): TagEntity!
+  updateTag(update: UpdateTagInput!): TagEntity!
+  removeTag(id: Int!): TagEntity!
+  createTopic(create: CreateTopicInput!): TopicEntity!
+  updateTopic(update: UpdateTopicInput!): TopicEntity!
+  removeTopic(id: Int!): TopicEntity!
   createForm(createFormInput: CreateFormInput!): Form!
   updateForm(update: UpdateFormInput!): Form!
   removeForm(id: Int!): Form!
@@ -116,54 +126,47 @@ type Mutation {
   createInstructor(create: CreateInstructorInput!): InstructorEntity!
   updateInstructor(update: UpdateInstructorInput!): InstructorEntity!
   removeInstructor(id: ID!): InstructorEntity!
-}
-
-input CreateTopicInput {
-  topic: ID!
-  parentTopic: ID!
-}
-
-input UpdateTopicInput {
-  topic: ID
-  parentTopic: ID
-  id: Int!
-}
-
-input CreateFacultyInput {
-  department: ID!
-  faculty: ID!
+  createFlow(create: CreateFlowInput!): FlowEntity!
+  updateFlow(update: UpdateFlowInput!): FlowEntity!
+  removeFlow(id: Int!): FlowEntity!
 }
 
 input UpdateFacultyInput {
-  department: ID!
-  faculty: ID!
   id: Int!
+  faculty: ID!
 }
 
 input CreateDepartmentInput {
   department: ID!
-  faculty: ID!
+  faculty: ID = "Unknown"
 }
 
 input UpdateDepartmentInput {
   department: ID!
-  faculty: ID!
+  faculty: ID = "Unknown"
   id: Int!
 }
 
-input CreateParentTopicInput {
-  topic: ID!
+input UpdateTagInput {
+  id: Int!
+  tag: ID!
 }
 
-input UpdateParentTopicInput {
+input CreateTopicInput {
+  topic: ID!
+  tag: ID = "Brightspace"
+}
+
+input UpdateTopicInput {
   topic: ID
+  tag: ID!
   id: Int!
 }
 
 input CreateFormInput {
   name: ID!
   description: ID!
-  parentTopic: ID!
+  tag: ID = "Brightspace"
   isDefault: Boolean!
   sections: [CreateFormSectionInput!]!
 }
@@ -179,7 +182,7 @@ input CreateFormSectionInput {
 input UpdateFormInput {
   name: ID
   description: ID
-  parentTopic: ID
+  tag: ID = "Brightspace"
   isDefault: Boolean
   sections: [CreateFormSectionInput!]
   id: Int!
@@ -192,19 +195,38 @@ input UpdateFormSectionInput {
   helpInfo: ID
   items: [ID!]
   id: Int!
-  parentTopic: ID
+  tag: ID
 }
 
 input CreateInstructorInput {
   id: ID!
-  department: ID!
+  department: ID = "Unknown"
   email: ID!
   fullName: ID!
 }
 
 input UpdateInstructorInput {
   id: ID!
-  department: ID!
+  department: ID = "Unknown"
   email: ID!
   fullName: ID!
+}
+
+input CreateFlowInput {
+  createdBy: ID!
+  topics: [ID!]!
+  description: ID!
+  tags: [ID!]!
+  uwinID: ID!
+  location: ID = "BB Cafe"
+}
+
+input UpdateFlowInput {
+  createdBy: ID!
+  topics: [ID!]!
+  description: ID!
+  tags: [ID!]!
+  uwinID: ID!
+  location: ID = "BB Cafe"
+  id: Int!
 }

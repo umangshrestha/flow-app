@@ -4,6 +4,6 @@ import { InputType, Field, ID } from '@nestjs/graphql';
 export class CreateDepartmentInput {
   @Field(() => ID)
   department: string;
-  @Field(() => ID)
+  @Field(() => ID, { defaultValue: "Unknown" })
   faculty: string;
 }

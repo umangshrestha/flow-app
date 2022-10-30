@@ -14,7 +14,7 @@ export class DepartmentsService {
   constructor(private prisma: PrismaService) { }
 
   create({ department, faculty }: CreateInput) {
-    return this.prisma.department.create({
+    return  this.prisma.department.create({
       data: {
         department,
         faculty: {

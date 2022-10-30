@@ -1,26 +1,23 @@
 import { Injectable } from '@nestjs/common';
 import { PrismaService } from '../prisma/prisma.service';
-import { CreateParentTopicInput as CreateInput } from './dto/create-parent-topic.input';
-import { UpdateParentTopicInput as UpdateInput } from './dto/update-parent-topic.input';
+import { UpdateTagInput as UpdateInput } from './dto/update-tag.input';
 import { QueryInput } from '../shared/dto/query.input';
 
 const include = {
-  _count: true,
-  majorTopics: true,
+  topics: true
 }
 @Injectable()
-export class ParentTopicsService {
+export class TagsService {
   constructor(private prisma: PrismaService) { }
 
-  create(data: CreateInput) {
-    return this.prisma.parentTopic.create({
-      data,
-      include
-    });
-  }
+  create(tag: string) {
+    return this.prisma.tag.create({
+      data: { tag }
+    })
 
+  }
   findAll({ orderBy, sortOrder, ...query }: QueryInput) {
-    return this.prisma.parentTopic.findMany({
+    return this.prisma.tag.findMany({
       ...query,
       orderBy: {
         [orderBy]: sortOrder,
@@ -30,14 +27,14 @@ export class ParentTopicsService {
   }
 
   findOne(id: number) {
-    return this.prisma.parentTopic.findUniqueOrThrow({
+    return this.prisma.tag.findUniqueOrThrow({
       where: { id },
       include
     });
   }
 
   update({ id, ...updateInput }: UpdateInput) {
-    return this.prisma.parentTopic.update({
+    return this.prisma.tag.update({
       where: { id },
       data: updateInput,
       include
@@ -45,7 +42,7 @@ export class ParentTopicsService {
   }
 
   remove(id: number) {
-    return this.prisma.parentTopic.delete({
+    return this.prisma.tag.delete({
       where: { id },
       include
     });

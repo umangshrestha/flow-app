@@ -6,5 +6,5 @@ export class UpdateFormSectionInput extends PartialType(CreateFormSectionInput) 
   @Field(() => Int)
   id: number;
   @Field(() => ID, {nullable: true})
-  parentTopic?: string;
+  tag?: string;
 }

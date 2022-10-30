@@ -5,26 +5,24 @@ import { CreateTopicInput as CreateInput } from './dto/create-topic.input';
 import { UpdateTopicInput as UpdateInput } from './dto/update-topic.input';
 
 const include = {
-  parentTopic: true,
+  tag: true,
 }
 
 @Injectable()
 export class TopicsService {
   constructor(private prisma: PrismaService) { }
 
-
-  create({ topic, parentTopic }: CreateInput) {
+  create({ topic, tag }: CreateInput) {
     return this.prisma.topic.create({
       data: {
         topic,
-        parentTopic: {
+        tag: {
           connectOrCreate: {
-            where:{topic: parentTopic},
-            create:{topic: parentTopic},
+            where:{tag},
+            create:{tag},
           }
         }
       },
-
     });
   }
 
@@ -45,15 +43,15 @@ export class TopicsService {
     });
   }
 
-  update({ id, topic, parentTopic }: UpdateInput) {
+  update({ id, topic, tag }: UpdateInput) {
     return this.prisma.topic.update({
       where: { id },
       data: {
         topic,
-        parentTopic: {
+        tag: {
           connectOrCreate: {
-            where:{topic: parentTopic},
-            create:{topic: parentTopic},
+            where:{tag},
+            create:{tag},
           }
         },
       },

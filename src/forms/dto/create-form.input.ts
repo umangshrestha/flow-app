@@ -7,8 +7,8 @@ export class CreateFormInput {
   name: string;
   @Field(() => ID)
   description: string;
-  @Field(() => ID)
-  parentTopic: string;
+  @Field(() => ID, {defaultValue: "Brightspace"})
+  tag: string;
   @Field(() => Boolean)
   isDefault: boolean;
   @Field(() => [CreateFormSectionInput])

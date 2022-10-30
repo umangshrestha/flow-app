@@ -1,7 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { PrismaService } from '../prisma/prisma.service';
 import { QueryInput } from '../shared/dto/query.input';
-import { CreateFacultyInput as CreateInput } from './dto/create-faculty.input';
 import { UpdateFacultyInput as UpdateInput } from './dto/update-faculty.input';
 
 
@@ -13,9 +12,9 @@ const include = {
 export class FacultysService {
   constructor(private prisma: PrismaService) { }
 
-  create(data: CreateInput) {
+  create(faculty: string) {
     return this.prisma.faculty.create({
-      data,
+      data: {faculty},
       include
     });
   }

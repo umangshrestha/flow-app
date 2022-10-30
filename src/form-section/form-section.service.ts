@@ -12,7 +12,7 @@ const include = {
 export class FormSectionService {
   constructor(private prisma: PrismaService) { }
 
-  update({ id, items, parentTopic, ...updateInput }: UpdateInput) {
+  update({ id, items, tag, ...updateInput }: UpdateInput) {
 
     return items.map(topic => this.prisma.formSection.update({
       where: { id },
@@ -23,9 +23,9 @@ export class FormSectionService {
             where: { topic },
             create: {
               topic,
-              parentTopic: {
+              tag: {
                 connect: {
-                  topic: parentTopic,
+                  tag,
                 }
               }
             },

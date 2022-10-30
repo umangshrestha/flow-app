@@ -15,11 +15,13 @@ const include = {
 export class FormsService {
   constructor(private prisma: PrismaService, private formSectionService: FormSectionService) { }
 
-  async create({ parentTopic, sections, ...createInput }: CreateInput) {
+  async create({ tag, sections, ...createInput }: CreateInput) {
     const {id} =  await this.prisma.form.create({
       data: {
         ...createInput,
-        parentTopic,
+        tag: {
+          connect: {tag}
+        },
       },
       select:{
         id: true

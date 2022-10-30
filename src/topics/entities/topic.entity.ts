@@ -1,5 +1,5 @@
 import { ObjectType, Field, Int, ID } from '@nestjs/graphql';
-import { ParentTopicEntity } from 'src/parent-topics/entities/parent-topic.entity';
+import { TagEntity } from 'src/tags/entities/tag.entity';
 
 @ObjectType()
 export class TopicEntity {
@@ -11,7 +11,6 @@ export class TopicEntity {
   readonly createdAt: Date;
   @Field(() => Date, { nullable: true })
   readonly updatedAt: Date;
-  @Field(() => ParentTopicEntity, { nullable: true })
-  parentTopic: ParentTopicEntity;
-  
+  @Field(() => TagEntity, { nullable: true })
+  tag: TagEntity;
 }

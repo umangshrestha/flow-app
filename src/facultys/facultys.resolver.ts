@@ -4,7 +4,6 @@ import { FacultyEntity as Entity } from './entities/faculty.entity';
 import { QueryInput } from '../shared/dto/query.input';
 import { UseFilters } from '@nestjs/common';
 import { PrismaClientKnownRequestFilter } from '../prisma/filter/known-request.filter';
-import { CreateFacultyInput as CreateInput } from './dto/create-faculty.input';
 import { UpdateFacultyInput as UpdateInput } from './dto/update-faculty.input';
 
 
@@ -14,8 +13,8 @@ export class FacultysResolver {
 
   @Mutation(() => Entity)
   createFaculty(
-    @Args('create') create: CreateInput) {
-    return this.service.create(create);
+    @Args("faculty") faculty: string) {
+    return this.service.create(faculty);
   }
 
   @Query(() => [Entity], { name: 'facultys' })

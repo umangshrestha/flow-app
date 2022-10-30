@@ -42,28 +42,30 @@ model Flow {
   description String
   location    String     @default("BBCafe")
   tags        Tag[]
-  staff       Instructor @relation(fields: [uwinId], references: [id])
+  instructor  Instructor @relation(fields: [uwinId], references: [id])
   uwinId      String
 }
 
-model ParentTopic {
+model Tag {
   id        Int      @id @default(autoincrement())
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
-  topic     String   @unique
+  tag       String   @unique
   topics    Topic[]
+  flows     Flow[]
+  form      Form[]
 }
 
 model Topic {
-  id            Int           @id @default(autoincrement())
-  createdAt     DateTime      @default(now())
-  updatedAt     DateTime      @updatedAt
-  topic         String        @unique
-  links         Link[]
-  flows         Flow[]
-  formElement   FormSection[]
-  parentTopic   ParentTopic?  @relation(fields: [parentTopicId], references: [id])
-  parentTopicId Int?
+  id          Int           @id @default(autoincrement())
+  createdAt   DateTime      @default(now())
+  updatedAt   DateTime      @updatedAt
+  topic       String        @unique
+  links       Link[]
+  flows       Flow[]
+  formElement FormSection[]
+  tag         Tag           @relation(fields: [tagId], references: [id])
+  tagId       Int
 }
 
 model Link {
@@ -74,28 +76,20 @@ model Link {
   topicId     Int?
 }
 
-model Tag {
-  id        Int      @id @default(autoincrement())
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-  flows     Flow[]
-}
-
 model Form {
   id          Int           @id @default(autoincrement())
   name        String
   description String
-  parentTopic String
   isDefault   Boolean       @default(false)
   sections    FormSection[]
+  tag         Tag?          @relation(fields: [tagId], references: [id])
+  tagId       Int?
 }
 
 model FormSection {
-  id Int @id @default(autoincrement())
-
-  Form   Form? @relation(fields: [formId], references: [id])
-  formId Int?
-
+  id          Int     @id @default(autoincrement())
+  Form        Form?   @relation(fields: [formId], references: [id])
+  formId      Int?
   formType    String
   placeholder String
   isRequired  String

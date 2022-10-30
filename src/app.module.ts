@@ -5,13 +5,14 @@ import { ApolloDriver, ApolloDriverConfig } from '@nestjs/apollo';
 import { orderStateResolver } from './shared/interface/interface';
 import { GraphQLError } from 'graphql';
 import { HelloModule } from './hello/hello.module';
-import { TopicsModule } from './topics/topics.module';
 import { FacultysModule } from './facultys/facultys.module';
 import { DepartmentsModule } from './departments/departments.module';
-import { ParentTopicsModule } from './parent-topics/parent-topics.module';
+import { TagsModule } from './tags/tags.module';
+import { InstructorsModule } from './instructors/instructors.module';
 import { FormsModule } from './forms/forms.module';
 import { FormSectionModule } from './form-section/form-section.module';
-import { InstructorsModule } from './instructors/instructors.module';
+import { FlowsModule } from './flows/flows.module';
+import { TopicsModule } from './topics/topics.module';
 
 
 @Module({
@@ -32,14 +33,15 @@ import { InstructorsModule } from './instructors/instructors.module';
         return error
       },
     }),
-    TopicsModule,
     HelloModule,
     FacultysModule,
     DepartmentsModule,
-    ParentTopicsModule,
+    TagsModule,
+    TopicsModule,
     FormsModule,
     FormSectionModule,
     InstructorsModule,
+    FlowsModule,
   ],
   controllers: [],
   providers: [],
