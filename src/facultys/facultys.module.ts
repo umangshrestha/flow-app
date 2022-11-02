@@ -5,7 +5,7 @@ import { PrismaModule } from 'src/prisma/prisma.module';
 import { DepartmentsModule } from 'src/departments/departments.module';
 
 @Module({
-  imports:[PrismaModule, DepartmentsModule],
+  imports:[PrismaModule],
   controllers: [FacultysController],
   providers: [FacultysService]
 })

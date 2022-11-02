@@ -5,7 +5,9 @@ import { UpdateTopicDto  as UpdateDto} from './dto/update-topic.dto';
 import { ApiBadGatewayResponse, ApiCreatedResponse, ApiOkResponse, ApiTags } from '@nestjs/swagger';
 import { QueryDto } from 'src/shared/dto/query.dto';
 import { ValidationErrorEntity } from 'src/shared/entity/validation-error.entity';
-import {TopicEntity as Entity, TopicEntityWithDate as EntityWithDate, TopicEntityWithTag as EntityWithTag} from './entities/topic.entity';
+import {TopicEntity as Entity} from './entities/topic.entity';
+import {TopicEntityWithDate as EntityWithDate}  from './entities/topic-with-date.entity';
+import {TopicEntityWithTag as EntityWithTag} from './entities/topic-with-tag.entity';
 
 @Controller('topics')
 @ApiTags('topics')

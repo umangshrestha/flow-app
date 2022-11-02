@@ -7,16 +7,25 @@ import { UpdateFacultyDto as UpdateDto } from './dto/update-faculty.dto';
 
 @Injectable()
 export class FacultysService {
-  constructor(private prisma: PrismaService,
-    private readonly departmentService: DepartmentsService
-  ) { }
+  constructor(private prisma: PrismaService) { }
 
-  async listDepartment(id: number, query: QueryLimitDto) {
-    const faculty = await this.findOne(id);
-    const departments = await this.departmentService.listDepartment(id, query);
-    const { skip, take } = query;
+  async listDepartment(id: number, { skip, take }: QueryLimitDto) {
     const page = `?skip=${skip}&take=${take}`;
-    return { ...faculty, page, departments };
+    return Object.assign(
+      { page: `?skip=${skip}&take=${take}` },
+      await this.prisma.faculty.findUniqueOrThrow({
+        where: { id },
+        include: {
+          departments: {
+            skip,
+            take,
+            select: {
+              department: true,
+              id: true,
+            }
+          }
+        }
+      }))
   }
 
   findAll({ skip, take, contains, sortOrder, orderBy }: QueryDto) {

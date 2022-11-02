@@ -44,20 +44,7 @@ export class DepartmentsService {
   findOne(id: number) {
     return this.prisma.department.findUniqueOrThrow({
       where: { id },
-      include: {
-        faculty: true,
-      },
-    });
-  }
-
-
-  listDepartment(facultyId: number, query: QueryLimitDto) {
-    return this.prisma.department.findMany({
-      where: { facultyId },
-      select: {
-        id: true,
-        department: true
-      }
+     include,
     });
   }
 
@@ -73,12 +60,14 @@ export class DepartmentsService {
           }
         }
       },
+      include
     });
   }
 
   remove(id: number) {
     return this.prisma.department.delete({
       where: { id },
+      include,
     });
   }
 }

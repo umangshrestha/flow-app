@@ -8,16 +8,3 @@ export class TopicEntity {
     topic: string;
 }
 
-
-export class TopicEntityWithDate extends TopicEntity {
-    @ApiProperty()
-    readonly createdAt: string;
-    @ApiProperty()
-    readonly updatedAt: string;
-}
-
-
-export class TopicEntityWithTag extends TopicEntityWithDate {
-    @ApiProperty()
-    tags: TagEntity;
-}

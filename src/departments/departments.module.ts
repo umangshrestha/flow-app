@@ -5,7 +5,6 @@ import { PrismaModule } from 'src/prisma/prisma.module';
 
 @Module({
   imports:[PrismaModule],
-  exports: [ DepartmentsService],
   controllers: [DepartmentsController],
   providers: [DepartmentsService]
 })

@@ -6,7 +6,7 @@ import { ValidationErrorEntity } from 'src/shared/entity/validation-error.entity
 import { DepartmentsService as Service } from './departments.service';
 import { CreateDepartmentDto } from './dto/create-department.dto';
 import { UpdateDepartmentDto } from './dto/update-department.dto';
-import { DepartmentEntity as Entity } from './entities/department.entity';
+import { DepartmentEntityWithFaculty as Entity } from './entities/department-with-faculty.entity';
 
 @Controller('departments')
 @ApiTags('departments')
@@ -15,7 +15,7 @@ export class DepartmentsController {
   constructor(private readonly service: Service) { }
 
   @Post()
-  @ApiOperation({ summary: 'If faculty doesn\'t exist create new one before connecting' })
+  @ApiOperation({ summary: 'If faculty doesn\'t exist then we create a new one before connecting' })
   @ApiCreatedResponse({ type: Entity })
   create(@Body() createDepartmentDto: CreateDepartmentDto) {
     return this.service.create(createDepartmentDto);

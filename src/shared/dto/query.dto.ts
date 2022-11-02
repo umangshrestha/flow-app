@@ -30,14 +30,17 @@ export class QueryDto extends QueryOrderDto{
 }
 
 
+const DateOneYearAgo = new Date();
+DateOneYearAgo.setFullYear(DateOneYearAgo.getDate() - 1);
+
 export class QueryTimeDto extends QueryDto {
     @IsOptional()
     @IsDate()
-    @ApiProperty({ default: new Date("2021-10-15T00:00:00.000Z"), required: false })
-    fromDate: Date;
+    @ApiProperty({default: DateOneYearAgo, required: false })
+    fromDate: Date = DateOneYearAgo;
 
     @IsOptional()
     @IsDate()
-    @ApiProperty({ default: new Date("2022-10-15T00:00:00.000Z"), required: false })
+    @ApiProperty({required: false })
     toDate: Date;
 }
