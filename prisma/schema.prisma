@@ -1,0 +1,82 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// For login
+model User {
+  id           Int     @id @default(autoincrement())
+  name         String
+  email        String  @unique
+  role         Role    @default(USER)
+  password     String
+  refreshToken String?
+}
+
+enum Role {
+  USER
+  ADMIN
+  ROOT
+}
+
+model Instructor {
+  id           String     @id @unique
+  email        String     @unique
+  fullName     String
+  department   Department @relation(fields: [departmentId], references: [id], onUpdate: Cascade, onDelete: Cascade)
+  departmentId Int
+  flows        Flow[]
+}
+
+model Faculty {
+  id          Int          @id @default(autoincrement())
+  faculty     String       @unique
+  departments Department[]
+}
+
+model Department {
+  id          Int          @id @default(autoincrement())
+  department  String       @unique
+  instructors Instructor[]
+  faculty     Faculty      @relation(fields: [facultyId], references: [id], onUpdate: Cascade, onDelete: Cascade)
+  facultyId   Int
+}
+
+model Flow {
+  id          Int        @id @default(autoincrement())
+  createdAt   DateTime   @default(now())
+  updatedAt   DateTime   @updatedAt
+  createdBy   String
+  topics      Topic[]
+  description String
+  location    String     @default("BBCafe")
+  tags        Tag[]
+  instructor  Instructor @relation(fields: [uwinId], references: [id], onUpdate: Cascade, onDelete: Cascade)
+  uwinId      String
+}
+
+model Tag {
+  id        Int      @id @default(autoincrement())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  tag       String   @unique
+  topics    Topic[]
+  flows     Flow[]
+}
+
+model Topic {
+  id        Int      @id @default(autoincrement())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  topic     String   @unique
+  flows     Flow[]
+  tag       Tag      @relation(fields: [tagId], references: [id])
+  tagId     Int
+}
