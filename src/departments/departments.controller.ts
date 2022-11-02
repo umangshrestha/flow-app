@@ -3,7 +3,6 @@ import { ApiBadGatewayResponse, ApiCreatedResponse, ApiNotFoundResponse, ApiOkRe
 import { Flatten } from 'src/prisma/interceptors/flatten.interceptor';
 import { QueryDto } from 'src/shared/dto/query.dto';
 import { ValidationErrorEntity } from 'src/shared/entity/validation-error.entity';
-import { TypeValidator } from 'src/shared/validator';
 import { DepartmentsService as Service } from './departments.service';
 import { CreateDepartmentDto } from './dto/create-department.dto';
 import { UpdateDepartmentDto } from './dto/update-department.dto';
@@ -25,7 +24,7 @@ export class DepartmentsController {
   @Get()
   @ApiBadGatewayResponse({ type: ValidationErrorEntity })
   @ApiOkResponse({ type: Entity, isArray: true })
-  findAll(@Query(TypeValidator) query: QueryDto) {
+  findAll(@Query() query: QueryDto) {
     return this.service.findAll(query);
   }
 

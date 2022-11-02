@@ -1,20 +1,19 @@
 import { Controller, Get, Post, Body, Patch, Param, Delete, Query } from '@nestjs/common';
-import { InstructorsService as Service} from './instructors.service';
-import { CreateInstructorDto as CreateDto } from './dto/create-instructor.dto';
-import { UpdateInstructorDto as UpdateDto} from './dto/update-instructor.dto';
-import { ApiBadGatewayResponse, ApiCreatedResponse, ApiOkResponse, ApiOperation, ApiTags } from '@nestjs/swagger';
-import { InstructorEntity as Entity} from './entities/instructor.entity';
+import { TopicsService  as Service} from './topics.service';
+import { CreateTopicDto as CreateDto } from './dto/create-topic.dto';
+import { UpdateTopicDto  as UpdateDto} from './dto/update-topic.dto';
+import { ApiBadGatewayResponse, ApiCreatedResponse, ApiOkResponse, ApiTags } from '@nestjs/swagger';
 import { QueryDto } from 'src/shared/dto/query.dto';
 import { ValidationErrorEntity } from 'src/shared/entity/validation-error.entity';
+import {TopicEntity as Entity, TopicEntityWithDate as EntityWithDate, TopicEntityWithTag as EntityWithTag} from './entities/topic.entity';
 
-@Controller('instructors')
-@ApiTags('instructors')
-export class InstructorsController {
+@Controller('topics')
+@ApiTags('topics')
+export class TopicsController {
   constructor(private readonly service: Service) {}
 
   @Post()
-  @ApiCreatedResponse({ type: Entity })
-  @ApiOperation({ summary: 'Department has to be created before connecting to instructor' })
+  @ApiCreatedResponse({ type: EntityWithDate })
   create(@Body() createInstructorDto: CreateDto) {
     return this.service.create(createInstructorDto);
   }
@@ -27,20 +26,20 @@ export class InstructorsController {
   }
 
   @Get(':id')
-  @ApiOkResponse({ type: Entity })
-  findOne(@Param('id') id: string) {
+  @ApiOkResponse({ type: EntityWithTag })
+  findOne(@Param('id') id: number) {
     return this.service.findOne(id);
   }
 
   @Patch(':id')
   @ApiCreatedResponse({ type: Entity })
-  update(@Param('id') id: string, @Body() updateDto: UpdateDto) {
+  update(@Param('id') id: number, @Body() updateDto: UpdateDto) {
     return this.service.update(id, updateDto);
   }
 
   @Delete(':id')
   @ApiOkResponse({ type: Entity })
-  remove(@Param('id') id: string) {
+  remove(@Param('id') id: number) {
     return this.service.remove(id);
   }
 }

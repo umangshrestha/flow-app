@@ -4,7 +4,6 @@ import { UpdateFacultyDto as UpdateDto } from './dto/update-faculty.dto';
 import { FacultyEntity, FacultyWithCount, FacultyWithDepartment} from './entities/faculty.entity';
 import { ApiBadGatewayResponse, ApiCreatedResponse, ApiNotFoundResponse, ApiOkResponse, ApiOperation, ApiTags } from '@nestjs/swagger';
 import { QueryDto, QueryLimitDto } from 'src/shared/dto/query.dto';
-import { TypeValidator } from 'src/shared/validator';
 import { ValidationErrorEntity } from 'src/shared/entity/validation-error.entity';
 import { ErrorEntity } from 'src/shared/entity/error.entity';
 import { FlattenCount } from 'src/prisma/interceptors/count.interceptors';
@@ -19,16 +18,16 @@ export class FacultysController {
   @UseInterceptors(new FlattenCount)
   @ApiBadGatewayResponse({type: ValidationErrorEntity})
   @ApiOkResponse({ type: FacultyWithCount, isArray: true })
-  findAll( @Query(TypeValidator) query: QueryDto) {
+  findAll( @Query() query: QueryDto) {
     return this.service.findAll(query);
   }
 
-  @Get(':id/list-departments')
+  @Get(':id/departments')
   @ApiOperation({ summary: 'Find list of departments based on faculty' })
   @ApiOkResponse({ type: FacultyWithDepartment })
   @ApiBadGatewayResponse({ type: ValidationErrorEntity })
   @ApiNotFoundResponse({type: ErrorEntity })
-  async listDepartments(@Param('id') id: string,  @Query(TypeValidator) query: QueryLimitDto) {
+  async listDepartments(@Param('id') id: string,  @Query() query: QueryLimitDto) {
     return this.service.listDepartment(+id, query);
   }
 

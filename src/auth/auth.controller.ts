@@ -6,7 +6,6 @@ import { ApiBadRequestResponse, ApiBody, ApiCookieAuth, ApiOkResponse, ApiOperat
 import { RegiserSuccessDto, RegiserFailureDto } from './entity/registration-auth.entity';
 import { AuthResponseDto } from './dto/response-auth.dto';
 import { UnauthorizedErrorEntity } from './entity/unauthorized-error.entity';
-import { TypeValidator } from 'src/shared/validator';
 import { ValidationErrorEntity } from 'src/shared/entity/validation-error.entity';
 import { RefreshTokenGuard } from './guard/refresh-token.gaurd';
 import { AccessTokenGuard } from './guard/access-token.gaurd';
@@ -24,7 +23,7 @@ export class AuthController {
     @ApiOkResponse({ type: RegiserSuccessDto })
     @ApiBadRequestResponse({ type: RegiserFailureDto })
     @ApiOperation({ summary: 'Create new user' })
-    async register(@Body(TypeValidator) createUserDto: CreateUserDto) {
+    async register(@Body() createUserDto: CreateUserDto) {
         return await this.authService.create(createUserDto);
     }
 
@@ -34,7 +33,7 @@ export class AuthController {
     @ApiUnauthorizedResponse({ type: UnauthorizedErrorEntity })
     @ApiOperation({ summary: 'Set a HTTP read only cookie' })
     async login(
-        @Body(TypeValidator) loginUserDto: LoginUserDto,
+        @Body() loginUserDto: LoginUserDto,
         @Res({ passthrough: true }) res: Response) {
         const secretData = await this.authService.login(loginUserDto);
         res.cookie("auth-cookie", secretData, { httpOnly: true });

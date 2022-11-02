@@ -5,6 +5,9 @@ import { UsersModule } from './users/users.module';
 import { FacultysModule } from './facultys/facultys.module';
 import { DepartmentsModule } from './departments/departments.module';
 import { InstructorsModule } from './instructors/instructors.module';
+import { TopicsModule } from './topics/topics.module';
+import { TagsModule } from './tags/tags.module';
+import { FlowsModule } from './flows/flows.module';
 
 
 @Module({
@@ -12,7 +15,10 @@ import { InstructorsModule } from './instructors/instructors.module';
   UsersModule,
   FacultysModule,
   DepartmentsModule,
-  InstructorsModule],
+  InstructorsModule,
+  TopicsModule,
+  TagsModule,
+  FlowsModule],
   controllers: [],
   providers: [],
 })

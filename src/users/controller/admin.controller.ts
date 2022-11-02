@@ -9,7 +9,6 @@ import { RoleGaurd } from 'src/auth/role/role.gaurd';
 import { ForbiddenErrorEntity } from 'src/auth/entity/forbidden-error.entity';
 import { UnauthorizedErrorEntity } from 'src/auth/entity/unauthorized-error.entity';
 import { QueryDto } from 'src/shared/dto/query.dto';
-import { TypeValidator } from 'src/shared/validator';
 
 
 @Controller('admin')
@@ -25,7 +24,7 @@ export class AdminController {
 
   @ApiOkResponse({ type: Entity, isArray: true })
   @Get("get-all-users/")
-  findAll(@Query(TypeValidator) query: QueryDto) {
+  findAll(@Query() query: QueryDto) {
     return this.service.findAll(query);
   }
 

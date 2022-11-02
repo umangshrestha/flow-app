@@ -14,7 +14,9 @@ export class FacultyWithCount extends FacultyEntity {
 }
 
 
-export class FacultyWithDepartment {
+export class FacultyWithDepartment extends  FacultyEntity{
+    @ApiProperty()
+    page: string
     @ApiProperty({isArray: true})
     departments: DepartmentEntity
 }

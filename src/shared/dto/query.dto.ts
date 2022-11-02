@@ -5,43 +5,25 @@ export class QueryLimitDto {
     @IsOptional()
     @IsNumber()
     @ApiProperty({ default: 0, required: false })
-    skip: number;
+    skip: number = 0;
 
     @IsOptional()
     @IsNumber()
     @ApiProperty({ default: 50, required: false })
-    take: number;
+    take: number = 50;
 }
 
-export class QueryOrderDto {
+export class QueryOrderDto extends QueryLimitDto{
     @IsOptional()
     @ApiProperty({ required: false, default: "id" })
-    orderBy: string;
+    orderBy: string = "id";
 
     @IsOptional()
     @ApiProperty({ required: false, default: "asc", enum: ["asc", "desc"] })
-    sortOrder: string;
+    sortOrder: string = "asc";
 }
 
-export class QueryDto {
-    @IsOptional()
-    @IsNumber()
-    @ApiProperty({ default: 0, required: false })
-    skip: number;
-
-    @IsOptional()
-    @IsNumber()
-    @ApiProperty({ default: 50, required: false })
-    take: number;
-
-    @IsOptional()
-    @ApiProperty({ required: false, default: "id" })
-    orderBy: string;
-
-    @IsOptional()
-    @ApiProperty({ required: false, default: "asc", enum: ["asc", "desc"] })
-    sortOrder: string;
-
+export class QueryDto extends QueryOrderDto{
     @IsOptional()
     @ApiProperty({ required: false })
     contains: string;

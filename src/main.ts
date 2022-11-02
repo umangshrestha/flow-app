@@ -7,11 +7,12 @@ import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
 import { PrismaClientInitializationFilter } from './prisma/filter/intiialization.filter';
 import { PrismaClientKnownRequestFilter } from './prisma/filter/known-request.filter';
 import { PrismaNotFoundExceptionFilter } from './prisma/filter/not-found.filter';
+import { ValidationPipe } from '@nestjs/common';
 
 async function bootstrap() {
-  const app = await NestFactory.create(AppModule, { 
+  const app = await NestFactory.create(AppModule, {
     logger: LoggerModule,
-    cors:{
+    cors: {
       origin: process.env.ALLOWED_ORIGIN || "*",
       credentials: true
     }
@@ -22,6 +23,12 @@ async function bootstrap() {
   app.useGlobalFilters(new PrismaClientInitializationFilter);
   app.useGlobalFilters(new PrismaClientKnownRequestFilter);
   app.useGlobalFilters(new PrismaNotFoundExceptionFilter)
+
+  app.useGlobalPipes(new ValidationPipe({
+    transform: true,
+    transformOptions: { enableImplicitConversion: true },
+    forbidNonWhitelisted: true
+  }))
   const config = new DocumentBuilder()
     .setTitle(process.env.npm_package_name)
     .setDescription(`The API description`)

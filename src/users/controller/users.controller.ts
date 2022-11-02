@@ -9,7 +9,6 @@ import { AccessTokenGuard } from 'src/auth/guard/access-token.gaurd';
 import { AuthUser } from '../../auth/decorator/get-user.decorator';
 import { UnauthorizedErrorEntity } from '../../auth/entity/unauthorized-error.entity';
 import { UserEntity as Entity } from '../entity/user.entity';
-import { TypeValidator } from 'src/shared/validator';
 import { ValidationErrorEntity } from 'src/shared/entity/validation-error.entity';
 
 @Controller('users')
@@ -30,7 +29,7 @@ export class UsersController {
   @Put('update/details')
   @ApiOkResponse({type: Entity})
   @ApiBadRequestResponse({ type: ValidationErrorEntity })
-  async update(@AuthUser() id: number, @Body(TypeValidator) updateUserDto: UpdateUserDto) {
+  async update(@AuthUser() id: number, @Body() updateUserDto: UpdateUserDto) {
     return this.service.update(id, updateUserDto);
   }
 
