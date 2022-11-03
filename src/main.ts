@@ -12,14 +12,11 @@ import { ValidationPipe } from '@nestjs/common';
 async function bootstrap() {
   const app = await NestFactory.create(AppModule, {
     logger: LoggerModule,
-    cors: {
-      origin: process.env.ALLOWED_ORIGIN || "*",
-      credentials: true
-    }
+    cors:true,
   });
 
   app.use(cookieParser());
-  app.use(helmet());
+  // app.use(helmet());
   app.useGlobalFilters(new PrismaClientInitializationFilter);
   app.useGlobalFilters(new PrismaClientKnownRequestFilter);
   app.useGlobalFilters(new PrismaNotFoundExceptionFilter)

@@ -1,36 +1,46 @@
-import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/common';
-import { FlowsService } from './flows.service';
-import { CreateFlowDto } from './dto/create-flow.dto';
-import { UpdateFlowDto } from './dto/update-flow.dto';
-import { ApiTags } from '@nestjs/swagger';
+import { Controller, Get, Post, Body, Patch, Param, Delete, Query } from '@nestjs/common';
+import { FlowsService as Service } from './flows.service';
+import { CreateFlowDto as CreateDto } from './dto/create-flow.dto';
+import { UpdateFlowDto as UpdateDto } from './dto/update-flow.dto';
+import { ApiBadGatewayResponse, ApiCreatedResponse, ApiOkResponse, ApiTags } from '@nestjs/swagger';
+import { ValidationErrorEntity } from 'src/shared/entity/validation-error.entity';
+import { QueryTimeDto as QueryDto } from 'src/shared/dto/query.dto';
+import { FlowEntity as Entity } from './entities/flow.entity';
 
 @Controller('flows')
 @ApiTags('flows')
 export class FlowsController {
-  constructor(private readonly flowsService: FlowsService) {}
+
+  constructor(private readonly service: Service) { }
 
   @Post()
-  create(@Body() createFlowDto: CreateFlowDto) {
-    return this.flowsService.create(createFlowDto);
+  @ApiCreatedResponse({ type: Entity })
+  create(@Body() createDto: CreateDto) {
+    return this.service.create(createDto);
   }
 
   @Get()
-  findAll() {
-    return this.flowsService.findAll();
+  @ApiBadGatewayResponse({ type: ValidationErrorEntity })
+  @ApiOkResponse({ type: Entity, isArray: true })
+  findAll(@Query() query: QueryDto) {
+    return this.service.findAll(query);
   }
 
   @Get(':id')
-  findOne(@Param('id') id: string) {
-    return this.flowsService.findOne(+id);
+  @ApiOkResponse({ type: Entity })
+  findOne(@Param('id') id: number) {
+    return this.service.findOne(id);
   }
 
   @Patch(':id')
-  update(@Param('id') id: string, @Body() updateFlowDto: UpdateFlowDto) {
-    return this.flowsService.update(+id, updateFlowDto);
+  @ApiCreatedResponse({ type: Entity })
+  update(@Param('id') id: number, @Body() updateDto: UpdateDto) {
+    return this.service.update(id, updateDto);
   }
 
   @Delete(':id')
-  remove(@Param('id') id: string) {
-    return this.flowsService.remove(+id);
+  @ApiOkResponse({ type: Entity })
+  remove(@Param('id') id: number) {
+    return this.service.remove(id);
   }
 }
