@@ -1,11 +1,13 @@
-import { Controller, Get, Body, Patch, Param, Delete, Query } from '@nestjs/common';
+import { Controller, Get, Body, Patch, Param, Delete, Query, UseInterceptors } from '@nestjs/common';
 import { TagsService as Service } from './tags.service';
 import { UpdateTagDto as UpdateDto } from './dto/update-tag.dto';
 import { TagEntity as Entity } from "./entities/tag.entity";
-import { TagWithTopicEntity as WithTopicEntity } from "./entities/tag-with-topic.entity";
+import { TagEntityWithTopic as EntityWithTopic } from "./entities/tag-with-topic.entity";
+import { TagEntityWithFlow as EntityWithFlow } from "./entities/tag-with-flows.entity";
 import { ApiBadGatewayResponse, ApiCreatedResponse, ApiOkResponse, ApiTags } from '@nestjs/swagger';
 import { QueryLimitDto, QueryTimeDto as QueryDto } from 'src/shared/dto/query.dto';
 import { ValidationErrorEntity } from 'src/shared/entity/validation-error.entity';
+import { FlattenCount } from 'src/prisma/interceptors/count.interceptors';
 
 @Controller('tags')
 @ApiTags('tags')
@@ -18,10 +20,18 @@ export class TagsController {
     return this.service.findAll(query);
   }
 
-  @Get(':id/topics')
-  @ApiOkResponse({ type: WithTopicEntity })
-  findOne(@Param('id') id: number, @Query() query: QueryLimitDto) {
-    return this.service.findOne(id, query);
+  @Get(':id')
+  @UseInterceptors(new FlattenCount)
+  @ApiOkResponse({ type: EntityWithTopic })
+  findOneTopics(@Param('id') id: number, @Query() query: QueryLimitDto) {
+    return this.service.findOneTopics(id, query);
+  }
+
+  @Get(':id/flows')
+  @UseInterceptors(new FlattenCount)
+  @ApiOkResponse({ type: EntityWithFlow })
+  findOneFlows(@Param('id') id: number, @Query() query: QueryLimitDto) {
+    return this.service.findOneFlows(id, query);
   }
 
   @Patch(':id')

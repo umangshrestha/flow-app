@@ -1,11 +1,14 @@
-import { Controller, Get, Post, Body, Patch, Param, Delete, Query } from '@nestjs/common';
+import { Controller, Get, Post, Body, Patch, Param, Delete, Query, UseInterceptors } from '@nestjs/common';
 import { InstructorsService as Service} from './instructors.service';
 import { CreateInstructorDto as CreateDto } from './dto/create-instructor.dto';
 import { UpdateInstructorDto as UpdateDto} from './dto/update-instructor.dto';
 import { ApiBadGatewayResponse, ApiCreatedResponse, ApiOkResponse, ApiOperation, ApiTags } from '@nestjs/swagger';
 import { InstructorEntity as Entity} from './entities/instructor.entity';
-import { QueryDto } from 'src/shared/dto/query.dto';
+import { QueryDto, QueryLimitDto } from 'src/shared/dto/query.dto';
 import { ValidationErrorEntity } from 'src/shared/entity/validation-error.entity';
+import { InstructorEntityWithFlow as EntityWithFlow } from './entities/instructor-with-flows.entity';
+import { query } from 'express';
+import { FlattenCount } from 'src/prisma/interceptors/count.interceptors';
 
 @Controller('instructors')
 @ApiTags('instructors')
@@ -31,6 +34,14 @@ export class InstructorsController {
   findOne(@Param('id') id: string) {
     return this.service.findOne(id);
   }
+
+  @Get(':id/flows')
+  @UseInterceptors(new FlattenCount)
+  @ApiOkResponse({ type: EntityWithFlow })
+  findOneFlows(@Param('id') id: string, @Query() query: QueryLimitDto) {
+    return this.service.findOneFlows(id, query);
+  }
+
 
   @Patch(':id')
   @ApiCreatedResponse({ type: Entity })

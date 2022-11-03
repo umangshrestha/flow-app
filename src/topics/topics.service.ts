@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { PrismaService } from 'src/prisma/prisma.service';
-import { QueryDto } from 'src/shared/dto/query.dto';
+import { QueryDto, QueryLimitDto } from 'src/shared/dto/query.dto';
 import { CreateTopicDto as CreateDto } from './dto/create-topic.dto';
 import { UpdateTopicDto as UpdateDto } from './dto/update-topic.dto';
 
@@ -14,8 +14,7 @@ const select = {
 
 @Injectable()
 export class TopicsService {
-  constructor(
-    private prisma: PrismaService) { }
+  constructor(private prisma: PrismaService) { }
 
   async create({ topic, tags: tagArr }: CreateDto) {
     return this.prisma.topic.create({
@@ -41,8 +40,7 @@ export class TopicsService {
         [orderBy]: sortOrder,
       },
       select
-    },
-    );
+    });
   }
 
   findOne(id: number) {
@@ -53,12 +51,29 @@ export class TopicsService {
           select: {
             id: true,
             tag: true,
-          } 
+          }
         }
       }
     });
   }
 
+  async findOneFlows(id: number, { skip, take }: QueryLimitDto) {
+    return Object.assign({ page: `?skip=${skip}&take=${take}` },
+      await this.prisma.topic.findUniqueOrThrow({
+        where: { id },
+        include: {
+          _count: {
+            select: {
+              flows: true,
+            }
+          },
+          flows: {
+            skip,
+            take,
+          }
+        }
+      }));
+  }
   async update(id: number, { topic, tags: tagArr }: UpdateDto) {
     return this.prisma.topic.update({
       where: { id },

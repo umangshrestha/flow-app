@@ -2,7 +2,7 @@ import { Injectable } from '@nestjs/common';
 import { CreateInstructorDto as CreateDto } from './dto/create-instructor.dto';
 import { UpdateInstructorDto as UpdateDto } from './dto/update-instructor.dto';
 import { PrismaService } from 'src/prisma/prisma.service';
-import { QueryDto } from 'src/shared/dto/query.dto';
+import { QueryDto, QueryLimitDto } from 'src/shared/dto/query.dto';
 
 @Injectable()
 export class InstructorsService {
@@ -36,6 +36,24 @@ export class InstructorsService {
   findOne(id: string) {
     return this.prisma.instructor.findUniqueOrThrow({
       where: { id },
+    });
+  }
+
+
+  findOneFlows(id: string, { skip, take }: QueryLimitDto) {
+    return this.prisma.instructor.findUniqueOrThrow({
+      where: { id },
+      include: {
+        _count: {
+          select: {
+            flows: true,
+          }
+        },
+        flows: {
+          skip,
+          take,
+        }
+      }
     });
   }
 

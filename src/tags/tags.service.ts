@@ -29,11 +29,16 @@ export class TagsService {
     });
   }
 
-  async findOne(id: number, { skip, take }: QueryLimitDto) {
+  async findOneTopics(id: number, { skip, take }: QueryLimitDto) {
     return Object.assign({ page: `?skip=${skip}&take=${take}` },
       await this.prisma.tag.findUniqueOrThrow({
         where: { id },
         include: {
+          _count: {
+            select: {
+              topics: true,
+            }
+          },
           topics: {
             skip,
             take,
@@ -41,6 +46,24 @@ export class TagsService {
               id: true,
               topic: true
             }
+          }
+        }
+      }));
+  }
+
+  async findOneFlows(id: number, { skip, take }: QueryLimitDto) {
+    return Object.assign({ page: `?skip=${skip}&take=${take}` },
+      await this.prisma.tag.findUniqueOrThrow({
+        where: { id },
+        include: {
+          _count: {
+            select: {
+              flows: true,
+            }
+          },
+          flows: {
+            skip,
+            take,
           }
         }
       }));
