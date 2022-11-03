@@ -1,5 +1,5 @@
 import { ApiProperty } from "@nestjs/swagger";
-import { DepartmentEntity } from "src/departments/entities/department.entity";
+import { DepartmentEntityBase  as DepartmentEntity} from "src/departments/entities/department.entity";
 
 export class FacultyEntity {
     @ApiProperty()

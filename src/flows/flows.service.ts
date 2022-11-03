@@ -4,6 +4,22 @@ import { QueryTimeDto as QueryDto } from 'src/shared/dto/query.dto';
 import { CreateFlowDto as CreateDto } from './dto/create-flow.dto';
 import { UpdateFlowDto as UpdateDto } from './dto/update-flow.dto';
 
+
+const include =  {
+  tags: {
+    select: {
+      id: true,
+      tag: true
+    }
+  },
+  topics: {
+    select: {
+      id: true,
+      topic: true,
+    }
+  }
+}
+
 @Injectable()
 export class FlowsService {
   constructor(private prisma: PrismaService) { }
@@ -24,7 +40,8 @@ export class FlowsService {
         topics: {
           connect: topics.map(id => ({ id }))
         }
-      }
+      },
+      include
     });
   }
 
@@ -42,12 +59,14 @@ export class FlowsService {
       orderBy: {
         [orderBy]: sortOrder,
       },
+      include
     });
   }
 
   findOne(id: number) {
     return this.prisma.flow.findUniqueOrThrow({
-      where: { id }
+      where: { id },
+      include
     })
   }
 
@@ -68,7 +87,8 @@ export class FlowsService {
         topics: {
           connect: topics.map(id => ({ id }))
         }
-      }
+      },
+      include
     });
 
   }
@@ -76,6 +96,7 @@ export class FlowsService {
   remove(id: number) {
     return this.prisma.flow.delete({
       where: { id },
+      include
     });
   }
 }

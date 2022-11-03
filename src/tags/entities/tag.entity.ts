@@ -1,11 +1,13 @@
 import { ApiProperty } from "@nestjs/swagger";
-import { TopicEntity } from "src/topics/entities/topic.entity";
 
-export class TagEntity {
+export class TagEntityBase {
     @ApiProperty()
     readonly id: number
     @ApiProperty()
     tag: string
+}
+
+export class TagEntity extends TagEntityBase {
     @ApiProperty()
     readonly createdAt: Date;
     @ApiProperty()

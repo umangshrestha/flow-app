@@ -1,5 +1,5 @@
 import { ApiProperty } from "@nestjs/swagger";
-import { TagEntity } from "src/tags/entities/tag.entity";
+import { TagEntityBase as TagEntity } from "src/tags/entities/tag.entity";
 import { TopicEntity } from "src/topics/entities/topic.entity";
 
 export class FlowEntity {
@@ -15,8 +15,8 @@ export class FlowEntity {
     createdAt: Date;
     @ApiProperty()
     updatedAt: Date;
-    @ApiProperty()
-    tags: TagEntity[];
-    @ApiProperty()
-    topics:TopicEntity[];
+    @ApiProperty({isArray: true})
+    tags: TagEntity;
+    @ApiProperty({isArray: true})
+    topics:TopicEntity;
 }
