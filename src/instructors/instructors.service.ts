@@ -16,6 +16,13 @@ export class InstructorsService {
           connect: { department }
         }
       },
+      include: {
+        _count: {
+          select: {
+            flows: true,
+          }
+        },
+      }
     });
   }
 
@@ -30,12 +37,36 @@ export class InstructorsService {
       orderBy: {
         [orderBy]: sortOrder,
       },
+      include: {
+        _count: {
+          select: {
+            flows: true,
+          },
+        },
+        department:{
+          include: {
+            faculty: true
+          },
+        },
+      }
     });
   }
 
   findOne(id: string) {
     return this.prisma.instructor.findUniqueOrThrow({
       where: { id },
+      include: {
+        _count: {
+          select: {
+            flows: true,
+          }
+        },
+        department:{
+          include: {
+            faculty: true
+          },
+        },
+      }
     });
   }
 
@@ -48,6 +79,11 @@ export class InstructorsService {
           select: {
             flows: true,
           }
+        }, 
+        department:{
+          include: {
+            faculty: true
+          },
         },
         flows: {
           skip,
@@ -66,12 +102,26 @@ export class InstructorsService {
           connect: { department }
         }
       },
+      include: {
+        _count: {
+          select: {
+            flows: true,
+          }
+        },
+      }
     });
   }
 
   remove(id: string) {
     return this.prisma.instructor.delete({
       where: { id },
+      include: {
+        _count: {
+          select: {
+            flows: true,
+          }
+        },
+      }
     });
   }
 }

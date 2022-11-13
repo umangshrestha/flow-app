@@ -8,6 +8,7 @@ import { InstructorsModule } from './instructors/instructors.module';
 import { TopicsModule } from './topics/topics.module';
 import { TagsModule } from './tags/tags.module';
 import { FlowsModule } from './flows/flows.module';
+import { FormsModule } from './forms/forms.module';
 
 
 @Module({
@@ -18,7 +19,8 @@ import { FlowsModule } from './flows/flows.module';
   InstructorsModule,
   TopicsModule,
   TagsModule,
-  FlowsModule],
+  FlowsModule,
+  FormsModule],
   controllers: [],
   providers: [],
 })

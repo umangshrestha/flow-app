@@ -16,8 +16,11 @@ export class Flatten implements NestInterceptor {
     tansformData(data: Object) {
         console.log(data)
         const { key } = this.config;
-        if (data[key] && data[key][key])
-            data[key] = data[key][key];
+        if (data[key] && data[key][key]) {
+            const {id, ...rest} = data[key];
+            delete data[key];
+            data = {...rest, ...data};
+        }
         return data
     }
 

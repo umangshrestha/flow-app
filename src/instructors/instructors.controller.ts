@@ -7,11 +7,14 @@ import { InstructorEntity as Entity} from './entities/instructor.entity';
 import { QueryDto, QueryLimitDto } from 'src/shared/dto/query.dto';
 import { ValidationErrorEntity } from 'src/shared/entity/validation-error.entity';
 import { InstructorEntityWithFlow as EntityWithFlow } from './entities/instructor-with-flows.entity';
-import { query } from 'express';
 import { FlattenCount } from 'src/prisma/interceptors/count.interceptors';
+import { Flatten } from 'src/prisma/interceptors/flatten.interceptor';
 
 @Controller('instructors')
 @ApiTags('instructors')
+@UseInterceptors(new FlattenCount)
+@UseInterceptors(new Flatten({ key: "department" }))
+@UseInterceptors(new Flatten({ key: "faculty" }))
 export class InstructorsController {
   constructor(private readonly service: Service) {}
 
@@ -36,7 +39,6 @@ export class InstructorsController {
   }
 
   @Get(':id/flows')
-  @UseInterceptors(new FlattenCount)
   @ApiOkResponse({ type: EntityWithFlow })
   findOneFlows(@Param('id') id: string, @Query() query: QueryLimitDto) {
     return this.service.findOneFlows(id, query);

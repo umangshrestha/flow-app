@@ -15,4 +15,6 @@ export class InstructorEntity {
     department: string
     @ApiProperty({ required: true })
     faculty: string
+    @ApiProperty()
+    flows_count: number
 }
