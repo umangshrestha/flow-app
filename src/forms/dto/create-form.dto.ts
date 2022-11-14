@@ -14,9 +14,10 @@ export class CreateFormDto {
     helpInfo: string;
 
     @IsNotEmpty()
+    @ApiProperty()
     tag: string;
 
     @IsNotEmpty()
-    @ApiProperty()
+    @ApiProperty({type: [CreateFormSectionDto]})
     sections: CreateFormSectionDto[];
 }

@@ -1,5 +1,6 @@
 import { ApiProperty } from "@nestjs/swagger"
 import { FlowEntityBase as FlowEntity } from "src/flows/entities/flow.entity"
+import { TopicEntity } from "src/topics/entities/topic.entity"
 import { TagEntity } from "./tag.entity"
 
 export class TagEntityWithTopic  extends TagEntity{
@@ -7,6 +8,6 @@ export class TagEntityWithTopic  extends TagEntity{
     page: string
     @ApiProperty()
     topics_count: number
-    @ApiProperty({isArray: true})
-    topics: FlowEntity
+    @ApiProperty({type: [TopicEntity]})
+    topics: TopicEntity[]
 }

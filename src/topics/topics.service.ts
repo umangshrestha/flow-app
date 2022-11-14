@@ -39,7 +39,7 @@ export class TopicsService {
       orderBy: {
         [orderBy]: sortOrder,
       },
-      select
+      select,
     });
   }
 

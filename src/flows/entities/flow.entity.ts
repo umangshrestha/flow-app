@@ -20,8 +20,8 @@ export class FlowEntityBase {
 }
 
 export class FlowEntity extends FlowEntityBase{
-    @ApiProperty({isArray: true})
-    tags: TagEntity;
-    @ApiProperty({isArray: true})
-    topics:TopicEntity;
+    @ApiProperty({type: [TagEntity]})
+    tags: TagEntity[];
+    @ApiProperty({type: [TopicEntity]})
+    topics:TopicEntity[];
 }

@@ -1,7 +1,12 @@
 import { ApiProperty } from "@nestjs/swagger";
 import { IsNotEmpty } from "class-validator";
+import { TopicEntity } from "src/topics/entities/topic.entity";
 
-export class CreateFormSectionDto {
+export class FormSectionEntity {
+    @IsNotEmpty()
+    @ApiProperty()
+    id: number;
+
     @IsNotEmpty()
     @ApiProperty()
     formType: string;
@@ -17,6 +22,6 @@ export class CreateFormSectionDto {
     helpInfo: string;
 
     @IsNotEmpty()
-    @ApiProperty()
-    topics: string[];
+    @ApiProperty({isArray: true})
+    topics: TopicEntity;
 }

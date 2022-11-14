@@ -1,17 +1,17 @@
 import { ApiProperty } from "@nestjs/swagger";
 import { IsNotEmpty } from "class-validator";
-import { TopicEntity } from "src/topics/entities/topic.entity";
+import { FormSectionEntity } from "./form-section.entity";
 
-export class FormSectionEntity {
+export class FormEntity {
     @IsNotEmpty()
     @ApiProperty()
-    formType: string;
+    id: number;
 
     @ApiProperty()
-    paceholder: string;
+    name: string;
 
     @ApiProperty()
-    isRequred: boolean;
+    description: string;
 
     @IsNotEmpty()
     @ApiProperty()
@@ -19,5 +19,13 @@ export class FormSectionEntity {
 
     @IsNotEmpty()
     @ApiProperty()
-    topics: TopicEntity[];
+    tagId: number;
+
+    @IsNotEmpty()
+    @ApiProperty()
+    tag: string;
+
+    @IsNotEmpty()
+    @ApiProperty({ type: [FormSectionEntity] })
+    sections: FormSectionEntity[];
 }

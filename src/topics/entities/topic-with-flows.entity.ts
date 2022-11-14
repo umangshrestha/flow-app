@@ -7,7 +7,7 @@ export class TopicEntityWithFlow  extends TopicEntity{
     page: string
     @ApiProperty()
     flows_count: number
-    @ApiProperty({isArray: true})
-    flows: FlowEntity
+    @ApiProperty({type: [FlowEntity]})
+    flows: FlowEntity[]
 
 }

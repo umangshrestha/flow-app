@@ -18,6 +18,6 @@ export class InstructorEntityWithFlow {
     faculty: string
     @ApiProperty()
     flows_count: number
-    @ApiProperty({isArray: true})
-    flows: FlowEntity
+    @ApiProperty({type: [FlowEntity]})
+    flows: FlowEntity[]
 }
