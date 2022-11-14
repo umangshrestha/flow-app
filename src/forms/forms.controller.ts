@@ -7,12 +7,16 @@ import { FormEntity } from './entities/form.entity';
 import { ValidationErrorEntity } from 'src/shared/entity/validation-error.entity';
 import { QueryDto } from 'src/shared/dto/query.dto';
 import { Flatten } from 'src/prisma/interceptors/flatten.interceptor';
+import { FormSectionService } from './section.service';
+import { FormSectionEntity } from './entities/form-section.entity';
+import { UpdateFormSectionDto } from './dto/update-section.dto';
 
 @Controller('forms')
 @ApiTags('forms')
 @UseInterceptors(new Flatten({key: 'tag'}))
 export class FormsController {
-  constructor(private readonly service: Service) {}
+  constructor(private readonly service: Service,
+    private readonly sectionService : FormSectionService) {}
 
   @Post()
   @ApiOkResponse({ type: FormEntity })
@@ -33,15 +37,33 @@ export class FormsController {
     return this.service.findOne(+id);
   }
 
+  @Get('section/:id')
+  @ApiOkResponse({ type: FormEntity })
+  findOneSection(@Param('id') id: string) {
+    return this.sectionService.findOne(+id);
+  }
+
   @Patch(':id')
   @ApiOkResponse({ type: FormEntity })
   update(@Param('id') id: string, @Body() updateDto: UpdateDto) {
     return this.service.update(+id, updateDto);
   }
 
+  @Patch('section/:id')
+  @ApiOkResponse({ type: FormSectionEntity })
+  updateSection(@Param('id') id: string, @Body() updateDto: UpdateFormSectionDto) {
+    return this.sectionService.update(+id, updateDto);
+  }
+
   @Delete(':id')
   @ApiOkResponse({ type: FormEntity })
   remove(@Param('id') id: string) {
     return this.service.remove(+id);
+  }
+
+  @Delete('section/:id')
+  @ApiOkResponse({ type: FormSectionEntity })
+  removeSection(@Param('id') id: string) {
+    return this.sectionService.remove(+id);
   }
 }
