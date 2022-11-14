@@ -26,6 +26,14 @@ export class FormEntity {
     tag: string;
 
     @IsNotEmpty()
+    @ApiProperty()
+    createdAt: Date;
+
+    @IsNotEmpty()
+    @ApiProperty()
+    updatedAt: Date;
+
+    @IsNotEmpty()
     @ApiProperty({ type: [FormSectionEntity] })
     sections: FormSectionEntity[];
 }

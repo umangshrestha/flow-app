@@ -11,10 +11,6 @@ export class CreateFormDto {
 
     @IsNotEmpty()
     @ApiProperty()
-    helpInfo: string;
-
-    @IsNotEmpty()
-    @ApiProperty()
     tag: string;
 
     @IsNotEmpty()

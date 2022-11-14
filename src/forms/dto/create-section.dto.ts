@@ -1,22 +1,28 @@
 import { ApiProperty } from "@nestjs/swagger";
-import { IsNotEmpty } from "class-validator";
+import { IsNotEmpty, IsOptional } from "class-validator";
 
 export class CreateFormSectionDto {
-    @IsNotEmpty()
+    @ApiProperty()
+    @IsOptional()
+    id?: number
+    
+    @IsOptional()
     @ApiProperty()
     formType: string;
 
     @ApiProperty()
+    @IsOptional()
     placeholder: string;
 
     @ApiProperty()
-    isRequred: boolean;
+    @IsOptional()
+    isRequired: boolean;
 
-    @IsNotEmpty()
     @ApiProperty()
+    @IsOptional()
     helpInfo: string;
 
-    @IsNotEmpty()
+    @IsOptional()
     @ApiProperty()
     topics: string[];
 }

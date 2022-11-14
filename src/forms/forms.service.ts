@@ -4,6 +4,23 @@ import { QueryDto } from 'src/shared/dto/query.dto';
 import { CreateFormDto as CreateDto } from './dto/create-form.dto';
 import { UpdateFormDto as UpdateDto } from './dto/update-form.dto';
 
+
+const include =  {
+  tag: true,
+  sections: {
+    include: {
+      topics: {
+        select: {
+          topic: true,
+          id: true,
+          updatedAt: false,
+          createdAt: false,
+          formSectionId: false,
+        }
+      }
+    }
+  }
+}
 @Injectable()
 export class FormsService {
   constructor(private prisma: PrismaService) { }
@@ -19,31 +36,29 @@ export class FormsService {
           })
         },
         sections: {
-          createMany: {
-            data: sections.map(({ topics, ...data }) => ({
+          connectOrCreate: sections.map(({ topics, id, ...data }) => ({
+            where: { id },
+            create: {
               ...data,
               topics: {
                 connectOrCreate: topics.map((topic) => ({
-                  where: { name: topic },
+                  where: { topic },
                   create: {
-                    name: topic, connectOrCreate: ({
-                      where: { tag },
-                      create: { tag }
-                    })
+                    topic,
+                    tags: {
+                      connectOrCreate: ({
+                        where: { tag },
+                        create: { tag }
+                      })
+                    }
                   }
                 }))
               }
-            })),
-          }
+            }
+          })),
         }
       },
-      include: {
-        sections: {
-          include: {
-            topics: true
-          }
-        }
-      }
+      include
     })
   }
 
@@ -59,26 +74,14 @@ export class FormsService {
         [orderBy]: sortOrder,
       },
 
-      include: {
-        sections: {
-          include: {
-            topics: true
-          }
-        }
-      }
+      include
     })
   }
 
   findOne(id: number) {
     return this.prisma.form.findUniqueOrThrow({
       where: { id },
-      include: {
-        sections: {
-          include: {
-            topics: true
-          }
-        }
-      }
+      include
     })
   }
 
@@ -99,9 +102,10 @@ export class FormsService {
               ...data,
               topics: {
                 connectOrCreate: topics.map((topic) => ({
-                  where: { name: topic },
+                  where: { topic },
                   create: {
-                    name: topic, connectOrCreate: ({
+                    topic,
+                    connectOrCreate: ({
                       where: { tag },
                       create: { tag }
                     })
@@ -112,26 +116,14 @@ export class FormsService {
           }
         }
       },
-      include: {
-        sections: {
-          include: {
-            topics: true
-          }
-        }
-      }
+      include
     })
   }
 
   remove(id: number) {
     return this.prisma.form.delete({
       where: { id },
-      include: {
-        sections: {
-          include: {
-            topics: true
-          }
-        }
-      },
+      include
     });
   }
 }

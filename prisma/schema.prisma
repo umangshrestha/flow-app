@@ -69,13 +69,37 @@ model Tag {
   tag       String   @unique
   topics    Topic[]
   flows     Flow[]
+  Form      Form[]
 }
 
 model Topic {
-  id        Int      @id @default(autoincrement())
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-  topic     String   @unique
-  flows     Flow[]
-  tags      Tag[]
+  id            Int          @id @default(autoincrement())
+  createdAt     DateTime     @default(now())
+  updatedAt     DateTime     @updatedAt
+  topic         String       @unique
+  flows         Flow[]
+  tags          Tag[]
+  FormSection   FormSection? @relation(fields: [formSectionId], references: [id])
+  formSectionId Int?
+}
+
+// for form
+model Form {
+  id          Int           @id @default(autoincrement())
+  name        String
+  description String
+  sections    FormSection[]
+  tag         Tag?          @relation(fields: [tagId], references: [id])
+  tagId       Int?
+}
+
+model FormSection {
+  id          Int     @id @default(autoincrement())
+  Form        Form?   @relation(fields: [formId], references: [id])
+  formId      Int?
+  formType    String
+  placeholder String
+  isRequired  Boolean @default(false)
+  helpInfo    String
+  topics      Topic[]
 }

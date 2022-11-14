@@ -12,7 +12,10 @@ import { ValidationPipe } from '@nestjs/common';
 async function bootstrap() {
   const app = await NestFactory.create(AppModule, {
     logger: LoggerModule,
-    cors:true,
+    cors: {
+      origin: process.env.ALLOWED_ORIGIN || "*",
+      credentials: true
+    }
   });
 
   app.use(cookieParser());
